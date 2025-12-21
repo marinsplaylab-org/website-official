@@ -1,0 +1,104 @@
+/* Theme */
+:root {
+  --color-bg: #07121f;        /* deep navy */
+  --color-surface: #0a1a2e;   /* header */
+  --color-surface-2: #081628; /* footer */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: rgba(255, 255, 255, 0.92);
+  --color-muted: rgba(255, 255, 255, 0.68);
+  --color-link: #7dd3fc;      /* light cyan */
+  --color-link-hover: #bae6fd;
+}
+
+/* Apply font to entire site */
+body {
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(125, 211, 252, 0.12), transparent 60%),
+    radial-gradient(1000px 500px at 100% 0%, rgba(99, 102, 241, 0.10), transparent 55%),
+    var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Make main content tall enough */
+main {
+  min-height: 70vh;
+}
+
+/* Links */
+a {
+  color: var(--color-link);
+  text-decoration-color: rgba(125, 211, 252, 0.35);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration-color: rgba(186, 230, 253, 0.6);
+}
+
+/* Make brand text stand out */
+.navbar-brand {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.navbar-brand img {
+  object-fit: contain; /* Prevents stretching */
+}
+
+/* Header */
+.site-navbar {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.site-navbar .navbar-brand,
+.site-navbar .nav-link {
+  color: var(--color-text);
+}
+
+.site-navbar .nav-link {
+  color: var(--color-muted);
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link:focus {
+  color: var(--color-text);
+}
+
+.site-navbar .nav-link.active {
+  color: var(--color-text);
+}
+
+/* Social icons */
+.site-social .nav-link {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-social svg {
+  opacity: 0.85;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.site-social .nav-link:hover svg,
+.site-social .nav-link:focus svg {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--color-surface-2);
+  border-top: 1px solid var(--color-border);
+}
+
+.site-version {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
