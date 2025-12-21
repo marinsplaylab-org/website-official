@@ -79,13 +79,21 @@ a:hover {
   justify-content: center;
 }
 
-.site-social svg {
+.site-social svg,
+.site-social img {
   opacity: 0.85;
   transition: opacity 120ms ease, transform 120ms ease;
 }
 
+.site-social img {
+  display: block;
+  filter: invert(1);
+}
+
 .site-social .nav-link:hover svg,
-.site-social .nav-link:focus svg {
+.site-social .nav-link:focus svg,
+.site-social .nav-link:hover img,
+.site-social .nav-link:focus img {
   opacity: 1;
   transform: translateY(-1px);
 }

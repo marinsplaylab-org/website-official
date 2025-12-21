@@ -21,7 +21,11 @@ This project is licensed under the MIT License. See the LICENSE file for details
 │   └── include.js
 └── images/
     ├── favicon.jpg
-    └── logo.jpg
+    ├── logo.jpg
+    └── socials/
+        ├── bluesky.svg
+        ├── github.svg
+        └── x.svg
 ```
 
 ## Run Locally on macOS
