@@ -8,8 +8,14 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L]
 
-# Unity WebGL Brotli (.br) support
+# Basic security headers (safe defaults for a static site)
 <IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), fullscreen=(self)"
+
+  # Unity WebGL Brotli (.br) support
   <FilesMatch "\.js\.br$">
     Header set Content-Encoding br
     Header set Content-Type "application/javascript; charset=UTF-8"
