@@ -19,47 +19,26 @@ def render_project(item):
   title = item["title"]
   description = item["description"]
   link = item["link"]
-  static_img = item["imageStatic"]
-  motion_img = item.get("imageMotion")
+  video = item["video"]
+  poster = item.get("poster")
   aria_label = item.get("ariaLabel", title)
-  source_url = item.get("sourceUrl")
-  source_text = item.get("sourceText", source_url)
+  poster_attr = f' poster="{poster}"' if poster else ""
 
   lines = [
     f'<div class="gallery-item is-link" data-link="{link}" role="link" aria-label="{aria_label}" tabindex="0">',
-    f'  <img',
-    f'    class="gallery-media is-static"',
-    f'    src="{static_img}"',
-    f'    alt="{title} still frame"',
-    f'    loading="lazy"',
-    f'    decoding="async">'
-  ]
-
-  if motion_img:
-    lines.extend([
-      f'  <img',
-      f'    class="gallery-media is-motion"',
-      f'    src="{motion_img}"',
-      f'    alt=""',
-      f'    aria-hidden="true"',
-      f'    loading="lazy"',
-      f'    decoding="async">'
-    ])
-
-  lines.extend([
+    f'  <video',
+    f'    class="gallery-media gallery-media-video"',
+    f'    src="{video}"',
+    f'    muted',
+    f'    loop',
+    f'    playsinline',
+    f'    preload="metadata"{poster_attr}',
+    f'    aria-hidden="true">',
+    f'  </video>',
     f'  <div class="gallery-overlay">',
     f'    <h2 class="gallery-title">{title}</h2>',
     f'    <p class="gallery-desc">{description}</p>'
-  ])
-
-  if source_url:
-    lines.extend([
-      f'    <p class="gallery-desc">',
-      f'      <a class="gallery-source" href="{source_url}" target="_blank" rel="noopener noreferrer">',
-      f'        {source_text}',
-      f'      </a>',
-      f'    </p>'
-    ])
+  ]
 
   lines.extend([
     f'  </div>',

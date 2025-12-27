@@ -29,20 +29,16 @@
     <section class="gallery-section">
       <div class="gallery-grid">
         <!-- GALLERY:START -->
-        <div class="gallery-item is-link" data-link="/project-solar-system/" role="link" aria-label="Solar System" tabindex="0">
-          <img
-            class="gallery-media is-static"
-            src="/images/gallery/solar-system.jpg"
-            alt="Solar System still frame"
-            loading="lazy"
-            decoding="async">
-          <img
-            class="gallery-media is-motion"
-            src="/images/gallery/solar-system-anim.gif"
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async">
+        <div class="gallery-item is-link" data-link="/solar-system/" role="link" aria-label="Solar System" tabindex="0">
+          <video
+            class="gallery-media gallery-media-video"
+            src="/images/gallery/solar-system.mp4"
+            muted
+            loop
+            playsinline
+            preload="metadata" poster="/images/gallery/solar-system.jpg"
+            aria-hidden="true">
+          </video>
           <div class="gallery-overlay">
             <h2 class="gallery-title">Solar System</h2>
             <p class="gallery-desc">Upcoming project, planned for January 2026. Preview prototype used for testing.</p>

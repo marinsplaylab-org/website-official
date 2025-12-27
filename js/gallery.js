@@ -1,3 +1,40 @@
+function playGalleryVideo(_item)
+{
+  const video = _item.querySelector(".gallery-media-video");
+  if (!video)
+  {
+    return;
+  }
+
+  const playPromise = video.play();
+  if (playPromise && typeof playPromise.catch === "function")
+  {
+    playPromise.catch(() =>
+    {
+      return;
+    });
+  }
+}
+
+function pauseGalleryVideo(_item)
+{
+  const video = _item.querySelector(".gallery-media-video");
+  if (!video)
+  {
+    return;
+  }
+
+  video.pause();
+  try
+  {
+    video.currentTime = 0;
+  }
+  catch
+  {
+    return;
+  }
+}
+
 function initGalleryLinks()
 {
   const items = document.querySelectorAll(".gallery-item[data-link]");
@@ -17,6 +54,7 @@ function initGalleryLinks()
         return;
       }
 
+      item.blur();
       window.location.href = link;
     });
 
@@ -32,6 +70,26 @@ function initGalleryLinks()
         event.preventDefault();
         window.location.href = link;
       }
+    });
+
+    item.addEventListener("mouseenter", () =>
+    {
+      playGalleryVideo(item);
+    });
+
+    item.addEventListener("mouseleave", () =>
+    {
+      pauseGalleryVideo(item);
+    });
+
+    item.addEventListener("focusin", () =>
+    {
+      playGalleryVideo(item);
+    });
+
+    item.addEventListener("focusout", () =>
+    {
+      pauseGalleryVideo(item);
     });
   });
 }

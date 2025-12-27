@@ -4,7 +4,7 @@ This is a small passion project and it is still in an early phase. The goal is s
 Contributions are welcome. Some parts of the workflow use AI to speed things up, but everything is reviewed so posts and projects stay as accurate and reliable as possible.
 The goal is to grow this space and its community. Over time, more topics will be added as the project grows.
 
-It is built using HTML, CSS, Bootstrap, and reusable header and footer templates to make it easy to extend and maintain.
+It is built using HTML, CSS, Bootstrap, and reusable header/footer includes to make it easy to extend and maintain.
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
@@ -24,7 +24,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 │   └── gallery.json
 ├── index.html
 ├── privacy-policy.html
-├── project-solar-system/
+├── solar-system/
 │   ├── Build/
 │   │   ├── Solar-System.data.br
 │   │   ├── Solar-System.framework.js.br
@@ -86,22 +86,23 @@ Gallery items are stored in `data/gallery.json`. After editing, run:
 python3 scripts/build-gallery.py
 ```
 This regenerates the gallery markup between `<!-- GALLERY:START -->` and `<!-- GALLERY:END -->` in `index.html`.
+Project items use a `video` path (MP4/WebM) and an optional `poster` image for the idle frame.
 
-## Unity WebGL Template
+## Unity WebGL Setup
 Use a folder-based page so the route can be extensionless:
 
-1. Create a folder like `project-your-build/`.
-2. Add an `index.html` that follows your project template (for example, `project-your-build/index.html`).
+1. Create a folder like `[PROJECT-NAME]/`.
+2. Add an `index.html` that follows your project page format (for example, `[PROJECT-NAME]/index.html`).
 3. Use `<body class="unity-page">` so the Unity canvas is full screen.
 4. Optional: include `<div id="header"></div>` plus `/js/include.js` to show the site header on hover (no footer).
 5. Include `../js/unity-loader.js` and call `loadUnity("unity-root")`.
 6. Copy Unity build output into the same folder:
    - `Build/`
    - `StreamingAssets/` (if present)
-   - `TemplateData/` only if you use Unity's default WebGL template
+   - `TemplateData/` only if you use Unity's default WebGL page assets
 7. Ensure file names in `index.html` match that project's Unity output (for example: `Build/YourProjectName.*`).
 8. Use Brotli builds and keep the Brotli header block enabled in `.htaccess` (this site expects `.br` assets).
-9. Link to it using `/project-your-build` (no `.html`).
+9. Link to it using `/[PROJECT-NAME]` (no `.html`).
 
 ## Open Source and Transparency
 The website and its projects are published openly on https://github.com/marinsplaylab-org/ so people can learn from them, reuse them, and improve them. The site is early stage, so updates will arrive gradually.

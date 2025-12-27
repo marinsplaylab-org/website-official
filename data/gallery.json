@@ -4,9 +4,9 @@
       "type": "project",
       "title": "Solar System",
       "description": "Upcoming project, planned for January 2026. Preview prototype used for testing.",
-      "link": "/project-solar-system/",
-      "imageStatic": "/images/gallery/solar-system.jpg",
-      "imageMotion": "/images/gallery/solar-system-anim.gif",
+      "link": "/solar-system/",
+      "video": "/images/gallery/solar-system.mp4",
+      "poster": "/images/gallery/solar-system.jpg",
       "ariaLabel": "Solar System"
     },
     {
