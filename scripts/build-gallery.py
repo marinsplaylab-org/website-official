@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+Builds the homepage gallery HTML from data/gallery.json.
+Edits only the section between GALLERY:START and GALLERY:END in index.html.
+"""
 import json
 from pathlib import Path
 
@@ -6,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX_PATH = ROOT / "index.html"
 DATA_PATH = ROOT / "data" / "gallery.json"
 
+# Gallery markers in index.html
 START = "<!-- GALLERY:START -->"
 END = "<!-- GALLERY:END -->"
 
@@ -63,18 +68,6 @@ def render_upcoming(item):
   ])
 
 
-def render_empty(item):
-  return "\n".join([
-    f'<div class="gallery-item is-empty" aria-hidden="true"></div>'
-  ])
-
-
-def render_ghost(item):
-  return "\n".join([
-    f'<div class="gallery-item is-ghost" aria-hidden="true"></div>'
-  ])
-
-
 def render_items(data):
   rendered = []
   for item in data.get("items", []):
@@ -83,10 +76,6 @@ def render_items(data):
       rendered.append(render_project(item))
     elif item_type == "upcoming":
       rendered.append(render_upcoming(item))
-    elif item_type == "empty":
-      rendered.append(render_empty(item))
-    elif item_type == "ghost":
-      rendered.append(render_ghost(item))
     else:
       raise ValueError(f"Unknown gallery item type: {item_type}")
 

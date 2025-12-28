@@ -1,3 +1,5 @@
+// Initializes a Unity WebGL instance using data-unity-* attributes on a container.
+// Required: data-unity-data-url, data-unity-framework-url, data-unity-code-url, data-unity-loader-url.
 function loadUnity(_rootId)
 {
   const root = document.getElementById(_rootId);

@@ -48,7 +48,8 @@ This project is licensed under the MIT License. See the LICENSE file for details
 └── images/
     ├── favicon.jpg
     ├── gallery/
-    │   └── solar-system.jpg
+    │   ├── solar-system.jpg
+    │   └── solar-system.mp4
     ├── logo.jpg
     └── socials/
         ├── bluesky.svg
@@ -56,7 +57,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
         └── x.svg
 ```
 
-## Run Locally on macOS
+## Run Locally (macOS / Linux)
 1. Open Terminal and navigate to the project folder:
 ```bash
 cd /path/to/website
@@ -78,7 +79,7 @@ Press `Ctrl + C` in the Terminal where the server is running.
 - A local server is required for header/footer loading (they are fetched from `templates/`)
 - Use root-absolute asset paths (like `/css/style.css`) so deep links and `404.html` work with or without a trailing slash
 - The website is mobile-friendly and built with responsive design in mind
-- Code style: CSS/JS use brace-on-new-line formatting
+- Code style: CSS/JS use brace-on-new-line formatting and keep comments short and clear
 
 ## Gallery Data
 Gallery items are stored in `data/gallery.json`. After editing, run:
@@ -87,6 +88,12 @@ python3 scripts/build-gallery.py
 ```
 This regenerates the gallery markup between `<!-- GALLERY:START -->` and `<!-- GALLERY:END -->` in `index.html`.
 Project items use a `video` path (MP4/WebM) and an optional `poster` image for the idle frame.
+Each item uses:
+- `type`: `project` or `upcoming`
+- `title`, `description`
+- `link`: route for project tiles
+- `video`: MP4/WebM path for project tiles
+- `poster`: optional image shown before playback
 
 ## Unity WebGL Setup
 Use a folder-based page so the route can be extensionless:
@@ -101,16 +108,18 @@ Use a folder-based page so the route can be extensionless:
    - `StreamingAssets/` (if present)
    - `TemplateData/` only if you use Unity's default WebGL page assets
 7. Ensure file names in `index.html` match that project's Unity output (for example: `Build/YourProjectName.*`).
-8. Use Brotli builds and keep the Brotli header block enabled in `.htaccess` (this site expects `.br` assets).
-9. Link to it using `/[PROJECT-NAME]` (no `.html`).
+8. Build for WebGL 2.0 (minimum) with WebAssembly 2023 (IL2CPP) and use WebGL-compatible lit shaders (MarinsPlayLab custom shaders if applicable).
+9. Do not use older or obsolete WebGL APIs or deprecated Unity code paths.
+10. Use Brotli builds and keep the Brotli header block enabled in `.htaccess` (this site expects `.br` assets).
+11. Link to it using `/[PROJECT-NAME]` (no `.html`).
 
 ## Open Source and Transparency
 The website and its projects are published openly on https://github.com/marinsplaylab-org/ so people can learn from them, reuse them, and improve them. The site is early stage, so updates will arrive gradually.
 
 ## Privacy
 No ads. No aggressive tracking. We try to use only essential services to run the site and projects. If a third party service is involved, their policies apply and they handle their own data.
-Full policy: https://marinsplaylab.org/privacy-policy
-Terms: https://marinsplaylab.org/terms-of-service
+Privacy Policy: https://marinsplaylab.org/privacy-policy
+Terms of Service: https://marinsplaylab.org/terms-of-service
 
 ## Tech Used
 - HTML
@@ -120,6 +129,7 @@ Terms: https://marinsplaylab.org/terms-of-service
 - Unity (WebGL)
 - Brotli-compressed Unity builds (.br)
 - Apache/LiteSpeed .htaccess (extensionless routes, Brotli headers)
+- Python 3 (local server + gallery build script)
 
 ## Contributing / Feedback
 This is an open-source project. At the moment, we are **not accepting code pull requests**.
@@ -129,6 +139,9 @@ You can help with:
 - PRs: documentation only (no code changes)
 
 Code PRs may be closed without review. If you want to propose a code change, please open an issue first.
+
+## Known Issues
+- mp4 dont autoplay due to modern browsers protection, need to switch to something better and faster and secure!
 
 ## Future Plans
 - Add more interactive educational projects

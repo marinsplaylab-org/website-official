@@ -51,6 +51,7 @@ function initGalleryLinks()
     {
       if (event.target.closest("a"))
       {
+        // Keep inner links working without triggering tile navigation.
         return;
       }
 
@@ -74,6 +75,7 @@ function initGalleryLinks()
 
     item.addEventListener("mouseenter", () =>
     {
+      // Hover plays the preview video when allowed by the browser.
       playGalleryVideo(item);
     });
 
@@ -84,6 +86,7 @@ function initGalleryLinks()
 
     item.addEventListener("focusin", () =>
     {
+      // Keyboard focus should also preview the video.
       playGalleryVideo(item);
     });
 

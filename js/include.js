@@ -1,4 +1,4 @@
-// Function to load HTML files into a page
+// Loads shared header/footer HTML into placeholders and updates layout variables.
 async function loadHTML(_elementId, _filePath)
 {
   try

@@ -1,4 +1,4 @@
-/* Theme */
+/* === Theme + layout tokens === */
 :root
 {
   --color-bg: #07121f;        /* deep navy */
@@ -13,7 +13,8 @@
   --site-footer-height: 0px;
 }
 
-/* Apply font to entire site */
+/* === Base layout === */
+/* Base font + background for the site */
 body
 {
   font-family: system-ui, sans-serif;
@@ -33,6 +34,7 @@ body.unity-page
 
 body.unity-page #header
 {
+  /* Reserve a thin hover target so the header can slide in. */
   position: fixed;
   top: 0;
   left: 0;
@@ -42,7 +44,7 @@ body.unity-page #header
   overflow: visible;
 }
 
-/* Make main content tall enough */
+/* Main layout sizing */
 main
 {
   flex: 1;
@@ -65,6 +67,7 @@ body.unity-page .site-main
 
 body.unity-page .site-navbar
 {
+  /* Hide the navbar on Unity pages until hover/focus. */
   transform: translateY(-100%);
   transition: transform 180ms ease;
 }
@@ -83,6 +86,7 @@ body.unity-page #header:focus-within .site-navbar
 
 .unity-container
 {
+  /* Unity canvas wrapper */
   position: relative;
   flex: 1;
   min-height: 0;
@@ -99,6 +103,7 @@ body.unity-page #header:focus-within .site-navbar
 
 .unity-loading
 {
+  /* Lightweight loading overlay for Unity */
   position: absolute;
   inset: 0;
   display: flex;
@@ -134,7 +139,7 @@ body.unity-page #header:focus-within .site-navbar
   margin-top: 0.5rem;
 }
 
-/* Links */
+/* === Global links === */
 a
 {
   color: var(--color-link);
@@ -147,7 +152,8 @@ a:hover
   text-decoration-color: rgba(186, 230, 253, 0.6);
 }
 
-/* Make brand text stand out */
+/* === Header === */
+/* Brand + nav */
 .navbar-brand
 {
   font-weight: bold;
@@ -159,7 +165,6 @@ a:hover
   object-fit: contain; /* Prevents stretching */
 }
 
-/* Header */
 .site-navbar
 {
   background-color: var(--color-surface);
@@ -221,9 +226,10 @@ a:hover
   transform: translateY(-1px);
 }
 
-/* Gallery */
+/* === Gallery === */
 .gallery-section
 {
+  /* Controls for tile size/density: increase --tile-size for larger tiles. */
   --tile-radius: 0px;
   --tile-border: rgba(255, 255, 255, 0.12);
   --tile-bg: rgba(8, 20, 34, 0.6);
@@ -252,6 +258,7 @@ a:hover
 
 .gallery-item
 {
+  /* Tile container */
   position: relative;
   display: block;
   width: 100%;
@@ -276,6 +283,7 @@ a:hover
 .gallery-item:hover,
 .gallery-item:focus-visible
 {
+  /* Scale from center so it expands on all sides. */
   transform: scale(1.015);
   border-color: rgba(125, 211, 252, 0.65);
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.5);
@@ -289,6 +297,7 @@ a:hover
 
 .gallery-media
 {
+  /* Shared media style for video */
   position: absolute;
   inset: 0;
   width: 100%;
@@ -301,6 +310,7 @@ a:hover
 
 .gallery-overlay
 {
+  /* Text overlay appears on hover/focus */
   position: absolute;
   inset: auto 0 0 0;
   padding: 1.1rem 1.2rem;
@@ -330,33 +340,6 @@ a:hover
   font-size: 0.9rem;
 }
 
-.gallery-item.is-empty
-{
-  background: rgba(8, 20, 34, 0.35);
-  border: 1px dashed rgba(255, 255, 255, 0.16);
-  box-shadow: none;
-}
-
-.gallery-item.is-empty::after
-{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(400px 240px at 30% 20%, rgba(125, 211, 252, 0.08), transparent 60%);
-}
-
-.gallery-item.is-ghost
-{
-  background: transparent;
-  border-color: transparent;
-  box-shadow: none;
-  pointer-events: none;
-}
-
-.gallery-item.is-ghost::after
-{
-  content: none;
-}
 
 .gallery-item.is-upcoming
 {
@@ -373,6 +356,7 @@ a:hover
 
 .page-content
 {
+  /* Content width for text pages */
   max-width: 48rem;
   margin: 0 auto;
 }
@@ -403,6 +387,7 @@ a:hover
 
 @media (max-width: 991.98px)
 {
+  /* Tablet sizing: smaller tiles */
   .gallery-section
   {
     --tile-size: clamp(260px, 46vw, 420px);
@@ -411,13 +396,14 @@ a:hover
 
 @media (max-width: 575.98px)
 {
+  /* Phone sizing: single-column tiles */
   .gallery-section
   {
     --tile-size: clamp(240px, 92vw, 360px);
   }
 }
 
-/* Footer */
+/* === Footer === */
 .site-footer
 {
   background-color: var(--color-surface-2);
