@@ -35,66 +35,94 @@ function pauseGalleryVideo(_item)
   }
 }
 
-function initGalleryLinks()
+function initGalleryEvents()
 {
-  const items = document.querySelectorAll(".gallery-item[data-link]");
-
-  items.forEach((item) =>
+  if (window.__galleryEventsBound)
   {
-    const link = item.dataset.link;
-    if (!link)
+    return;
+  }
+
+  window.__galleryEventsBound = true;
+
+  // Event delegation keeps gallery behavior working even when HTML is injected.
+  document.addEventListener("click", (event) =>
+  {
+    const item = event.target.closest(".gallery-item[data-link]");
+    if (!item)
     {
       return;
     }
 
-    item.addEventListener("click", (event) =>
+    if (event.target.closest("a"))
     {
-      if (event.target.closest("a"))
-      {
-        // Keep inner links working without triggering tile navigation.
-        return;
-      }
+      return;
+    }
 
-      item.blur();
-      window.location.href = link;
-    });
+    item.blur();
+    window.location.href = item.dataset.link;
+  });
 
-    item.addEventListener("keydown", (event) =>
+  document.addEventListener("keydown", (event) =>
+  {
+    if (event.key !== "Enter" && event.key !== " ")
     {
-      if (event.key === "Enter" || event.key === " ")
-      {
-        if (event.target.closest("a"))
-        {
-          return;
-        }
+      return;
+    }
 
-        event.preventDefault();
-        window.location.href = link;
-      }
-    });
-
-    item.addEventListener("mouseenter", () =>
+    const item = event.target.closest(".gallery-item[data-link]");
+    if (!item || event.target.closest("a"))
     {
-      // Hover plays the preview video when allowed by the browser.
-      playGalleryVideo(item);
-    });
+      return;
+    }
 
-    item.addEventListener("mouseleave", () =>
-    {
-      pauseGalleryVideo(item);
-    });
+    event.preventDefault();
+    item.blur();
+    window.location.href = item.dataset.link;
+  });
 
-    item.addEventListener("focusin", () =>
+  document.addEventListener("pointerover", (event) =>
+  {
+    const item = event.target.closest(".gallery-item[data-link]");
+    if (!item || (event.relatedTarget && item.contains(event.relatedTarget)))
     {
-      // Keyboard focus should also preview the video.
-      playGalleryVideo(item);
-    });
+      return;
+    }
 
-    item.addEventListener("focusout", () =>
+    playGalleryVideo(item);
+  });
+
+  document.addEventListener("pointerout", (event) =>
+  {
+    const item = event.target.closest(".gallery-item[data-link]");
+    if (!item || (event.relatedTarget && item.contains(event.relatedTarget)))
     {
-      pauseGalleryVideo(item);
-    });
+      return;
+    }
+
+    pauseGalleryVideo(item);
+  });
+
+  document.addEventListener("focusin", (event) =>
+  {
+    const item = event.target.closest(".gallery-item[data-link]");
+    if (!item)
+    {
+      return;
+    }
+
+    playGalleryVideo(item);
+  });
+
+  document.addEventListener("focusout", (event) =>
+  {
+    const item = event.target.closest(".gallery-item[data-link]");
+    if (!item || (event.relatedTarget && item.contains(event.relatedTarget)))
+    {
+      return;
+    }
+
+    pauseGalleryVideo(item);
   });
 }
 
-document.addEventListener("DOMContentLoaded", initGalleryLinks);
+document.addEventListener("DOMContentLoaded", initGalleryEvents);

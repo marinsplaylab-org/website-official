@@ -204,21 +204,14 @@ a:hover
   justify-content: center;
 }
 
-.site-social svg,
-.site-social img
-{
-  opacity: 0.85;
-  transition: opacity 120ms ease, transform 120ms ease;
-}
-
 .site-social img
 {
   display: block;
+  opacity: 0.85;
   filter: invert(1);
+  transition: opacity 120ms ease, transform 120ms ease;
 }
 
-.site-social .nav-link:hover svg,
-.site-social .nav-link:focus svg,
 .site-social .nav-link:hover img,
 .site-social .nav-link:focus img
 {

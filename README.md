@@ -20,31 +20,27 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ├── LICENSE
 ├── README.md
 ├── about.html
-├── data/
-│   └── gallery.json
 ├── index.html
 ├── privacy-policy.html
-├── solar-system/
-│   ├── Build/
-│   │   ├── Solar-System.data.br
-│   │   ├── Solar-System.framework.js.br
-│   │   ├── Solar-System.loader.js
-│   │   └── Solar-System.wasm.br
-│   └── index.html
 ├── terms-of-service.html
-├── templates/
-│   ├── header.html
-│   └── footer.html
 ├── robots.txt
 ├── sitemap.xml
+├── solar-system/
+│   ├── Solar-System.data.br
+│   ├── Solar-System.framework.js.br
+│   ├── Solar-System.loader.js
+│   ├── Solar-System.wasm.br
+│   └── index.html
+├── templates/
+│   ├── footer.html
+│   ├── gallery.html
+│   └── header.html
 ├── css/
 │   └── style.css
 ├── js/
 │   ├── gallery.js
 │   ├── include.js
 │   └── unity-loader.js
-├── scripts/
-│   └── build-gallery.py
 └── images/
     ├── favicon.jpg
     ├── gallery/
@@ -81,19 +77,9 @@ Press `Ctrl + C` in the Terminal where the server is running.
 - The website is mobile-friendly and built with responsive design in mind
 - Code style: CSS/JS use brace-on-new-line formatting and keep comments short and clear
 
-## Gallery Data
-Gallery items are stored in `data/gallery.json`. After editing, run:
-```bash
-python3 scripts/build-gallery.py
-```
-This regenerates the gallery markup between `<!-- GALLERY:START -->` and `<!-- GALLERY:END -->` in `index.html`.
-Project items use a `video` path (MP4/WebM) and an optional `poster` image for the idle frame.
-Each item uses:
-- `type`: `project` or `upcoming`
-- `title`, `description`
-- `link`: route for project tiles
-- `video`: MP4/WebM path for project tiles
-- `poster`: optional image shown before playback
+## Gallery
+Homepage gallery markup lives in `templates/gallery.html`.
+Project tiles use a `video` path (MP4/WebM) and an optional `poster` image for the idle frame.
 
 ## Unity WebGL Setup
 Use a folder-based page so the route can be extensionless:
@@ -104,10 +90,14 @@ Use a folder-based page so the route can be extensionless:
 4. Optional: include `<div id="header"></div>` plus `/js/include.js` to show the site header on hover (no footer).
 5. Include `../js/unity-loader.js` and call `loadUnity("unity-root")`.
 6. Copy Unity build output into the same folder:
-   - `Build/`
+   - `YourProjectName.data.br`
+   - `YourProjectName.framework.js.br`
+   - `YourProjectName.loader.js`
+   - `YourProjectName.wasm.br`
    - `StreamingAssets/` (if present)
    - `TemplateData/` only if you use Unity's default WebGL page assets
-7. Ensure file names in `index.html` match that project's Unity output (for example: `Build/YourProjectName.*`).
+   Keep these files next to `index.html` (no subfolders).
+7. Ensure file names in `index.html` match that project's Unity output (for example: `YourProjectName.*`).
 8. Build for WebGL 2.0 (minimum) with WebAssembly 2023 (IL2CPP) and use WebGL-compatible lit shaders (MarinsPlayLab custom shaders if applicable).
 9. Do not use older or obsolete WebGL APIs or deprecated Unity code paths.
 10. Use Brotli builds and keep the Brotli header block enabled in `.htaccess` (this site expects `.br` assets).
@@ -129,7 +119,7 @@ Terms of Service: https://marinsplaylab.org/terms-of-service
 - Unity (WebGL)
 - Brotli-compressed Unity builds (.br)
 - Apache/LiteSpeed .htaccess (extensionless routes, Brotli headers)
-- Python 3 (local server + gallery build script)
+- Python 3 (local server)
 
 ## Contributing / Feedback
 This is an open-source project. At the moment, we are **not accepting code pull requests**.

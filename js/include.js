@@ -1,4 +1,4 @@
-// Loads shared header/footer HTML into placeholders and updates layout variables.
+// Loads shared HTML includes into placeholders and updates layout variables.
 async function loadHTML(_elementId, _filePath)
 {
   try
@@ -41,7 +41,8 @@ function updateLayoutVars()
 // Load header/footer templates and update layout sizing once they are in place
 Promise.all([
   loadHTML("header", "/templates/header.html"),
-  loadHTML("footer", "/templates/footer.html")
+  loadHTML("footer", "/templates/footer.html"),
+  loadHTML("gallery", "/templates/gallery.html")
 ]).then(updateLayoutVars);
 
 window.addEventListener("resize", updateLayoutVars);
