@@ -29,6 +29,8 @@ async function loadHTML(_elementId, _filePath)
 
 function updateLayoutVars()
 {
+  document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
+
   const header = document.getElementById("header");
   const footer = document.getElementById("footer");
   const headerHeight = header ? header.offsetHeight : 0;

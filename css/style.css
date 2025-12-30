@@ -65,6 +65,23 @@ body.unity-page .site-main
   min-height: 100vh;
 }
 
+body.unity-page .site-main,
+body.unity-page .unity-container
+{
+  height: 100dvh;
+  min-height: 100dvh;
+}
+
+@supports not (height: 100dvh)
+{
+  body.unity-page .site-main,
+  body.unity-page .unity-container
+  {
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
 body.unity-page .site-navbar
 {
   /* Hide the navbar on Unity pages until hover/focus. */
