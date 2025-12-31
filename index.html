@@ -30,25 +30,20 @@
       <section class="home-projects">
         <div id="projects" class="projects-list"></div>
       </section>
-
-      <aside class="home-feed">
+      <aside class="home-feed" aria-labelledby="home-feed-title">
         <div class="home-feed-card">
-          <h2 class="home-feed-title">Latest on X</h2>
-          <a
-            class="twitter-timeline"
-            data-theme="dark"
-            data-chrome="noheader nofooter transparent"
-            data-dnt="true"
-            data-height="820"
-            data-height-min="520"
-            data-height-max="900"
-            data-height-scale="0.78"
-            href="https://x.com/marinsplaylab">
-            Posts by Marins PlayLab
-          </a>
-          <!-- Height tuning: lower scale/limits reduce iframe height on smaller screens. -->
+          <h2 id="home-feed-title" class="home-feed-title">Latest Posts</h2>
+          <div
+            id="bsky-feed"
+            class="home-feed-list"
+            data-bsky-handle="marinsplaylab.org"
+            data-bsky-limit="3"
+            aria-live="polite">
+            <p class="home-feed-empty">Loading updates...</p>
+          </div>
           <p class="home-feed-fallback">
-            Timeline not loading? <a href="https://x.com/marinsplaylab" target="_blank" rel="noopener noreferrer">View on X</a>.
+            If updates do not load, visit
+            <a href="https://bsky.app/profile/marinsplaylab.org" target="_blank" rel="noopener noreferrer">Bluesky</a>.
           </p>
         </div>
       </aside>
@@ -67,11 +62,9 @@
   <!-- Project card interactions -->
   <script src="/js/project-cards.js"></script>
 
-  <!-- Timeline fallback handling -->
-  <script src="/js/x-timeline.js"></script>
+  <!-- Bluesky feed rendering -->
+  <script src="/js/bsky-feed.js"></script>
 
-  <!-- X (Twitter) widget -->
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 
 </html>

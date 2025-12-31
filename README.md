@@ -50,11 +50,11 @@ This project is licensed under the MIT License. See the LICENSE file for details
 │       └── x.svg
 ├── js/
 │   ├── bootstrap.bundle.min.js
+│   ├── bsky-feed.js
 │   ├── template-loader.js
 │   ├── project-cards.js
 │   ├── solar-system-init.js
-│   ├── unity-loader.js
-│   └── x-timeline.js
+│   └── unity-loader.js
 ├── solar-system/
 │   ├── Solar-System.data.br
 │   ├── Solar-System.framework.js.br
@@ -97,7 +97,7 @@ Press `Ctrl + C` in the Terminal where the server is running.
 ## Homepage Projects
 Homepage project list markup lives in `templates/home-project-list.html`.
 It is loaded into the `#projects` container via `/js/template-loader.js`.
-The right-column timeline embed is defined directly in `index.html` (X widgets script).
+Bluesky updates are rendered by `/js/bsky-feed.js` using the public API.
 
 Project card style guidelines:
 - Use a square thumbnail (`.project-thumb`) and keep copy to 1–2 short sentences.
@@ -108,14 +108,6 @@ Project card style guidelines:
 ## Tuning Guide (Examples)
 Use this section when you want to adjust layout or behavior quickly.
 
-### Home Layout (Projects vs. X Timeline)
-The two-column layout lives in `css/style.css` under `.home-layout`:
-- `grid-template-columns: 3fr 2fr` means projects get ~60% width and the timeline ~40%.
-- Example changes:
-  - `2fr 1fr` = projects feel larger, timeline narrower.
-  - `1fr 1fr` = equal columns (more balanced, less emphasis on projects).
-  - `4fr 1fr` = projects dominate, timeline becomes compact.
-
 ### Project Thumbnail Ratio
 The image ratio lives in `css/style.css` under `.project-thumb`:
 - `aspect-ratio: 1 / 1` gives a modern square.
@@ -125,15 +117,15 @@ The image ratio lives in `css/style.css` under `.project-thumb`:
   - `16 / 9` = cinematic, but text feels taller compared to the image.
 `object-fit: cover` keeps images from stretching; it crops instead.
 
-### X Timeline Height (Responsive)
-The timeline reads these attributes in `index.html`:
-- `data-height-min` (minimum height in px)
-- `data-height-max` (maximum height in px)
-- `data-height-scale` (multiplier of viewport height)
-Example tuning:
-- `data-height-scale="0.6"` makes the timeline shorter on small screens.
-- `data-height-min="420"` prevents it from shrinking too far.
-- `data-height-max="760"` keeps it from becoming too tall on large displays.
+### Bluesky Feed Settings
+The Bluesky feed container lives in `index.html` as `#bsky-feed`:
+- `data-bsky-handle` sets the account handle (example: `marinsplaylab.org`).
+- `data-bsky-limit` sets how many posts to show (example: `3`).
+Example change:
+- Set `data-bsky-limit="5"` to show more updates.
+Images and videos are shown when available:
+- Images load from https://cdn.bsky.app.
+- Videos use HLS playlists from https://video.bsky.app (some browsers may require native HLS support).
 
 ### Unity WebGL Data Attributes
 The Unity page uses `data-unity-*` on the container in `solar-system/index.html`:
@@ -148,7 +140,6 @@ Example change:
 The site preloader runs once per session (`sessionStorage` key `mpl_preloader_seen`) in `js/template-loader.js`.
 Example change:
 - To show it every page load, remove the sessionStorage check block.
-The X embed uses an external script from https://platform.twitter.com and loads media from https://pbs.twimg.com.
 
 ## Unity WebGL Setup
 Use a folder-based page so the route can be extensionless:
@@ -188,7 +179,7 @@ Terms of Service: https://marinsplaylab.org/terms-of-service
 - Oxanium (self-hosted font)
 - Source Sans 3 (self-hosted font)
 - Fira Code (self-hosted font)
-- X (Twitter) widgets script
+- Bluesky public API (public.api.bsky.app)
 - Unity (WebGL)
 - Brotli-compressed Unity builds (.br)
 - Apache/LiteSpeed .htaccess (extensionless routes, Brotli headers)
