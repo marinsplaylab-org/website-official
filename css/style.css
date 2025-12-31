@@ -611,10 +611,42 @@ a:hover
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
+.home-feed-header
+{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  margin-bottom: 0.9rem;
+}
+
 .home-feed-title
 {
-  margin: 0 0 0.9rem;
+  margin: 0;
   font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+}
+
+.home-feed-actions
+{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.home-feed-actions a
+{
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-color: rgba(125, 211, 252, 0.35);
+}
+
+.home-feed-actions a:hover
+{
+  color: var(--color-link-hover);
+  text-decoration-color: rgba(186, 230, 253, 0.7);
 }
 
 .home-feed-list
