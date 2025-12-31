@@ -17,6 +17,7 @@ RewriteRule ^(.+)$ $1.html [L]
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), fullscreen=(self)"
+  Header set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; script-src 'self' 'wasm-unsafe-eval' https://platform.twitter.com https://syndication.twitter.com https://cdn.syndication.twimg.com https://abs.twimg.com https://x.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://pbs.twimg.com https://abs.twimg.com https://platform.twitter.com; font-src 'self'; connect-src 'self' https://syndication.twitter.com https://platform.twitter.com https://pbs.twimg.com https://abs.twimg.com https://cdn.syndication.twimg.com https://x.com; frame-src 'self' https://platform.twitter.com https://syndication.twitter.com https://x.com; worker-src 'self' blob:; media-src 'self';"
 
   # Unity WebGL Brotli (.br) support
   <FilesMatch "\.js\.br$">

@@ -1,5 +1,6 @@
 // Initializes a Unity WebGL instance using data-unity-* attributes on a container.
 // Required: data-unity-data-url, data-unity-framework-url, data-unity-code-url, data-unity-loader-url.
+// Example: if your build outputs SpaceLab.data.br, set data-unity-data-url="SpaceLab.data.br".
 function loadUnity(_rootId)
 {
   const root = document.getElementById(_rootId);
@@ -11,11 +12,13 @@ function loadUnity(_rootId)
 
   const canvas = root.querySelector("[data-unity-canvas]");
   const loading = root.querySelector("[data-unity-loading]");
+  const loadingText = loading ? loading.querySelector("[data-unity-loading-text]") : null;
   const warning = root.querySelector("[data-unity-warning]");
   const dataUrl = root.dataset.unityDataUrl;
   const frameworkUrl = root.dataset.unityFrameworkUrl;
   const codeUrl = root.dataset.unityCodeUrl;
   const loaderUrl = root.dataset.unityLoaderUrl;
+  // Optional values: productName/productVersion update the loading text only.
   const streamingAssetsUrl = root.dataset.unityStreamingAssetsUrl || "StreamingAssets";
   const productName = root.dataset.unityProductName || "Unity Project";
   const companyName = root.dataset.unityCompanyName || "Marins PlayLab";
@@ -26,6 +29,7 @@ function loadUnity(_rootId)
 
   if (rawArgs)
   {
+    // If JSON parsing fails, fall back to comma-separated values.
     try
     {
       args = JSON.parse(rawArgs);
@@ -100,9 +104,14 @@ function loadUnity(_rootId)
   loaderScript.src = loaderUrl;
   loaderScript.onload = () =>
   {
+    // createUnityInstance is provided by the Unity loader script.
     createUnityInstance(canvas, config, (progress) =>
     {
-      if (loading)
+      if (loadingText)
+      {
+        loadingText.textContent = `Loading ${productName}... ${Math.round(progress * 100)}%`;
+      }
+      else if (loading)
       {
         loading.textContent = `Loading ${productName}... ${Math.round(progress * 100)}%`;
       }
@@ -115,7 +124,11 @@ function loadUnity(_rootId)
     }).catch((message) =>
     {
       console.error(message);
-      if (loading)
+      if (loadingText)
+      {
+        loadingText.textContent = "Failed to load the project. Please try again later.";
+      }
+      else if (loading)
       {
         loading.textContent = "Failed to load the project. Please try again later.";
       }
