@@ -94,6 +94,7 @@ Press `Ctrl + C` in the Terminal where the server is running.
 - Font files are under the SIL Open Font License (OFL) and were downloaded from https://fonts.google.com
 - The site logo and favicon use WebP in `images/`. Project previews use WebP when available.
 - Image assets use modern formats only (WebP for raster, SVG for icons).
+- Cloudflare is used in production as a CDN and security proxy.
 - Security headers (including CSP) are defined in `.htaccess`
 
 ## Homepage Projects
@@ -209,6 +210,7 @@ Terms of Service: https://marinsplaylab.org/terms-of-service
 - Unity (WebGL)
 - Brotli-compressed Unity builds (.br)
 - Apache/LiteSpeed .htaccess (extensionless routes, Brotli headers)
+- Cloudflare (CDN and security proxy)
 - Python 3 (local server)
 
 ## Contributing / Feedback
