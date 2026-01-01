@@ -3,6 +3,8 @@ ErrorDocument 403 /403.html
 ErrorDocument 500 /500.html
 ErrorDocument 503 /503.html
 
+Options -Indexes
+
 RewriteEngine On
 
 # Serve extensionless URLs for existing .html files
@@ -13,27 +15,43 @@ RewriteRule ^(.+)$ $1.html [L]
 
 # Basic security headers (safe defaults for a static site)
 <IfModule mod_headers.c>
-  Header set X-Content-Type-Options "nosniff"
-  Header set X-Frame-Options "SAMEORIGIN"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
-  Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), fullscreen=(self)"
-  Header set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://cdn.bsky.app; font-src 'self'; connect-src 'self' https://public.api.bsky.app https://video.bsky.app; frame-src 'self'; worker-src 'self' blob:; media-src 'self' https://video.bsky.app;"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), fullscreen=(self)"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'wasm-unsafe-eval'; script-src-attr 'none'; style-src 'self'; img-src 'self' data: https://cdn.bsky.app https://video.bsky.app https://video.cdn.bsky.app; font-src 'self'; connect-src 'self' https://public.api.bsky.app; frame-src 'none'; worker-src 'self' blob:; media-src 'self' https://video.bsky.app;"
+
+  # Cache static assets that rarely change.
+  <FilesMatch "\.woff2$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+  <FilesMatch "\.(svg|webp)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
 
   # Unity WebGL Brotli (.br) support
   <FilesMatch "\.js\.br$">
     Header set Content-Encoding br
     Header set Content-Type "application/javascript; charset=UTF-8"
+    Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
   <FilesMatch "\.data\.br$">
     Header set Content-Encoding br
     Header set Content-Type "application/octet-stream"
+    Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
   <FilesMatch "\.wasm\.br$">
     Header set Content-Encoding br
     Header set Content-Type "application/wasm"
+    Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
   <FilesMatch "\.framework\.js\.br$">
     Header set Content-Encoding br
     Header set Content-Type "application/javascript; charset=UTF-8"
+    Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
 </IfModule>

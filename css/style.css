@@ -2,8 +2,8 @@
 @font-face
 {
   font-family: "Oxanium";
-  src: url("../assets/fonts-oxanium/Oxanium-VariableFont_wght.ttf") format("truetype");
-  font-weight: 200 800;
+  src: url("../assets/fonts-oxanium/Oxanium-VariableFont_wght.woff2") format("woff2");
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
@@ -11,8 +11,8 @@
 @font-face
 {
   font-family: "Source Sans 3";
-  src: url("../assets/fonts-source-sans-3/SourceSans3-VariableFont_wght.ttf") format("truetype");
-  font-weight: 200 900;
+  src: url("../assets/fonts-source-sans-3/SourceSans3-VariableFont_wght.woff2") format("woff2");
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
@@ -20,8 +20,8 @@
 @font-face
 {
   font-family: "Source Sans 3";
-  src: url("../assets/fonts-source-sans-3/SourceSans3-Italic-VariableFont_wght.ttf") format("truetype");
-  font-weight: 200 900;
+  src: url("../assets/fonts-source-sans-3/SourceSans3-Italic-VariableFont_wght.woff2") format("woff2");
+  font-weight: 400 700;
   font-style: italic;
   font-display: swap;
 }
@@ -29,8 +29,8 @@
 @font-face
 {
   font-family: "Fira Code";
-  src: url("../assets/fonts-fira-code/FiraCode-VariableFont_wght.ttf") format("truetype");
-  font-weight: 300 700;
+  src: url("../assets/fonts-fira-code/FiraCode-VariableFont_wght.woff2") format("woff2");
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
@@ -143,6 +143,31 @@ body.unity-page #header
   border: 2px solid rgba(125, 211, 252, 0.25);
   border-top-color: rgba(125, 211, 252, 0.85);
   animation: site-spin 0.9s linear infinite;
+}
+
+/* === JavaScript required banner === */
+.no-js-warning
+{
+  display: none;
+  margin: 1.5rem auto 0;
+  max-width: 68rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(248, 113, 113, 0.6);
+  background: rgba(127, 29, 29, 0.35);
+  color: rgba(254, 226, 226, 0.95);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+html.no-js body > *
+{
+  display: none !important;
+}
+
+html.no-js body > .no-js-warning
+{
+  display: block !important;
 }
 
 .site-preloader-text
@@ -423,6 +448,7 @@ a:hover
 {
   min-width: 0;
 }
+
 
 .projects-list
 {
@@ -736,6 +762,15 @@ a:hover
   font-size: 0.95rem;
 }
 
+.home-feed-note
+{
+  margin: 0;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .home-feed-fallback
 {
   margin: 0.9rem 0 0;
@@ -809,7 +844,7 @@ a:hover
 
 .site-version
 {
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -819,14 +854,14 @@ a:hover
 {
   margin: 0.35rem auto 0.6rem;
   max-width: 36rem;
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.82);
   font-size: 0.95rem;
 }
 
 .site-opensource
 {
   margin: 0 auto 0.6rem;
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .site-opensource a
@@ -846,7 +881,7 @@ a:hover
 {
   margin: 0 auto 0.8rem;
   max-width: 46rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 0.9rem;
   line-height: 1.6;
 }

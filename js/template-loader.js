@@ -28,6 +28,8 @@ async function loadHTML(_elementId, _filePath)
   }
 }
 
+document.documentElement.classList.remove("no-js");
+
 function initPreloader()
 {
   // This preloader is skipped on Unity pages and shown once per session.
@@ -60,7 +62,7 @@ function initPreloader()
   const overlay = document.createElement("div");
   overlay.className = "site-preloader";
   overlay.innerHTML = `
-    <img class="site-preloader-logo" src="/images/favicon.jpg" alt="">
+    <img class="site-preloader-logo" src="/images/marinsplaylab-logo.webp" alt="">
     <div class="site-preloader-spinner" aria-hidden="true"></div>
     <div class="site-preloader-text">Loading</div>
   `;
@@ -100,12 +102,36 @@ function updateLayoutVars()
   document.documentElement.style.setProperty("--site-footer-height", `${footerHeight}px`);
 }
 
-// Load shared templates and update layout sizing once they are in place.
+// Load shared templates after the first paint so static content renders immediately.
 initPreloader();
-Promise.all([
-  loadHTML("header", "/templates/header.html"),
-  loadHTML("footer", "/templates/footer.html"),
-  loadHTML("projects", "/templates/home-project-list.html")
-]).then(updateLayoutVars);
+const loadTemplates = () =>
+{
+  Promise.all([
+    loadHTML("header", "/templates/header.html"),
+    loadHTML("footer", "/templates/footer.html"),
+    loadHTML("projects", "/templates/home-project-list.html")
+  ]).then(updateLayoutVars);
+};
+
+const scheduleTemplateLoad = () =>
+{
+  if ("requestAnimationFrame" in window)
+  {
+    requestAnimationFrame(loadTemplates);
+  }
+  else
+  {
+    setTimeout(loadTemplates, 0);
+  }
+};
+
+if (document.readyState === "loading")
+{
+  document.addEventListener("DOMContentLoaded", scheduleTemplateLoad, { once: true });
+}
+else
+{
+  scheduleTemplateLoad();
+}
 
 window.addEventListener("resize", updateLayoutVars);

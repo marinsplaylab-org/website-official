@@ -4,7 +4,7 @@ This is a small passion project and it is still in an early phase. The goal is s
 Contributions are welcome. Some parts of the workflow use AI to speed things up, but everything is reviewed so posts and projects stay as accurate and reliable as possible.
 The goal is to grow this space and its community. Over time, more topics will be added as the project grows.
 
-It is built using HTML, CSS, Bootstrap (local files), self-hosted fonts (Oxanium, Source Sans 3, Fira Code), and reusable header/footer/project includes to make it easy to extend and maintain.
+It is built using HTML, CSS, Bootstrap (local files), self-hosted WOFF2 fonts (Oxanium, Source Sans 3, Fira Code), and reusable header/footer/project includes to make it easy to extend and maintain.
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
@@ -27,23 +27,22 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ├── sitemap.xml
 ├── assets/
 │   ├── fonts-fira-code/
-│   │   ├── FiraCode-VariableFont_wght.ttf
-│   │   ├── OFL.txt
+│   │   ├── FiraCode-VariableFont_wght.woff2
+│   │   └── OFL.txt
 │   ├── fonts-oxanium/
 │   │   ├── OFL.txt
-│   │   └── Oxanium-VariableFont_wght.ttf
+│   │   └── Oxanium-VariableFont_wght.woff2
 │   └── fonts-source-sans-3/
 │       ├── OFL.txt
-│       ├── SourceSans3-Italic-VariableFont_wght.ttf
-│       └── SourceSans3-VariableFont_wght.ttf
+│       ├── SourceSans3-Italic-VariableFont_wght.woff2
+│       └── SourceSans3-VariableFont_wght.woff2
 ├── css/
 │   ├── bootstrap.min.css
 │   └── style.css
 ├── images/
-│   ├── favicon.jpg
+│   ├── marinsplaylab-logo.webp
 │   ├── projects/
-│   │   └── solar-system.jpg
-│   ├── logo.jpg
+│   │   └── solar-system.webp
 │   └── socials/
 │       ├── bluesky.svg
 │       ├── github.svg
@@ -87,17 +86,26 @@ Press `Ctrl + C` in the Terminal where the server is running.
 ## Notes
 - Do not open `index.html` directly using `file://`
 - A local server is required for header/footer/project loading (they are fetched from `templates/`)
+- JavaScript is required to load shared templates and homepage content (a no-JS warning is shown if scripts do not run)
 - Use root-absolute asset paths (like `/css/style.css`) so deep links and `404.html` work with or without a trailing slash
 - The website is mobile-friendly and built with responsive design in mind
 - Code style: CSS/JS use brace-on-new-line formatting and keep comments short and clear
-- Fonts are self-hosted in `assets/` (Oxanium, Source Sans 3, Fira Code)
+- Fonts are self-hosted WOFF2 files in `assets/` (Oxanium, Source Sans 3, Fira Code)
 - Font files are under the SIL Open Font License (OFL) and were downloaded from https://fonts.google.com
+- The site logo and favicon use WebP in `images/`. Project previews use WebP when available.
+- Image assets use modern formats only (WebP for raster, SVG for icons).
 - Security headers (including CSP) are defined in `.htaccess`
 
 ## Homepage Projects
 Homepage project list markup lives in `templates/home-project-list.html`.
 It is loaded into the `#projects` container via `/js/template-loader.js`.
 Bluesky updates are rendered by `/js/bsky-feed.js` using the public API.
+If JavaScript is unavailable, the page shows a no-JS warning instead of project cards.
+
+Bluesky feed caching:
+- Cached HTML is stored in `localStorage` under `mpl_bsky_cache_v1`.
+- Default TTL is 12 hours (`cacheTtlMs` in `js/bsky-feed.js`).
+- If the network fails or a 429 rate limit occurs, cached content is shown with a subtle note.
 
 Project card style guidelines:
 - Use a square thumbnail (`.project-thumb`) and keep copy to 1–2 short sentences.
@@ -115,7 +123,7 @@ The image ratio lives in `css/style.css` under `.project-thumb`:
   - `4 / 3` = more horizontal content, less crop on wide images.
   - `3 / 2` = wider preview look, less height.
   - `16 / 9` = cinematic, but text feels taller compared to the image.
-`object-fit: cover` keeps images from stretching; it crops instead.
+`object-fit: cover` keeps images from stretching. It crops instead.
 
 ### Bluesky Feed Settings
 The Bluesky feed container lives in `index.html` as `#bsky-feed`:
@@ -123,6 +131,9 @@ The Bluesky feed container lives in `index.html` as `#bsky-feed`:
 - `data-bsky-limit` sets how many posts to show (example: `3`).
 Example change:
 - Set `data-bsky-limit="5"` to show more updates.
+Caching defaults:
+- `cacheTtlMs` in `js/bsky-feed.js` controls cache TTL (12 hours by default).
+- If Bluesky rate-limits (429), a short backoff is applied and cached posts are shown.
 Images and videos are shown when available:
 - Images load from https://cdn.bsky.app.
 - Videos use HLS playlists from https://video.bsky.app (some browsers may require native HLS support).
@@ -140,6 +151,21 @@ Example change:
 The site preloader runs once per session (`sessionStorage` key `mpl_preloader_seen`) in `js/template-loader.js`.
 Example change:
 - To show it every page load, remove the sessionStorage check block.
+
+## Security Headers (.htaccess)
+- CSP is strict by default (`default-src 'self'`) and only allows Bluesky endpoints needed for the feed:
+  - `connect-src`: https://public.api.bsky.app
+  - `img-src`: https://cdn.bsky.app https://video.bsky.app https://video.cdn.bsky.app
+  - `media-src`: https://video.bsky.app
+- If you remove the Bluesky feed, delete these domains from the CSP.
+- HSTS is enabled. Ensure the site is served over HTTPS before deploying the `.htaccess` changes.
+
+## Caching
+Server cache defaults (from `.htaccess`):
+- Fonts (`.woff2`): 1 year
+- JS/CSS: 1 day
+- Images (`.svg/.webp`): 30 days
+- Unity `.br` build files: 1 week
 
 ## Unity WebGL Setup
 Use a folder-based page so the route can be extensionless:
@@ -176,9 +202,9 @@ Terms of Service: https://marinsplaylab.org/terms-of-service
 - CSS
 - Bootstrap 5 (self-hosted with local files)
 - JavaScript
-- Oxanium (self-hosted font)
-- Source Sans 3 (self-hosted font)
-- Fira Code (self-hosted font)
+- Oxanium (self-hosted WOFF2 font)
+- Source Sans 3 (self-hosted WOFF2 font)
+- Fira Code (self-hosted WOFF2 font)
 - Bluesky public API (public.api.bsky.app)
 - Unity (WebGL)
 - Brotli-compressed Unity builds (.br)
@@ -199,3 +225,12 @@ Code PRs may be closed without review. If you want to propose a code change, ple
 - Expand research resources
 - Improve user interface and accessibility
 - Continuously update with new content and features
+
+## Testing
+Run these checks before deploying:
+- Lighthouse (Chrome DevTools) on `index.html` and `solar-system/index.html`
+- Deactivate JavaScript or simulate a failed network request to confirm the homepage fallback still shows content
+- Confirm the Unity page loads and the Brotli assets return `Content-Encoding: br` with correct MIME types
+- On production, verify headers with:
+  - `curl -I https://marinsplaylab.org/solar-system/Solar-System.wasm.br`
+  - `curl -I https://marinsplaylab.org/css/style.css`
