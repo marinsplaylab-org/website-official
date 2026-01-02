@@ -126,11 +126,11 @@ function loadUnity(_rootId)
       console.error(message);
       if (loadingText)
       {
-        loadingText.textContent = "Failed to load the project. Please try again later.";
+        loadingText.textContent = "Failed to load the project. Please try again later. Check your connection or refresh.";
       }
       else if (loading)
       {
-        loading.textContent = "Failed to load the project. Please try again later.";
+        loading.textContent = "Failed to load the project. Please try again later. Check your connection or refresh.";
       }
     });
   };

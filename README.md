@@ -40,8 +40,9 @@ This project is licensed under the MIT License. See the LICENSE file for details
 │   ├── bootstrap.min.css
 │   └── style.css
 ├── images/
-│   ├── marinsplaylab-logo.webp
+│   ├── logo.webp
 │   ├── projects/
+│   │   ├── nexus.webp
 │   │   └── solar-system.webp
 │   └── socials/
 │       ├── bluesky.svg
@@ -54,6 +55,10 @@ This project is licensed under the MIT License. See the LICENSE file for details
 │   ├── project-cards.js
 │   ├── solar-system-init.js
 │   └── unity-loader.js
+├── nexus/
+│   └── index.html
+├── stem-toolkits/
+│   └── index.html
 ├── solar-system/
 │   ├── Solar-System.data.br
 │   ├── Solar-System.framework.js.br
@@ -154,11 +159,12 @@ Example change:
 - To show it every page load, remove the sessionStorage check block.
 
 ## Security Headers (.htaccess)
-- CSP is strict by default (`default-src 'self'`) and only allows Bluesky endpoints needed for the feed:
-  - `connect-src`: https://public.api.bsky.app
+- CSP is strict by default (`default-src 'self'`) and only allows endpoints needed for Bluesky + Cloudflare Insights:
+  - `script-src`: https://static.cloudflareinsights.com
+  - `connect-src`: https://public.api.bsky.app https://cloudflareinsights.com
   - `img-src`: https://cdn.bsky.app https://video.bsky.app https://video.cdn.bsky.app
   - `media-src`: https://video.bsky.app
-- If you remove the Bluesky feed, delete these domains from the CSP.
+- If you remove Bluesky or Cloudflare Insights, delete those domains from the CSP.
 - HSTS is enabled. Ensure the site is served over HTTPS before deploying the `.htaccess` changes.
 
 ## Caching

@@ -52,9 +52,61 @@ function initProjectCards()
   return true;
 }
 
+
+function initProjectThumbFallbacks()
+{
+  const thumbs = document.querySelectorAll("img.project-thumb");
+  if (!thumbs.length)
+  {
+    return false;
+  }
+
+  const replaceWithPlaceholder = (_img) =>
+  {
+    const placeholder = document.createElement("div");
+    placeholder.className = "project-thumb project-thumb--placeholder";
+    placeholder.setAttribute("aria-hidden", "true");
+    _img.replaceWith(placeholder);
+  };
+
+  thumbs.forEach((_img) =>
+  {
+    if (_img.dataset.thumbFallbackAttached)
+    {
+      return;
+    }
+
+    _img.dataset.thumbFallbackAttached = "true";
+    _img.addEventListener("error", () =>
+    {
+      replaceWithPlaceholder(_img);
+    }, { once: true });
+  });
+
+  return true;
+}
+
 function initProjectCardsWhenReady()
 {
-  if (initProjectCards())
+  let cardsReady = false;
+  let thumbsReady = false;
+
+  const tryInit = () =>
+  {
+    if (!cardsReady)
+    {
+      cardsReady = initProjectCards();
+    }
+
+    if (!thumbsReady)
+    {
+      thumbsReady = initProjectThumbFallbacks();
+    }
+
+    return cardsReady && thumbsReady;
+  };
+
+  if (tryInit())
   {
     return;
   }
@@ -63,7 +115,7 @@ function initProjectCardsWhenReady()
   const timer = setInterval(() =>
   {
     attempts += 1;
-    if (initProjectCards() || attempts >= 10)
+    if (tryInit() || attempts >= 10)
     {
       clearInterval(timer);
     }

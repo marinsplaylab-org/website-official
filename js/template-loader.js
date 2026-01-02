@@ -62,7 +62,7 @@ function initPreloader()
   const overlay = document.createElement("div");
   overlay.className = "site-preloader";
   overlay.innerHTML = `
-    <img class="site-preloader-logo" src="/images/marinsplaylab-logo.webp" alt="">
+    <img class="site-preloader-logo" src="/images/logo.webp" alt="">
     <div class="site-preloader-spinner" aria-hidden="true"></div>
     <div class="site-preloader-text">Loading</div>
   `;
