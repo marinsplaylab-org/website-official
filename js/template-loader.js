@@ -61,7 +61,7 @@ function initPreloader()
   const overlay = document.createElement("div");
   overlay.className = "site-preloader";
   overlay.innerHTML = `
-    <img class="site-preloader-logo" src="/images/logo.webp" alt="">
+    <img class="site-preloader-logo" src="/media/logo.webp" alt="">
     <div class="site-preloader-spinner" aria-hidden="true"></div>
     <div class="site-preloader-text">Loading</div>
   `;
@@ -109,7 +109,11 @@ const loadTemplates = () =>
     loadHTML("header", "/templates/header.html"),
     loadHTML("footer", "/templates/footer.html"),
     loadHTML("projects", "/templates/home-project-list.html")
-  ]).then(updateLayoutVars);
+  ]).then(() =>
+  {
+    updateLayoutVars();
+    document.dispatchEvent(new CustomEvent("mpl:templates-loaded"));
+  });
 };
 
 const scheduleTemplateLoad = () =>

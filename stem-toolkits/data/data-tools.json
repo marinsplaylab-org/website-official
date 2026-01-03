@@ -8,11 +8,11 @@
       "valueLabel": "Value",
       "fromLabel": "From base",
       "toLabel": "To base",
-      "placeholder": "1010",
+      "placeholder": "Enter a value (e.g., 1010)",
       "note": "Supports bases 2, 8, 10, 16 (no 0x prefix). Uses BigInt for exact integer conversion.",
       "defaultFrom": "2",
       "defaultTo": "16",
-      "emptyMessage": "Enter a value to convert.",
+      "emptyMessage": "Result appears here after you type a value.",
       "bases": [
         {
           "id": "2",
@@ -40,7 +40,7 @@
       "modeLabel": "Mode",
       "inputLabel": "Input",
       "note": "Binary input accepts 8-bit groups with optional spaces.",
-      "emptyMessage": "Enter input to convert.",
+      "emptyMessage": "Result appears here after you type input.",
       "textareaRows": 6,
       "modes": [
         {
@@ -53,8 +53,8 @@
         }
       ],
       "placeholders": {
-        "text-to-binary": "Type text to convert",
-        "binary-to-text": "Paste binary groups like 01001000 01101001"
+        "text-to-binary": "Enter text to convert",
+        "binary-to-text": "Enter binary groups (e.g., 01001000 01101001)"
       }
     }
   ]

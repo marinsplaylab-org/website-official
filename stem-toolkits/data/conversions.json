@@ -8,10 +8,10 @@
       "valueLabel": "Value",
       "fromLabel": "From unit",
       "toLabel": "To unit",
-      "placeholder": "Enter length",
+      "placeholder": "Enter a length value",
       "defaultFrom": "m",
       "defaultTo": "ft",
-      "emptyMessage": "Enter a value to convert.",
+      "emptyMessage": "Result appears here after you type a value.",
       "units": [
         {
           "id": "m",
@@ -71,10 +71,10 @@
       "valueLabel": "Value",
       "fromLabel": "From unit",
       "toLabel": "To unit",
-      "placeholder": "Enter mass",
+      "placeholder": "Enter a mass value",
       "defaultFrom": "kg",
       "defaultTo": "lb",
-      "emptyMessage": "Enter a value to convert.",
+      "emptyMessage": "Result appears here after you type a value.",
       "units": [
         {
           "id": "kg",
@@ -116,10 +116,10 @@
       "valueLabel": "Value",
       "fromLabel": "From unit",
       "toLabel": "To unit",
-      "placeholder": "Enter volume",
+      "placeholder": "Enter a volume value",
       "defaultFrom": "l",
       "defaultTo": "gal",
-      "emptyMessage": "Enter a value to convert.",
+      "emptyMessage": "Result appears here after you type a value.",
       "units": [
         {
           "id": "l",
@@ -167,10 +167,10 @@
       "valueLabel": "Value",
       "fromLabel": "From scale",
       "toLabel": "To scale",
-      "placeholder": "Enter temperature",
+      "placeholder": "Enter a temperature value",
       "defaultFrom": "c",
       "defaultTo": "f",
-      "emptyMessage": "Enter a value to convert.",
+      "emptyMessage": "Result appears here after you type a value.",
       "scales": [
         {
           "id": "c",

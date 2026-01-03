@@ -326,7 +326,7 @@
         toolCard.appendChild(helperNote);
       }
 
-      toolCard.appendChild(createOutputMessage(toolDefinition.emptyMessage || "Enter a value to convert."));
+      toolCard.appendChild(createOutputMessage(toolDefinition.emptyMessage || "Result appears here after you type a value."));
     }
     else if (toolDefinition.type === "temperature-converter")
     {
@@ -365,7 +365,7 @@
         toolCard.appendChild(helperNote);
       }
 
-      toolCard.appendChild(createOutputMessage(toolDefinition.emptyMessage || "Enter a value to convert."));
+      toolCard.appendChild(createOutputMessage(toolDefinition.emptyMessage || "Result appears here after you type a value."));
     }
     else if (toolDefinition.type === "base-converter")
     {
@@ -405,7 +405,7 @@
         toolCard.appendChild(helperNote);
       }
 
-      toolCard.appendChild(createOutputMessage(toolDefinition.emptyMessage || "Enter a value to convert."));
+      toolCard.appendChild(createOutputMessage(toolDefinition.emptyMessage || "Result appears here after you type a value."));
     }
     else if (toolDefinition.type === "binary-text")
     {
@@ -601,7 +601,7 @@
       const rawValue = parseFloat(valueInput.value);
       if (!Number.isFinite(rawValue))
       {
-        setOutputMessage(outputElement, toolConfig.emptyMessage || "Enter a value to convert.");
+        setOutputMessage(outputElement, toolConfig.emptyMessage || "Result appears here after you type a value.");
         return;
       }
 
@@ -700,7 +700,7 @@
       const rawValue = parseFloat(valueInput.value);
       if (!Number.isFinite(rawValue))
       {
-        setOutputMessage(outputElement, toolConfig.emptyMessage || "Enter a value to convert.");
+        setOutputMessage(outputElement, toolConfig.emptyMessage || "Result appears here after you type a value.");
         return;
       }
 
@@ -759,7 +759,7 @@
       const rawValue = valueInput.value.trim();
       if (!rawValue)
       {
-        setOutputMessage(outputElement, toolConfig.emptyMessage || "Enter a value to convert.");
+        setOutputMessage(outputElement, toolConfig.emptyMessage || "Result appears here after you type a value.");
         return;
       }
 

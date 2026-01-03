@@ -1,0 +1,176 @@
+/* === Unity layout === */
+body.unity-page
+{
+  background: var(--color-bg);
+}
+
+body.unity-page #header
+{
+  /* Reserve a thin hover target so the header can slide in. */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  z-index: 1030;
+  overflow: visible;
+}
+
+body.unity-page .site-main
+{
+  min-height: 100vh;
+}
+
+body.unity-page .site-main,
+body.unity-page .unity-container
+{
+  height: 100dvh;
+  min-height: 100dvh;
+}
+
+@supports not (height: 100dvh)
+{
+  body.unity-page .site-main,
+  body.unity-page .unity-container
+  {
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
+body.unity-page .site-navbar
+{
+  /* Hide the navbar on Unity pages until hover/focus. */
+  transform: translateY(-100%);
+  transition: transform 180ms ease;
+}
+
+body.unity-page #header:hover .site-navbar,
+body.unity-page #header:focus-within .site-navbar
+{
+  transform: translateY(0);
+}
+
+.unity-main
+{
+  flex: 1;
+  min-height: 0;
+}
+
+.unity-container
+{
+  /* Unity canvas wrapper */
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: var(--surface-unity);
+}
+
+#unity-canvas
+{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.unity-loading
+{
+  /* Lightweight loading overlay for Unity */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-unity-overlay);
+}
+
+.unity-loading.is-hidden
+{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.unity-loading-content
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.unity-loading-logos
+{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.unity-loading-logo
+{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+.unity-loading-separator
+{
+  width: 1px;
+  height: 30px;
+  background: var(--accent-mid);
+}
+
+.unity-loading-spinner
+{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-border-soft);
+  border-top-color: var(--accent-border-strong);
+  animation: site-spin 0.9s linear infinite;
+}
+
+.unity-loading-text
+{
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.unity-warning
+{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: none;
+  z-index: 2;
+  font-size: 0.95rem;
+}
+
+.unity-warning div + div
+{
+  margin-top: 0.5rem;
+}
+
+.unity-warning-message
+{
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--unity-warning-text);
+  background: var(--unity-warning-bg);
+}
+
+.unity-warning-message.is-error
+{
+  background: var(--unity-warning-error);
+}
+
+.unity-warning-message.is-warning
+{
+  background: var(--unity-warning-alert);
+}

@@ -8,9 +8,13 @@ MIT License. See `LICENSE`.
 ## Project Structure (Overview)
 - Root pages: `index.html`, `about.html`, `privacy-policy.html`, `terms-of-service.html`, `403.html`, `404.html`, `500.html`, `503.html`
 - Templates: `templates/`
-- Styles: `css/`
-- Scripts: `js/`
-- Assets: `images/`, `assets/`
+- Styles: `css/` (shared)
+- Shared CSS modules: `css/style.css` (global), `css/home.css` (homepage), `css/unity.css` (Unity pages), `css/content.css` (text pages)
+- Scripts: `js/` (shared)
+- Homepage scripts: `js/home/`
+- Global media: `media/`, `fonts/`
+- Project media: `/<project>/media/`
+- Project-only styles/scripts: `/<project>/`
 - Project builds: `solar-system/`, `nexus/`, `stem-toolkits/`
 
 ## Forking and Project Sources
@@ -39,27 +43,30 @@ Press `Ctrl + C` in the Terminal where the server is running.
 - Run the site through a local server (do not open `index.html` via `file://`).
 - JavaScript is required to load shared templates and homepage content; the no-JS warning appears if scripts do not run.
 - Use root-absolute paths (for example `/css/style.css`) so deep links and error pages work consistently.
-- Assets use modern formats only: WebP for raster images, SVG for icons, and WOFF2 for fonts.
+- Media uses modern formats only: WebP for raster images, SVG for icons, and WOFF2 for fonts.
 - Python 3 is only used for local testing (optional).
+- Text pages (About, Policies, error pages) load `css/content.css` for typography and layout.
 
 ## Homepage Projects
 - Markup lives in `templates/home-project-list.html` and is injected into `#projects` via `/js/template-loader.js`.
-- Bluesky updates are rendered by `/js/bsky-feed.js` using the public API and cached in `localStorage` (`mpl_bsky_cache_v1`) for 12 hours.
+- Homepage layout styles live in `css/home.css`.
+- Homepage interactions (cards, feed) live in `/js/home/`.
+- Bluesky updates are rendered by `/js/home/bsky-feed.js` using the public API and cached in `localStorage` (`mpl_bsky_cache_v1`) for 12 hours.
 - If the network fails or a 429 occurs, cached content is shown with a small notice.
 
 ## STEM Toolkits
 - Data lives in `stem-toolkits/data/` (categories and tool definitions).
-- Page layout lives in `stem-toolkits/index.html` with styles in `css/stem-toolkits.css`.
-- Rendering logic lives in `js/stem-toolkits.js`.
+- Page layout lives in `stem-toolkits/index.html` with styles in `stem-toolkits/stem-toolkits.css`.
+- Rendering logic lives in `stem-toolkits/stem-toolkits.js`.
 - File map: `/stem-toolkits/index.html` (page layout)
 - File map: `/stem-toolkits/data/*.json` (tool/category data)
-- File map: `/js/stem-toolkits.js` (rendering logic)
-- File map: `/css/stem-toolkits.css` (page styles)
+- File map: `/stem-toolkits/stem-toolkits.js` (rendering logic)
+- File map: `/stem-toolkits/stem-toolkits.css` (page styles)
 
 ## Adding a Project
 - Create a folder like `/my-project/` with an `index.html` entry page
 - Add a card to `templates/home-project-list.html` with title, summary, badges, and link
-- Place a WebP preview in `images/projects/` or rely on the placeholder if it is not ready
+- Place a WebP preview in `/<project>/media/` and reference it in the project card
 - Add the route to `sitemap.xml`
 - For Unity WebGL, follow the "Unity WebGL Setup" section below
 
@@ -69,6 +76,7 @@ Press `Ctrl + C` in the Terminal where the server is running.
 
 ## Unity WebGL Setup
 - Create a folder like `[PROJECT-NAME]/` with its own `index.html`.
+- Include `/css/unity.css` in Unity project pages for shared layout styles.
 - Keep the Unity build files next to that `index.html` (`[PROJECT-NAME].data.br`, `.framework.js.br`, `.loader.js`, `.wasm.br`).
 - Ensure `solar-system/index.html`-style data attributes match your build filenames.
 - Build for WebGL 2.0 and WebAssembly 2023, and keep Brotli enabled in `.htaccess`.

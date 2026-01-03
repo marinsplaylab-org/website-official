@@ -12,21 +12,21 @@
           "key": "voltage",
           "label": "Voltage (V)",
           "description": "Electric potential in volts.",
-          "placeholder": "Volts",
+          "placeholder": "Enter volts",
           "inputMode": "decimal"
         },
         {
           "key": "current",
           "label": "Current (A)",
           "description": "Electric current in amps.",
-          "placeholder": "Amps",
+          "placeholder": "Enter amps",
           "inputMode": "decimal"
         },
         {
           "key": "resistance",
           "label": "Resistance (ohm)",
           "description": "Electrical resistance in ohms.",
-          "placeholder": "Ohms",
+          "placeholder": "Enter ohms",
           "inputMode": "decimal"
         }
       ],
@@ -47,7 +47,7 @@
           "key": "radius",
           "label": "Radius",
           "description": "Circle radius in any unit.",
-          "placeholder": "Radius",
+          "placeholder": "Enter radius",
           "inputMode": "decimal"
         }
       ],

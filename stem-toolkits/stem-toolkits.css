@@ -48,8 +48,8 @@
   padding: clamp(1rem, 1.8vw, 1.4rem);
   border-radius: 16px;
   border: 1px solid var(--color-border);
-  background: rgba(8, 20, 34, 0.6);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-card);
 }
 
 .toolkit-hero-card .toolkit-hero-title
@@ -90,9 +90,9 @@
   margin: 0;
   padding: 0.8rem 0.9rem;
   border-radius: 12px;
-  border: 1px dashed rgba(255, 255, 255, 0.18);
+  border: 1px dashed var(--border-stronger);
   color: var(--color-muted);
-  background: rgba(6, 14, 26, 0.45);
+  background: var(--surface-panel-muted);
   font-size: 0.95rem;
 }
 
@@ -112,21 +112,21 @@
   padding: 0.85rem 1rem;
   border-radius: 14px;
   border: 1px solid var(--color-border);
-  background: rgba(6, 14, 26, 0.65);
+  background: var(--surface-panel-strong);
   transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
 }
 
 .toolkit-section-summary:hover,
 .toolkit-section-summary:focus-visible
 {
-  border-color: rgba(125, 211, 252, 0.4);
-  background: rgba(9, 20, 34, 0.85);
+  border-color: var(--border-accent-hover);
+  background: var(--surface-panel-hover-strong);
   transform: translateY(-1px);
 }
 
 .toolkit-section-summary:focus-visible
 {
-  outline: 2px solid rgba(125, 211, 252, 0.6);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -195,8 +195,8 @@
   padding: clamp(0.9rem, 1.4vw, 1.2rem);
   border-radius: 16px;
   border: 1px solid var(--color-border);
-  background: rgba(8, 20, 34, 0.6);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-card);
   min-width: 0;
 }
 
@@ -221,21 +221,21 @@
 
 .toolkit-page .form-control
 {
-  background-color: rgba(6, 14, 26, 0.7);
-  border-color: rgba(255, 255, 255, 0.18);
+  background-color: var(--surface-input);
+  border-color: var(--border-stronger);
   color: var(--color-text);
 }
 
 .toolkit-page .form-control::placeholder
 {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-placeholder);
 }
 
 .toolkit-page .form-control:focus
 {
-  background-color: rgba(6, 14, 26, 0.85);
-  border-color: rgba(125, 211, 252, 0.6);
-  box-shadow: 0 0 0 0.2rem rgba(125, 211, 252, 0.2);
+  background-color: var(--surface-input-focus);
+  border-color: var(--border-accent-stronger);
+  box-shadow: 0 0 0 0.2rem var(--focus-shadow);
   color: var(--color-text);
 }
 
@@ -246,30 +246,30 @@
 
 .tool-field--select .form-label
 {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-strong);
 }
 
 .tool-select
 {
-  background-color: rgba(6, 14, 26, 0.8);
-  border-color: rgba(125, 211, 252, 0.35);
+  background-color: var(--surface-select);
+  border-color: var(--border-accent);
   color: var(--color-text);
   cursor: pointer;
 }
 
 .tool-select:focus
 {
-  border-color: rgba(125, 211, 252, 0.65);
-  box-shadow: 0 0 0 0.2rem rgba(125, 211, 252, 0.25);
+  border-color: var(--border-accent-strongest);
+  box-shadow: 0 0 0 0.2rem var(--accent-border-soft);
 }
 
 .tool-output
 {
   padding: 0.65rem 0.75rem;
   border-radius: 12px;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  background: rgba(9, 20, 34, 0.45);
-  color: rgba(255, 255, 255, 0.72);
+  border: 1px dashed var(--surface-output-border);
+  background: var(--surface-output);
+  color: var(--surface-output-text);
   font-size: 0.95rem;
   min-height: 2.5rem;
   cursor: default;
@@ -284,9 +284,9 @@
 
 .tool-output[data-state="error"]
 {
-  border-color: rgba(248, 113, 113, 0.6);
-  background: rgba(127, 29, 29, 0.25);
-  color: rgba(254, 226, 226, 0.95);
+  border-color: var(--surface-warning-border);
+  background: var(--surface-error-bg);
+  color: var(--surface-error-text);
 }
 
 .tool-actions
@@ -353,7 +353,7 @@
   margin-left: 0.5rem;
   font-size: 0.75rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-dim);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
