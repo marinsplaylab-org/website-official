@@ -47,6 +47,15 @@ Press `Ctrl + C` in the Terminal where the server is running.
 - Bluesky updates are rendered by `/js/bsky-feed.js` using the public API and cached in `localStorage` (`mpl_bsky_cache_v1`) for 12 hours.
 - If the network fails or a 429 occurs, cached content is shown with a small notice.
 
+## STEM Toolkits
+- Data lives in `stem-toolkits/data/` (categories and tool definitions).
+- Page layout lives in `stem-toolkits/index.html` with styles in `css/stem-toolkits.css`.
+- Rendering logic lives in `js/stem-toolkits.js`.
+- File map: `/stem-toolkits/index.html` (page layout)
+- File map: `/stem-toolkits/data/*.json` (tool/category data)
+- File map: `/js/stem-toolkits.js` (rendering logic)
+- File map: `/css/stem-toolkits.css` (page styles)
+
 ## Adding a Project
 - Create a folder like `/my-project/` with an `index.html` entry page
 - Add a card to `templates/home-project-list.html` with title, summary, badges, and link

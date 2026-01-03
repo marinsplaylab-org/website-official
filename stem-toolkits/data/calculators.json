@@ -1,0 +1,60 @@
+{
+  "tools": [
+    {
+      "id": "ohms-law",
+      "type": "ohms-law",
+      "title": "Ohm's Law",
+      "description": "Solve for voltage, current, or resistance using V = I R.",
+      "note": "Provide any two values to solve for the third.",
+      "emptyMessage": "Enter any two values to solve.",
+      "fields": [
+        {
+          "key": "voltage",
+          "label": "Voltage (V)",
+          "description": "Electric potential in volts.",
+          "placeholder": "Volts",
+          "inputMode": "decimal"
+        },
+        {
+          "key": "current",
+          "label": "Current (A)",
+          "description": "Electric current in amps.",
+          "placeholder": "Amps",
+          "inputMode": "decimal"
+        },
+        {
+          "key": "resistance",
+          "label": "Resistance (ohm)",
+          "description": "Electrical resistance in ohms.",
+          "placeholder": "Ohms",
+          "inputMode": "decimal"
+        }
+      ],
+      "actions": [
+        { "id": "solve", "label": "Solve" },
+        { "id": "clear", "label": "Clear" }
+      ]
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "title": "Circle (Area and Circumference)",
+      "description": "Calculate area and circumference from a radius.",
+      "note": "Formulas: area = pi r^2, circumference = 2 pi r.",
+      "emptyMessage": "Enter a radius to calculate.",
+      "fields": [
+        {
+          "key": "radius",
+          "label": "Radius",
+          "description": "Circle radius in any unit.",
+          "placeholder": "Radius",
+          "inputMode": "decimal"
+        }
+      ],
+      "actions": [
+        { "id": "solve", "label": "Solve" },
+        { "id": "clear", "label": "Clear" }
+      ]
+    }
+  ]
+}

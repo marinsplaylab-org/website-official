@@ -1,24 +1,23 @@
 // Loads shared HTML templates into placeholders and updates layout variables.
 // Example: changing a template file (header/footer/home list) updates all pages at once.
-async function loadHTML(_elementId, _filePath)
+async function loadHTML(elementId, templatePath)
 {
   try
   {
-    const element = document.getElementById(_elementId);
+    const element = document.getElementById(elementId);
     if (!element)
     {
       return null;
     }
 
-    const response = await fetch(_filePath);
+    const response = await fetch(templatePath);
     if (!response.ok)
     {
-      throw new Error(`Failed to load ${_filePath}: ${response.status} ${response.statusText}`);
+      throw new Error(`Failed to load ${templatePath}: ${response.status} ${response.statusText}`);
     }
 
-    const data = await response.text();
-
-    element.innerHTML = data;
+    const templateHtml = await response.text();
+    element.innerHTML = templateHtml;
     return element;
   }
   catch (error)
@@ -44,15 +43,15 @@ function initPreloader()
     return;
   }
 
-  const key = "mpl_preloader_seen";
+  const preloaderKey = "mpl_preloader_seen";
   try
   {
-    if (sessionStorage.getItem(key) === "true")
+    if (sessionStorage.getItem(preloaderKey) === "true")
     {
       return;
     }
 
-    sessionStorage.setItem(key, "true");
+    sessionStorage.setItem(preloaderKey, "true");
   }
   catch
   {

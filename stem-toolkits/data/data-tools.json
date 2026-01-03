@@ -1,0 +1,61 @@
+{
+  "tools": [
+    {
+      "id": "base-converter",
+      "type": "base-converter",
+      "title": "Base Converter",
+      "description": "Convert numbers between binary, octal, decimal, and hexadecimal.",
+      "valueLabel": "Value",
+      "fromLabel": "From base",
+      "toLabel": "To base",
+      "placeholder": "1010",
+      "note": "Supports bases 2, 8, 10, 16 (no 0x prefix). Uses BigInt for exact integer conversion.",
+      "defaultFrom": "2",
+      "defaultTo": "16",
+      "emptyMessage": "Enter a value to convert.",
+      "bases": [
+        {
+          "id": "2",
+          "label": "Binary (base 2)"
+        },
+        {
+          "id": "8",
+          "label": "Octal (base 8)"
+        },
+        {
+          "id": "10",
+          "label": "Decimal (base 10)"
+        },
+        {
+          "id": "16",
+          "label": "Hex (base 16)"
+        }
+      ]
+    },
+    {
+      "id": "binary-text",
+      "type": "binary-text",
+      "title": "Binary and Text",
+      "description": "Convert between plain text and 8-bit binary groups.",
+      "modeLabel": "Mode",
+      "inputLabel": "Input",
+      "note": "Binary input accepts 8-bit groups with optional spaces.",
+      "emptyMessage": "Enter input to convert.",
+      "textareaRows": 6,
+      "modes": [
+        {
+          "id": "text-to-binary",
+          "label": "Text to binary"
+        },
+        {
+          "id": "binary-to-text",
+          "label": "Binary to text"
+        }
+      ],
+      "placeholders": {
+        "text-to-binary": "Type text to convert",
+        "binary-to-text": "Paste binary groups like 01001000 01101001"
+      }
+    }
+  ]
+}

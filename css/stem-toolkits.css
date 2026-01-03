@@ -1,0 +1,375 @@
+.toolkit-page
+{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.toolkit-main
+{
+  display: block;
+  padding: clamp(1.25rem, 2.5vw, 2.75rem) 0;
+}
+
+.toolkit-container
+{
+  width: 100%;
+}
+
+.toolkit-page h1
+{
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+.toolkit-page h2
+{
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+}
+
+.toolkit-hero
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  align-items: start;
+}
+
+.toolkit-hero-text p
+{
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0.5rem 0 0;
+}
+
+.toolkit-hero-card
+{
+  padding: clamp(1rem, 1.8vw, 1.4rem);
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: rgba(8, 20, 34, 0.6);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.toolkit-hero-card .toolkit-hero-title
+{
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.toolkit-hero-card p
+{
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.toolkit-hero-card .toolkit-hero-note
+{
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.toolkit-layout
+{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1rem, 2vw, 2rem);
+  align-items: start;
+}
+
+.toolkit-content
+{
+  min-width: 0;
+}
+
+.toolkit-status
+{
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  color: var(--color-muted);
+  background: rgba(6, 14, 26, 0.45);
+  font-size: 0.95rem;
+}
+
+.toolkit-section
+{
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.toolkit-section-summary
+{
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  background: rgba(6, 14, 26, 0.65);
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.toolkit-section-summary:hover,
+.toolkit-section-summary:focus-visible
+{
+  border-color: rgba(125, 211, 252, 0.4);
+  background: rgba(9, 20, 34, 0.85);
+  transform: translateY(-1px);
+}
+
+.toolkit-section-summary:focus-visible
+{
+  outline: 2px solid rgba(125, 211, 252, 0.6);
+  outline-offset: 2px;
+}
+
+.toolkit-section-summary::-webkit-details-marker
+{
+  display: none;
+}
+
+.toolkit-summary-text
+{
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.toolkit-summary-title
+{
+  margin: 0;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+}
+
+.toolkit-summary-subtitle
+{
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.toolkit-summary-icon
+{
+  font-size: 0.85rem;
+  transition: transform 160ms ease;
+}
+
+.toolkit-section[open] .toolkit-summary-icon
+{
+  transform: rotate(180deg);
+}
+
+.toolkit-section-body
+{
+  margin-top: 1rem;
+}
+
+.toolkit-section-footer
+{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toolkit-card-grid
+{
+  display: grid;
+  gap: clamp(0.9rem, 1.6vw, 1.4rem);
+  margin-top: 0;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.tool-card
+{
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: clamp(0.9rem, 1.4vw, 1.2rem);
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: rgba(8, 20, 34, 0.6);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  min-width: 0;
+}
+
+.tool-card h3
+{
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.tool-grid
+{
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.tool-field
+{
+  display: grid;
+  gap: 0.35rem;
+}
+
+.toolkit-page .form-control
+{
+  background-color: rgba(6, 14, 26, 0.7);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--color-text);
+}
+
+.toolkit-page .form-control::placeholder
+{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.toolkit-page .form-control:focus
+{
+  background-color: rgba(6, 14, 26, 0.85);
+  border-color: rgba(125, 211, 252, 0.6);
+  box-shadow: 0 0 0 0.2rem rgba(125, 211, 252, 0.2);
+  color: var(--color-text);
+}
+
+.tool-field--select
+{
+  position: relative;
+}
+
+.tool-field--select .form-label
+{
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tool-select
+{
+  background-color: rgba(6, 14, 26, 0.8);
+  border-color: rgba(125, 211, 252, 0.35);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.tool-select:focus
+{
+  border-color: rgba(125, 211, 252, 0.65);
+  box-shadow: 0 0 0 0.2rem rgba(125, 211, 252, 0.25);
+}
+
+.tool-output
+{
+  padding: 0.65rem 0.75rem;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  background: rgba(9, 20, 34, 0.45);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+  min-height: 2.5rem;
+  cursor: default;
+}
+
+.tool-output--pre
+{
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 7.5rem;
+}
+
+.tool-output[data-state="error"]
+{
+  border-color: rgba(248, 113, 113, 0.6);
+  background: rgba(127, 29, 29, 0.25);
+  color: rgba(254, 226, 226, 0.95);
+}
+
+.tool-actions
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tool-card[data-tool="binary-text"] .tool-grid
+{
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.tool-card[data-tool="binary-text"] textarea
+{
+  min-height: 8rem;
+}
+
+.tool-note
+{
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.tool-constants
+{
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+}
+
+.tool-constant
+{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+
+.tool-constant dt
+{
+  font-weight: 600;
+}
+
+.tool-constant dd
+{
+  margin: 0;
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.toolkit-footer
+{
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.toolkit-title-version
+{
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991px)
+{
+  .toolkit-layout
+  {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px)
+{
+  .toolkit-summary-title
+  {
+    font-size: 1.1rem;
+  }
+}

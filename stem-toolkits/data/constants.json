@@ -1,0 +1,75 @@
+{
+  "sections": [
+    {
+      "title": "Physics",
+      "description": "Fundamental constants used across physics.",
+      "constants": [
+        {
+          "name": "Speed of light (c)",
+          "value": "299792458 m/s"
+        },
+        {
+          "name": "Gravitational constant (G)",
+          "value": "6.67430(15)e-11 m^3 kg^-1 s^-2"
+        },
+        {
+          "name": "Planck constant (h)",
+          "value": "6.62607015e-34 J s"
+        },
+        {
+          "name": "Boltzmann constant (k)",
+          "value": "1.380649e-23 J/K"
+        },
+        {
+          "name": "Standard gravity (g0)",
+          "value": "9.80665 m/s^2"
+        }
+      ]
+    },
+    {
+      "title": "Chemistry",
+      "description": "Core chemical constants and reference values.",
+      "constants": [
+        {
+          "name": "Avogadro constant (Nₐ)",
+          "value": "6.02214076e23 mol^-1"
+        },
+        {
+          "name": "Gas constant (R)",
+          "value": "8.31446261815324 J/(mol·K)"
+        },
+        {
+          "name": "Faraday constant (F)",
+          "value": "96485.3321233100184 C/mol"
+        },
+        {
+          "name": "Elementary charge (e)",
+          "value": "1.602176634e-19 C"
+        },
+        {
+          "name": "Molar mass of water",
+          "value": "18.01528 g/mol (approx)"
+        }
+      ]
+    },
+    {
+      "title": "Biology (Approx)",
+      "description": "Typical reference values for biology.",
+      "note": "Biology values are typical references, not fixed constants.",
+      "constants": [
+        {
+          "name": "DNA base pair spacing",
+          "value": "0.34 nm"
+        },
+        {
+          "name": "DNA helix diameter",
+          "value": "2.0 nm"
+        },
+        {
+          "name": "Human body temperature",
+          "value": "37 C"
+        }
+      ]
+    }
+  ]
+}

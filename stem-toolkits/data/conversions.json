@@ -1,0 +1,193 @@
+{
+  "tools": [
+    {
+      "id": "length",
+      "type": "unit-converter",
+      "title": "Length",
+      "description": "Convert between metric and imperial lengths.",
+      "valueLabel": "Value",
+      "fromLabel": "From unit",
+      "toLabel": "To unit",
+      "placeholder": "Enter length",
+      "defaultFrom": "m",
+      "defaultTo": "ft",
+      "emptyMessage": "Enter a value to convert.",
+      "units": [
+        {
+          "id": "m",
+          "label": "Meters (m)",
+          "short": "m",
+          "factor": 1
+        },
+        {
+          "id": "km",
+          "label": "Kilometers (km)",
+          "short": "km",
+          "factor": 1000
+        },
+        {
+          "id": "cm",
+          "label": "Centimeters (cm)",
+          "short": "cm",
+          "factor": 0.01
+        },
+        {
+          "id": "mm",
+          "label": "Millimeters (mm)",
+          "short": "mm",
+          "factor": 0.001
+        },
+        {
+          "id": "in",
+          "label": "Inches (in)",
+          "short": "in",
+          "factor": 0.0254
+        },
+        {
+          "id": "ft",
+          "label": "Feet (ft)",
+          "short": "ft",
+          "factor": 0.3048
+        },
+        {
+          "id": "yd",
+          "label": "Yards (yd)",
+          "short": "yd",
+          "factor": 0.9144
+        },
+        {
+          "id": "mi",
+          "label": "Miles (mi)",
+          "short": "mi",
+          "factor": 1609.344
+        }
+      ]
+    },
+    {
+      "id": "mass",
+      "type": "unit-converter",
+      "title": "Mass",
+      "description": "Convert between metric and imperial mass units.",
+      "valueLabel": "Value",
+      "fromLabel": "From unit",
+      "toLabel": "To unit",
+      "placeholder": "Enter mass",
+      "defaultFrom": "kg",
+      "defaultTo": "lb",
+      "emptyMessage": "Enter a value to convert.",
+      "units": [
+        {
+          "id": "kg",
+          "label": "Kilograms (kg)",
+          "short": "kg",
+          "factor": 1
+        },
+        {
+          "id": "g",
+          "label": "Grams (g)",
+          "short": "g",
+          "factor": 0.001
+        },
+        {
+          "id": "mg",
+          "label": "Milligrams (mg)",
+          "short": "mg",
+          "factor": 1e-06
+        },
+        {
+          "id": "lb",
+          "label": "Pounds (lb)",
+          "short": "lb",
+          "factor": 0.45359237
+        },
+        {
+          "id": "oz",
+          "label": "Ounces (oz)",
+          "short": "oz",
+          "factor": 0.028349523125
+        }
+      ]
+    },
+    {
+      "id": "volume",
+      "type": "unit-converter",
+      "title": "Volume",
+      "description": "Convert between liters and common US volume units.",
+      "valueLabel": "Value",
+      "fromLabel": "From unit",
+      "toLabel": "To unit",
+      "placeholder": "Enter volume",
+      "defaultFrom": "l",
+      "defaultTo": "gal",
+      "emptyMessage": "Enter a value to convert.",
+      "units": [
+        {
+          "id": "l",
+          "label": "Liters (L)",
+          "short": "L",
+          "factor": 1
+        },
+        {
+          "id": "ml",
+          "label": "Milliliters (mL)",
+          "short": "mL",
+          "factor": 0.001
+        },
+        {
+          "id": "m3",
+          "label": "Cubic meters (m3)",
+          "short": "m3",
+          "factor": 1000
+        },
+        {
+          "id": "gal",
+          "label": "US gallons (gal)",
+          "short": "gal",
+          "factor": 3.785411784
+        },
+        {
+          "id": "qt",
+          "label": "US quarts (qt)",
+          "short": "qt",
+          "factor": 0.946352946
+        },
+        {
+          "id": "floz",
+          "label": "US fl oz",
+          "short": "fl oz",
+          "factor": 0.0295735295625
+        }
+      ]
+    },
+    {
+      "id": "temperature",
+      "type": "temperature-converter",
+      "title": "Temperature",
+      "description": "Convert between Celsius, Fahrenheit, and Kelvin.",
+      "valueLabel": "Value",
+      "fromLabel": "From scale",
+      "toLabel": "To scale",
+      "placeholder": "Enter temperature",
+      "defaultFrom": "c",
+      "defaultTo": "f",
+      "emptyMessage": "Enter a value to convert.",
+      "scales": [
+        {
+          "id": "c",
+          "label": "Celsius (C)",
+          "short": "C"
+        },
+        {
+          "id": "f",
+          "label": "Fahrenheit (F)",
+          "short": "F"
+        },
+        {
+          "id": "k",
+          "label": "Kelvin (K)",
+          "short": "K"
+        }
+      ]
+    }
+  ]
+}

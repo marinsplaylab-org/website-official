@@ -2,49 +2,49 @@
 // Example: add data-href="/solar-system/" on the card and data-ignore-card-click on the GitHub icon link.
 function initProjectCards()
 {
-  const cards = document.querySelectorAll(".project-card[data-href]");
-  if (!cards.length)
+  const projectCards = document.querySelectorAll(".project-card[data-href]");
+  if (!projectCards.length)
   {
     return false;
   }
 
-  const shouldIgnoreClick = (_event) =>
+  const shouldIgnoreClick = (event) =>
   {
-    return Boolean(_event.target.closest("[data-ignore-card-click]"));
+    return Boolean(event.target.closest("[data-ignore-card-click]"));
   };
 
-  const navigateToCard = (_card) =>
+  const navigateToCard = (card) =>
   {
-    const href = _card.dataset.href;
+    const href = card.dataset.href;
     if (href)
     {
       window.location.href = href;
     }
   };
 
-  cards.forEach((_card) =>
+  projectCards.forEach((card) =>
   {
-    _card.addEventListener("click", (_event) =>
+    card.addEventListener("click", (event) =>
     {
-      if (shouldIgnoreClick(_event))
+      if (shouldIgnoreClick(event))
       {
         return;
       }
 
-      navigateToCard(_card);
+      navigateToCard(card);
     });
 
-    _card.addEventListener("keydown", (_event) =>
+    card.addEventListener("keydown", (event) =>
     {
-      if (shouldIgnoreClick(_event))
+      if (shouldIgnoreClick(event))
       {
         return;
       }
 
-      if (_event.key === "Enter" || _event.key === " ")
+      if (event.key === "Enter" || event.key === " ")
       {
-        _event.preventDefault();
-        navigateToCard(_card);
+        event.preventDefault();
+        navigateToCard(card);
       }
     });
   });
@@ -55,31 +55,31 @@ function initProjectCards()
 
 function initProjectThumbFallbacks()
 {
-  const thumbs = document.querySelectorAll("img.project-thumb");
-  if (!thumbs.length)
+  const thumbnailImages = document.querySelectorAll("img.project-thumb");
+  if (!thumbnailImages.length)
   {
     return false;
   }
 
-  const replaceWithPlaceholder = (_img) =>
+  const replaceWithPlaceholder = (imageElement) =>
   {
     const placeholder = document.createElement("div");
     placeholder.className = "project-thumb project-thumb--placeholder";
     placeholder.setAttribute("aria-hidden", "true");
-    _img.replaceWith(placeholder);
+    imageElement.replaceWith(placeholder);
   };
 
-  thumbs.forEach((_img) =>
+  thumbnailImages.forEach((imageElement) =>
   {
-    if (_img.dataset.thumbFallbackAttached)
+    if (imageElement.dataset.thumbFallbackAttached)
     {
       return;
     }
 
-    _img.dataset.thumbFallbackAttached = "true";
-    _img.addEventListener("error", () =>
+    imageElement.dataset.thumbFallbackAttached = "true";
+    imageElement.addEventListener("error", () =>
     {
-      replaceWithPlaceholder(_img);
+      replaceWithPlaceholder(imageElement);
     }, { once: true });
   });
 
@@ -88,25 +88,25 @@ function initProjectThumbFallbacks()
 
 function initProjectCardsWhenReady()
 {
-  let cardsReady = false;
-  let thumbsReady = false;
+  let cardsInitialized = false;
+  let thumbnailsInitialized = false;
 
-  const tryInit = () =>
+  const tryInitialize = () =>
   {
-    if (!cardsReady)
+    if (!cardsInitialized)
     {
-      cardsReady = initProjectCards();
+      cardsInitialized = initProjectCards();
     }
 
-    if (!thumbsReady)
+    if (!thumbnailsInitialized)
     {
-      thumbsReady = initProjectThumbFallbacks();
+      thumbnailsInitialized = initProjectThumbFallbacks();
     }
 
-    return cardsReady && thumbsReady;
+    return cardsInitialized && thumbnailsInitialized;
   };
 
-  if (tryInit())
+  if (tryInitialize())
   {
     return;
   }
@@ -115,7 +115,7 @@ function initProjectCardsWhenReady()
   const timer = setInterval(() =>
   {
     attempts += 1;
-    if (tryInit() || attempts >= 10)
+    if (tryInitialize() || attempts >= 10)
     {
       clearInterval(timer);
     }

@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="STEM Toolkits. Lightweight converters, calculators, and constants in one modular web app. Coming soon.">
+    content="STEM Toolkits. Converters, calculators, and reference constants in one modular web app.">
 
   <link rel="preload" href="/assets/fonts-source-sans-3/SourceSans3-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -22,6 +22,7 @@
 
   <!-- website custom CSS -->
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/stem-toolkits.css">
 </head>
 <body>
 
@@ -33,12 +34,33 @@
   <div id="header"></div>
 
   <!-- Main page content -->
-  <main class="container my-5">
-    <section class="page-content">
-      <h1>STEM Toolkits</h1>
-      <p>Lightweight converters, calculators, and constants in one modular web app. Coming soon.</p>
-      <a class="btn btn-outline-light mt-3" href="https://marinsplaylab.org/">Back to Home</a>
-    </section>
+  <main class="site-main toolkit-main">
+    <div class="container toolkit-container">
+      <section class="toolkit-page">
+        <div class="toolkit-hero">
+          <div class="toolkit-hero-text">
+            <h1>STEM Toolkits <span class="toolkit-title-version">v2026.1.3 (Build 0.01 alpha)</span></h1>
+            <p>Lightweight converters, calculators, and reference constants. Everything runs locally in your browser.</p>
+          </div>
+        <div class="toolkit-hero-card">
+          <h2 class="toolkit-hero-title">Quick Start</h2>
+          <p>1) Open a category below.</p>
+          <p>2) Enter values or pick units in each tool.</p>
+          <p>3) Read the result below each tool.</p>
+        </div>
+        </div>
+
+        <div class="toolkit-layout">
+          <div class="toolkit-content" data-toolkit-content>
+            <p class="toolkit-status" data-toolkit-status role="status" aria-live="polite">Loading toolkits...</p>
+          </div>
+        </div>
+
+        <div class="toolkit-footer">
+          <a class="btn btn-outline-light" href="https://marinsplaylab.org/">Back to Home</a>
+        </div>
+      </section>
+    </div>
   </main>
 
   <!-- Footer will be loaded here using JavaScript -->
@@ -49,5 +71,6 @@
 
   <!-- JavaScript that loads header and footer -->
   <script src="/js/template-loader.js" defer></script>
+  <script src="/js/stem-toolkits.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "id": "conversions",
+      "title": "Conversions",
+      "subtitle": "Metric and imperial units, plus temperature.",
+      "description": "Convert between metric and imperial units plus temperature scales.",
+      "dataUrl": "/stem-toolkits/data/conversions.json",
+      "layout": "tools"
+    },
+    {
+      "id": "calculators",
+      "title": "Calculators",
+      "subtitle": "Quick formulas for common STEM problems.",
+      "description": "Solve common formulas with lightweight calculators.",
+      "dataUrl": "/stem-toolkits/data/calculators.json",
+      "layout": "tools"
+    },
+    {
+      "id": "data",
+      "title": "Data and Code",
+      "subtitle": "Base conversions and binary helpers.",
+      "description": "Convert between number bases and text/binary formats.",
+      "dataUrl": "/stem-toolkits/data/data-tools.json",
+      "layout": "tools"
+    },
+    {
+      "id": "constants",
+      "title": "Reference Constants",
+      "subtitle": "Common physics, chemistry, and biology values.",
+      "description": "Reference values for physics, chemistry, and biology.",
+      "dataUrl": "/stem-toolkits/data/constants.json",
+      "layout": "constants"
+    }
+  ]
+}

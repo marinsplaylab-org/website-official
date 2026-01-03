@@ -2,16 +2,16 @@
 // Tuning: set data-bsky-handle and data-bsky-limit on #bsky-feed in index.html.
 function initBlueskyFeed()
 {
-  const feed = document.getElementById("bsky-feed");
-  if (!feed)
+  const feedContainer = document.getElementById("bsky-feed");
+  if (!feedContainer)
   {
     return;
   }
 
-  const fallback = document.querySelector(".home-feed-fallback");
-  const handle = feed.dataset.bskyHandle || "marinsplaylab.org";
-  const limit = Number.parseInt(feed.dataset.bskyLimit || "3", 10);
-  const apiUrl = `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${encodeURIComponent(handle)}&limit=25`;
+  const fallbackNote = document.querySelector(".home-feed-fallback");
+  const authorHandle = feedContainer.dataset.bskyHandle || "marinsplaylab.org";
+  const feedLimit = Number.parseInt(feedContainer.dataset.bskyLimit || "3", 10);
+  const apiEndpoint = `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${encodeURIComponent(authorHandle)}&limit=25`;
   const cacheKey = "mpl_bsky_cache_v1";
   const backoffKey = "mpl_bsky_backoff_until";
   const cacheTtlMs = 12 * 60 * 60 * 1000;
@@ -25,22 +25,22 @@ function initBlueskyFeed()
     "video.bsky.app"
   ]);
 
-  const safeUrl = (_value, _allowedHosts) =>
+  const safeUrl = (urlValue, allowedHosts) =>
   {
-    if (!_value || typeof _value !== "string")
+    if (!urlValue || typeof urlValue !== "string")
     {
       return "";
     }
 
     try
     {
-      const url = new URL(_value);
+      const url = new URL(urlValue);
       if (url.protocol !== "https:")
       {
         return "";
       }
 
-      if (_allowedHosts && !_allowedHosts.has(url.hostname))
+      if (allowedHosts && !allowedHosts.has(url.hostname))
       {
         return "";
       }
@@ -53,9 +53,9 @@ function initBlueskyFeed()
     }
   };
 
-  const escapeHtml = (_value) =>
+  const escapeHtml = (value) =>
   {
-    return String(_value).replace(/[&<>"]/g, (char) =>
+    return String(value).replace(/[&<>\"]/g, (char) =>
     {
       return {
         "&": "&amp;",
@@ -66,20 +66,20 @@ function initBlueskyFeed()
     });
   };
 
-  const formatText = (_text) =>
+  const formatText = (text) =>
   {
-    const safe = escapeHtml(_text || "");
+    const safe = escapeHtml(text || "");
     return safe.replace(/\n/g, "<br>");
   };
 
-  const formatDate = (_value) =>
+  const formatDate = (value) =>
   {
-    if (!_value)
+    if (!value)
     {
       return "";
     }
 
-    const date = new Date(_value);
+    const date = new Date(value);
     if (Number.isNaN(date.getTime()))
     {
       return "";
@@ -92,41 +92,41 @@ function initBlueskyFeed()
     });
   };
 
-  const normalizeEmbed = (_embed) =>
+  const normalizeEmbed = (embed) =>
   {
-    if (!_embed)
+    if (!embed)
     {
       return null;
     }
 
-    if (_embed.$type === "app.bsky.embed.recordWithMedia#view")
+    if (embed.$type === "app.bsky.embed.recordWithMedia#view")
     {
-      return _embed.media || null;
+      return embed.media || null;
     }
 
-    return _embed;
+    return embed;
   };
 
   const hideFallback = () =>
   {
-    if (fallback)
+    if (fallbackNote)
     {
-      fallback.classList.add("is-hidden");
+      fallbackNote.classList.add("is-hidden");
     }
   };
 
-  const showMessage = (_message) =>
+  const showMessage = (message) =>
   {
-    feed.innerHTML = `<p class="home-feed-empty">${escapeHtml(_message)}</p>`;
+    feedContainer.innerHTML = `<p class="home-feed-empty">${escapeHtml(message)}</p>`;
   };
 
-  const buildItemsHtml = (_items) =>
+  const buildItemsHtml = (feedItems) =>
   {
-    return _items.map((entry) =>
+    return feedItems.map((entry) =>
     {
       const uri = entry.post?.uri || "";
-      const rkey = uri.split("/").pop();
-      const url = `https://bsky.app/profile/${handle}/post/${rkey}`;
+      const recordKey = uri.split("/").pop();
+      const postUrl = `https://bsky.app/profile/${authorHandle}/post/${recordKey}`;
       const text = formatText(entry.post?.record?.text || "");
       const date = formatDate(entry.post?.record?.createdAt);
       const embed = normalizeEmbed(entry.post?.embed);
@@ -171,7 +171,7 @@ function initBlueskyFeed()
             <div class="home-feed-media">
               <video class="home-feed-media-video" controls playsinline preload="metadata"${poster}>
                 <source src="${playlist}" type="application/x-mpegURL">
-                <a href="${url}" target="_blank" rel="noopener noreferrer">Watch on Bluesky</a>
+                <a href="${postUrl}" target="_blank" rel="noopener noreferrer">Watch on Bluesky</a>
               </video>
             </div>
           `;
@@ -183,22 +183,22 @@ function initBlueskyFeed()
           <p class="home-feed-text">${text || "(no text)"}</p>
           ${date ? `<div class="home-feed-meta">${escapeHtml(date)}</div>` : ""}
           ${mediaHtml}
-          <a class="home-feed-link" href="${url}" target="_blank" rel="noopener noreferrer">View on Bluesky</a>
+          <a class="home-feed-link" href="${postUrl}" target="_blank" rel="noopener noreferrer">View on Bluesky</a>
         </article>
       `;
     }).join("");
   };
 
-  const applyFeedHtml = (_html, _note) =>
+  const applyFeedHtml = (feedHtml, noteText) =>
   {
-    feed.innerHTML = _html;
+    feedContainer.innerHTML = feedHtml;
 
-    if (_note)
+    if (noteText)
     {
-      const note = document.createElement("p");
-      note.className = "home-feed-note";
-      note.textContent = _note;
-      feed.prepend(note);
+      const noteElement = document.createElement("p");
+      noteElement.className = "home-feed-note";
+      noteElement.textContent = noteText;
+      feedContainer.prepend(noteElement);
     }
 
     hideFallback();
@@ -232,12 +232,12 @@ function initBlueskyFeed()
     }
   };
 
-  const writeCache = (_html) =>
+  const writeCache = (feedHtml) =>
   {
     try
     {
       localStorage.setItem(cacheKey, JSON.stringify({
-        html: _html,
+        html: feedHtml,
         timestamp: Date.now()
       }));
     }
@@ -290,14 +290,12 @@ function initBlueskyFeed()
       applyFeedHtml(cachedHtml, "Updates are temporarily limited. Showing cached posts.");
       return;
     }
-    else
-    {
-      showMessage("Updates are temporarily unavailable.");
-    }
+
+    showMessage("Updates are temporarily unavailable.");
     return;
   }
 
-  fetch(apiUrl)
+  fetch(apiEndpoint)
     .then((response) =>
     {
       if (!response.ok)
@@ -314,7 +312,7 @@ function initBlueskyFeed()
     {
       const items = (data.feed || [])
         .filter((entry) => !entry.reason && !entry.post?.record?.reply)
-        .slice(0, Number.isFinite(limit) ? Math.max(1, limit) : 3);
+        .slice(0, Number.isFinite(feedLimit) ? Math.max(1, feedLimit) : 3);
 
       if (!items.length)
       {
