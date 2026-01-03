@@ -61,15 +61,16 @@ function loadUnity(_rootId)
 
     const div = document.createElement("div");
     div.textContent = msg;
+    div.className = "unity-warning-message";
     warning.appendChild(div);
 
     if (type === "error")
     {
-      div.style = "background: #ef4444; padding: 10px; color: #0b0b0b;";
+      div.classList.add("is-error");
     }
     else if (type === "warning")
     {
-      div.style = "background: #facc15; padding: 10px; color: #0b0b0b;";
+      div.classList.add("is-warning");
       setTimeout(() =>
       {
         if (warning.contains(div))

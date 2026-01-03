@@ -344,6 +344,24 @@ body.unity-page #header:focus-within .site-navbar
   margin-top: 0.5rem;
 }
 
+.unity-warning-message
+{
+  padding: 10px;
+  border-radius: 10px;
+  color: #0b0b0b;
+  background: #e2e8f0;
+}
+
+.unity-warning-message.is-error
+{
+  background: #ef4444;
+}
+
+.unity-warning-message.is-warning
+{
+  background: #facc15;
+}
+
 /* === Global links === */
 a
 {
@@ -875,15 +893,6 @@ a:hover
 {
   color: var(--color-link-hover);
   text-decoration-color: rgba(186, 230, 253, 0.7);
-}
-
-.site-disclaimer
-{
-  margin: 0 auto 0.8rem;
-  max-width: 46rem;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.9rem;
-  line-height: 1.6;
 }
 
 .site-footer-logo

@@ -16,6 +16,42 @@ function initBlueskyFeed()
   const backoffKey = "mpl_bsky_backoff_until";
   const cacheTtlMs = 12 * 60 * 60 * 1000;
   const backoffTtlMs = 10 * 60 * 1000;
+  const allowedImageHosts = new Set([
+    "cdn.bsky.app",
+    "video.bsky.app",
+    "video.cdn.bsky.app"
+  ]);
+  const allowedVideoHosts = new Set([
+    "video.bsky.app"
+  ]);
+
+  const safeUrl = (_value, _allowedHosts) =>
+  {
+    if (!_value || typeof _value !== "string")
+    {
+      return "";
+    }
+
+    try
+    {
+      const url = new URL(_value);
+      if (url.protocol !== "https:")
+      {
+        return "";
+      }
+
+      if (_allowedHosts && !_allowedHosts.has(url.hostname))
+      {
+        return "";
+      }
+
+      return url.href;
+    }
+    catch
+    {
+      return "";
+    }
+  };
 
   const escapeHtml = (_value) =>
   {
@@ -98,25 +134,25 @@ function initBlueskyFeed()
 
       if (embed?.$type === "app.bsky.embed.images#view")
       {
-          const images = (embed.images || []).slice(0, 4).map((image) =>
+        const images = (embed.images || []).slice(0, 4).map((image) =>
+        {
+          const thumb = safeUrl(image.thumb || image.fullsize, allowedImageHosts);
+          const full = safeUrl(image.fullsize || image.thumb, allowedImageHosts);
+          if (!thumb || !full)
           {
-            const thumb = image.thumb || image.fullsize;
-            const full = image.fullsize || image.thumb;
-            if (!thumb || !full)
-            {
-              return "";
-            }
+            return "";
+          }
 
-            const rawAlt = (image.alt || "").trim();
-            const altText = rawAlt || "Bluesky image";
-            const ariaLabel = rawAlt ? `Open image: ${rawAlt}` : "Open image on Bluesky";
+          const rawAlt = (image.alt || "").trim();
+          const altText = rawAlt || "Bluesky image";
+          const ariaLabel = rawAlt ? `Open image: ${rawAlt}` : "Open image on Bluesky";
 
-            return `
-            <a class="home-feed-media-link" href="${full}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(ariaLabel)}">
-              <img class="home-feed-media-image" src="${thumb}" alt="${escapeHtml(altText)}" loading="lazy" decoding="async">
-            </a>
-          `;
-          }).join("");
+          return `
+          <a class="home-feed-media-link" href="${full}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(ariaLabel)}">
+            <img class="home-feed-media-image" src="${thumb}" alt="${escapeHtml(altText)}" loading="lazy" decoding="async">
+          </a>
+        `;
+        }).filter(Boolean).join("");
 
         if (images)
         {
@@ -126,15 +162,20 @@ function initBlueskyFeed()
 
       if (embed?.$type === "app.bsky.embed.video#view" && embed.playlist)
       {
-        const poster = embed.thumbnail ? ` poster="${embed.thumbnail}"` : "";
-        mediaHtml = `
-          <div class="home-feed-media">
-            <video class="home-feed-media-video" controls playsinline preload="metadata"${poster}>
-              <source src="${embed.playlist}" type="application/x-mpegURL">
-              <a href="${url}" target="_blank" rel="noopener noreferrer">Watch on Bluesky</a>
-            </video>
-          </div>
-        `;
+        const playlist = safeUrl(embed.playlist, allowedVideoHosts);
+        if (playlist)
+        {
+          const posterUrl = safeUrl(embed.thumbnail, allowedImageHosts);
+          const poster = posterUrl ? ` poster="${posterUrl}"` : "";
+          mediaHtml = `
+            <div class="home-feed-media">
+              <video class="home-feed-media-video" controls playsinline preload="metadata"${poster}>
+                <source src="${playlist}" type="application/x-mpegURL">
+                <a href="${url}" target="_blank" rel="noopener noreferrer">Watch on Bluesky</a>
+              </video>
+            </div>
+          `;
+        }
       }
 
       return `
