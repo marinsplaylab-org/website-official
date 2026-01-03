@@ -6,12 +6,12 @@ Built with HTML, CSS, local Bootstrap, and self-hosted WOFF2 fonts (Oxanium, Sou
 MIT License. See `LICENSE`.
 
 ## Project Structure (Overview)
-- Root pages: `index.html`, `about.html`, `privacy-policy.html`, `terms-of-service.html`, `404.html`
+- Root pages: `index.html`, `about.html`, `privacy-policy.html`, `terms-of-service.html`, `403.html`, `404.html`, `500.html`, `503.html`
 - Templates: `templates/`
 - Styles: `css/`
 - Scripts: `js/`
 - Assets: `images/`, `assets/`
-- Unity builds: `solar-system/` and other project folders
+- Project builds: `solar-system/`, `nexus/`, `stem-toolkits/`
 
 ## Forking and Project Sources
 - The template design lives in `templates/`, `css/`, and `js/`.
@@ -21,7 +21,7 @@ MIT License. See `LICENSE`.
 ## Run Locally (macOS / Linux)
 1. Open Terminal and navigate to the project folder:
 ```bash
-cd /path/to/website
+cd /path/to/marinsplaylab-website
 ```
 
 2. Start a local server:
