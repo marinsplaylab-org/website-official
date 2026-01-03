@@ -1,5 +1,5 @@
 # marinsplaylab.org Website
-official source code for marinsplaylab.org with template design and project builds.
+Official source code for marinsplaylab.org with template design and project builds.
 It contains the core site structure, shared templates, styles, and example project pages used by the live site.
 
 Built with HTML, CSS, local Bootstrap, and self-hosted WOFF2 fonts (Oxanium, Source Sans 3, Fira Code).
