@@ -2,7 +2,7 @@
 Source code and template design for the marinsplaylab.org website.
 Core site structure, shared template design, styles, and project builds used by the live site.
 
-Built with HTML, CSS, local Bootstrap, and self-hosted WOFF2 fonts (Oxanium, Source Sans 3, Fira Code).
+Built with HTML, CSS, JavaScript, local Bootstrap, and self-hosted WOFF2 fonts (Oxanium, Source Sans 3, Fira Code).
 MIT License. See `LICENSE`.
 
 ## Project Structure (Overview)
@@ -15,7 +15,7 @@ MIT License. See `LICENSE`.
 - Global media: `media/`, `fonts/`
 - Project media: `/<project>/media/`
 - Project-only styles/scripts: `/<project>/`
-- Project builds: `solar-system/`, `nexus/`, `stem-toolkits/`
+- Project builds: `solar-system-simulation/`, `nexus/`, `stem-toolkits/`
 
 ## Forking and Project Sources
 - The template design lives in `templates/`, `css/`, and `js/`.
@@ -46,6 +46,18 @@ Press `Ctrl + C` in the Terminal where the server is running.
 - Media uses modern formats only: WebP for raster images, SVG for icons, and WOFF2 for fonts.
 - Python 3 is only used for local testing (optional).
 - Text pages (About, Policies, error pages) load `css/content.css` for typography and layout.
+
+## Coding Guidelines (Humans + Automation)
+- Use Allman braces.
+- Prefix local variables and function parameters with `_`.
+- Do not prefix object fields or properties with `_`.
+- Use descriptive, self-explanatory names; longer names are fine.
+- Prefer modular, configurable solutions; avoid hardcoded values.
+- When changes affect structure, routes, or assets, update all related references (templates, README, sitemap, scripts).
+- Avoid obsolete APIs.
+- Keep README and AGENTS in sync when rules change.
+- Keep comments brief and intent-focused; include what and why, plus an example only when it clarifies non-obvious behavior.
+- Use simple English in comments and UI copy; avoid conversational phrasing.
 
 ## Homepage Projects
 - Markup lives in `templates/home-project-list.html` and is injected into `#projects` via `/js/template-loader.js`.
@@ -78,7 +90,7 @@ Press `Ctrl + C` in the Terminal where the server is running.
 - Create a folder like `[PROJECT-NAME]/` with its own `index.html`.
 - Include `/css/unity.css` in Unity project pages for shared layout styles.
 - Keep the Unity build files next to that `index.html` (`[PROJECT-NAME].data.br`, `.framework.js.br`, `.loader.js`, `.wasm.br`).
-- Ensure `solar-system/index.html`-style data attributes match your build filenames.
+- Ensure `solar-system-simulation/index.html`-style data attributes match your build filenames.
 - Build for WebGL 2.0 and WebAssembly 2023, and keep Brotli enabled in `.htaccess`.
 - Link to it using `/[PROJECT-NAME]` (no `.html`).
 
@@ -112,9 +124,9 @@ Code PRs may be closed without review. If you want to propose a code change, ple
 
 ## Testing
 Run these checks before deploying:
-- Lighthouse (Chrome DevTools) on `index.html` and `solar-system/index.html`
+- Lighthouse (Chrome DevTools) on `index.html` and `solar-system-simulation/index.html`
 - Deactivate JavaScript or simulate a failed network request to confirm the homepage fallback still shows content
 - Confirm the Unity page loads and the Brotli assets return `Content-Encoding: br` with correct MIME types
 - On production, verify headers with:
-  - `curl -I https://marinsplaylab.org/solar-system/Solar-System.wasm.br`
+  - `curl -I https://marinsplaylab.org/solar-system-simulation/Solar-System-Simulation.wasm.br`
   - `curl -I https://marinsplaylab.org/css/style.css`

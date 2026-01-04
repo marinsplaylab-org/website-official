@@ -7,6 +7,12 @@ Options -Indexes
 
 RewriteEngine On
 
+# Maintenance mode (toggle with a flag file)
+RewriteCond %{REQUEST_URI} !^/503\.html$ [NC]
+RewriteCond %{REQUEST_URI} !^/(css|js|media|fonts|templates)/ [NC]
+RewriteCond %{DOCUMENT_ROOT}/maintenance.flag -f
+RewriteRule ^ - [R=503,L]
+
 # Serve extensionless URLs for existing .html files
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

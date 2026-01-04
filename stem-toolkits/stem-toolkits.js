@@ -13,6 +13,55 @@
     16: /^-?[0-9a-f]+$/i
   };
 
+  const supportedBases = Object.keys(baseDigitValidators)
+    .map((base) => Number.parseInt(base, 10))
+    .sort((left, right) => left - right);
+
+  function getBaseDigitHint(base)
+  {
+    if (base === 2)
+    {
+      return "Use only 0 and 1 (optional leading + or -).";
+    }
+
+    if (base === 8)
+    {
+      return "Use digits 0-7 (optional leading + or -).";
+    }
+
+    if (base === 10)
+    {
+      return "Use digits 0-9 (optional leading + or -).";
+    }
+
+    if (base === 16)
+    {
+      return "Use digits 0-9 and A-F (optional leading + or -).";
+    }
+
+    return "Use digits valid for the selected base (optional leading + or -).";
+  }
+
+  function getMinimumTemperature(scale)
+  {
+    if (scale === "c")
+    {
+      return -273.15;
+    }
+
+    if (scale === "f")
+    {
+      return -459.67;
+    }
+
+    if (scale === "k")
+    {
+      return 0;
+    }
+
+    return null;
+  }
+
   function parseBigIntFromBase(value, base)
   {
     if (typeof value !== "string")
@@ -47,28 +96,28 @@
     const bigBase = BigInt(base);
     let result = 0n;
 
-    for (const ch of digits.toLowerCase())
+    for (const character of digits.toLowerCase())
     {
-      let digit;
-      if (ch >= "0" && ch <= "9")
+      let digitValue;
+      if (character >= "0" && character <= "9")
       {
-        digit = BigInt(ch.charCodeAt(0) - 48);
+        digitValue = BigInt(character.charCodeAt(0) - 48);
       }
-      else if (ch >= "a" && ch <= "z")
+      else if (character >= "a" && character <= "z")
       {
-        digit = BigInt(ch.charCodeAt(0) - 87);
+        digitValue = BigInt(character.charCodeAt(0) - 87);
       }
       else
       {
-        throw new Error("Invalid digit");
+        throw new Error(`Incorrect character "${character}". Use digits 0-9 and letters A-Z only.`);
       }
 
-      if (digit >= bigBase)
+      if (digitValue >= bigBase)
       {
-        throw new Error("Digit out of range");
+        throw new Error(`Digit "${character}" is not correct for base ${base}. ${getBaseDigitHint(base)}`);
       }
 
-      result = result * bigBase + digit;
+      result = result * bigBase + digitValue;
     }
 
     return result * sign;
@@ -610,7 +659,7 @@
 
       if (!fromUnit || !toUnit)
       {
-        setOutputMessage(outputElement, "Select units to convert.", "error");
+        setOutputMessage(outputElement, "Select both a From unit and a To unit to convert.", "error");
         return;
       }
 
@@ -706,14 +755,19 @@
 
       const fromScale = fromSelect.value;
       const toScale = toSelect.value;
-      const celsiusValue = toCelsius(rawValue, fromScale);
-
-      if (celsiusValue < -273.15)
+      const minimumValue = getMinimumTemperature(fromScale);
+      if (Number.isFinite(minimumValue) && rawValue < minimumValue)
       {
-        setOutputMessage(outputElement, "Temperature cannot be below absolute zero.", "error");
+        const fromLabel = scaleLookup[fromScale] ? scaleLookup[fromScale].short : fromScale;
+        setOutputMessage(
+          outputElement,
+          `Temperature must be at or above ${formatNumber(minimumValue)} ${fromLabel} (absolute zero).`,
+          "error"
+        );
         return;
       }
 
+      const celsiusValue = toCelsius(rawValue, fromScale);
       const result = fromCelsius(celsiusValue, toScale);
       const fromLabel = scaleLookup[fromScale] ? scaleLookup[fromScale].short : fromScale;
       const toLabel = scaleLookup[toScale] ? scaleLookup[toScale].short : toScale;
@@ -770,13 +824,17 @@
 
       if (!validator)
       {
-        setOutputMessage(outputElement, `Unsupported base ${fromBase}.`, "error");
+        setOutputMessage(
+          outputElement,
+          `Unsupported base ${fromBase}. Supported bases: ${supportedBases.join(", ")}.`,
+          "error"
+        );
         return;
       }
 
       if (!validator.test(cleaned))
       {
-        setOutputMessage(outputElement, `Invalid digits for base ${fromBase}.`, "error");
+        setOutputMessage(outputElement, getBaseDigitHint(fromBase), "error");
         return;
       }
 
@@ -787,7 +845,11 @@
       }
       catch (error)
       {
-        setOutputMessage(outputElement, "Unable to parse the input value.", "error");
+        setOutputMessage(
+          outputElement,
+          "Unable to parse that value. Use digits allowed for the selected base (optional leading + or -).",
+          "error"
+        );
         return;
       }
 
@@ -871,14 +933,22 @@
 
       if (!/^[01\s]+$/.test(rawBinary))
       {
-        setOutputMessage(outputElement, "Binary input must use only 0 and 1.", "error");
+        setOutputMessage(
+          outputElement,
+          "Binary input can only include 0 and 1 (spaces are allowed between 8-bit groups).",
+          "error"
+        );
         return;
       }
 
       const cleaned = rawBinary.replace(/\s+/g, "");
       if (cleaned.length % 8 !== 0)
       {
-        setOutputMessage(outputElement, "Binary input must be in 8-bit groups.", "error");
+        setOutputMessage(
+          outputElement,
+          "Binary input must be in 8-bit groups (e.g., 01001000 01101001).",
+          "error"
+        );
         return;
       }
 
@@ -939,7 +1009,11 @@
 
       if (providedCount < 2)
       {
-        setOutputMessage(outputElement, toolConfig && toolConfig.emptyMessage ? toolConfig.emptyMessage : "Enter any two values to solve.", "error");
+        setOutputMessage(
+          outputElement,
+          "Provide any two numeric values to solve for the third.",
+          "error"
+        );
         return;
       }
 
@@ -956,7 +1030,7 @@
       {
         if (solvedResistance === 0)
         {
-          setOutputMessage(outputElement, "Resistance cannot be 0 when solving for current.", "error");
+          setOutputMessage(outputElement, "Resistance must be non-zero to solve for current.", "error");
           return;
         }
         solvedCurrent = solvedVoltage / solvedResistance;
@@ -966,7 +1040,7 @@
       {
         if (solvedCurrent === 0)
         {
-          setOutputMessage(outputElement, "Current cannot be 0 when solving for resistance.", "error");
+          setOutputMessage(outputElement, "Current must be non-zero to solve for resistance.", "error");
           return;
         }
         solvedResistance = solvedVoltage / solvedCurrent;
@@ -1007,13 +1081,13 @@
       const radiusValue = Number.parseFloat(radiusInput.value);
       if (!Number.isFinite(radiusValue))
       {
-        setOutputMessage(outputElement, toolConfig && toolConfig.emptyMessage ? toolConfig.emptyMessage : "Enter a radius to calculate.", "error");
+        setOutputMessage(outputElement, "Enter a numeric radius (0 or greater).", "error");
         return;
       }
 
       if (radiusValue < 0)
       {
-        setOutputMessage(outputElement, "Radius must be 0 or greater.", "error");
+        setOutputMessage(outputElement, "Radius must be 0 or greater (no negative values).", "error");
         return;
       }
 

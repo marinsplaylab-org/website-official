@@ -1,5 +1,5 @@
 // Makes entire project cards clickable while allowing inner links to work.
-// Example: add data-href="/solar-system/" on the card and data-ignore-card-click on the GitHub icon link.
+// Example: add data-href="/solar-system-simulation/" on the card and data-ignore-card-click on the GitHub icon link.
 function initProjectCards()
 {
   const projectCards = document.querySelectorAll(".project-card[data-href]");
