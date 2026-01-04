@@ -20,6 +20,7 @@ Guidance for automated changes in this repository.
 - Keep extensionless routes (for example, `/privacy-policy`).
 - Raster images: WebP. Icons: SVG. Fonts: WOFF2.
 - When renaming/moving assets or folders, update all references and `sitemap.xml` as needed.
+- Maintenance mode uses `maintenance.flag` in the site root; delete it to restore the site.
 
 ## Unity WebGL Pages
 - Unity pages use `css/unity.css` and live beside their build files.

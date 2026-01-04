@@ -85,6 +85,7 @@ Press `Ctrl + C` in the Terminal where the server is running.
 ## Deployment Config (.htaccess)
 - Security headers (CSP, HSTS, Referrer-Policy, Permissions-Policy) and caching rules live in `.htaccess`.
 - If you remove Bluesky or Cloudflare, remove those domains from the CSP.
+- Maintenance mode: a rewrite rule is enabled in `.htaccess`. Create `maintenance.flag` in the site root to return `503.html`; delete the file to restore the site.
 
 ## Unity WebGL Setup
 - Create a folder like `[PROJECT-NAME]/` with its own `index.html`.
