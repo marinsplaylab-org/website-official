@@ -15,7 +15,7 @@ MIT License. See `LICENSE`.
 - Global media: `media/`, `fonts/`
 - Project media: `/<project>/media/`
 - Project-only styles/scripts: `/<project>/`
-- Project builds: `solar-system-simulation/`, `nexus/`, `stem-toolkits/`
+- Project builds: `solar-system-simulation/`, `stem-toolkits/`
 
 ## Forking and Project Sources
 - The template design lives in `templates/`, `css/`, and `js/`.

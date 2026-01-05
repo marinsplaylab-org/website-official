@@ -11,7 +11,7 @@ Guidance for automated changes in this repository.
 - Shared JS: `js/` (homepage scripts in `js/home/`)
 - Global media: `media/`
 - Fonts (WOFF2 only): `fonts/`
-- Project builds: `solar-system-simulation/`, `nexus/`, `stem-toolkits/`
+- Project builds: `solar-system-simulation/`, `stem-toolkits/`
 - Project media: `/<project>/media/`
 - Project-only CSS/JS should live inside that project folder.
 
