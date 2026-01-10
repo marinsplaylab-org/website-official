@@ -122,9 +122,9 @@
   --accent-mid: rgba(var(--color-accent-rgb), 0.3);
   --accent-border-soft: rgba(var(--color-accent-rgb), 0.25);
   --accent-border-strong: rgba(var(--color-accent-rgb), 0.85);
-  --badge-prototype-border: rgba(249, 115, 22, 0.55);
-  --badge-prototype-bg: rgba(249, 115, 22, 0.12);
-  --badge-prototype-text: rgba(255, 214, 170, 0.92);
+  --badge-prototype-border: rgba(248, 113, 113, 0.55);
+  --badge-prototype-bg: rgba(248, 113, 113, 0.12);
+  --badge-prototype-text: rgba(254, 202, 202, 0.95);
   --badge-upcoming-border: rgba(248, 113, 113, 0.55);
   --badge-upcoming-bg: rgba(248, 113, 113, 0.12);
   --badge-upcoming-text: rgba(254, 202, 202, 0.95);
@@ -422,15 +422,17 @@ a:hover
 
 .site-theme-toggle
 {
+  --theme-toggle-translate: 0px;
+  width: 60px;
+  height: 32px;
+  padding: 2px;
   border-radius: 999px;
   border: 1px solid var(--border-strong);
-  background: transparent;
-  color: var(--color-text);
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  padding: 0.35rem 0.85rem;
-  text-transform: uppercase;
-  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
+  background: var(--surface-panel);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 }
 
 .site-theme-toggle:hover,
@@ -438,7 +440,6 @@ a:hover
 {
   border-color: var(--border-accent-strong);
   background: var(--surface-panel-hover);
-  color: var(--color-text);
   transform: translateY(-1px);
 }
 
@@ -446,6 +447,63 @@ a:hover
 {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+.site-theme-toggle-thumb
+{
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--surface-panel-soft);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  place-items: center;
+  position: relative;
+  transform: translateX(var(--theme-toggle-translate));
+  transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+.site-theme-toggle-icon
+{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  filter: var(--icon-filter);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+:root[data-theme="light"] .site-theme-toggle
+{
+  --theme-toggle-translate: 0px;
+}
+
+:root[data-theme="dark"] .site-theme-toggle
+{
+  --theme-toggle-translate: 28px;
+}
+
+:root[data-theme="light"] .site-theme-toggle-icon--light
+{
+  opacity: 1;
+  transform: scale(1);
+}
+
+:root[data-theme="light"] .site-theme-toggle-icon--dark
+{
+  opacity: 0;
+  transform: scale(0.75);
+}
+
+:root[data-theme="dark"] .site-theme-toggle-icon--light
+{
+  opacity: 0;
+  transform: scale(0.75);
+}
+
+:root[data-theme="dark"] .site-theme-toggle-icon--dark
+{
+  opacity: 1;
+  transform: scale(1);
 }
 
 :root[data-theme="light"] .btn-outline-light
@@ -475,26 +533,69 @@ a:hover
   color: var(--color-text);
 }
 
+.site-footer-inner
+{
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-footer-column
+{
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.site-footer-column--social
+{
+  align-items: flex-start;
+}
+
+.site-footer-column--brand
+{
+  align-items: center;
+  text-align: center;
+}
+
+.site-footer-column--meta
+{
+  align-items: flex-end;
+  text-align: right;
+}
+
 .site-version
 {
   color: var(--color-text-quiet);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  display: block;
+}
+
+:root[data-theme="light"] .site-footer-copyright
+{
+  color: var(--color-text-emphasis);
 }
 
 .site-tagline
 {
-  margin: 0.35rem auto 0.6rem;
-  max-width: 36rem;
+  margin: 0;
+  max-width: 32rem;
   color: var(--color-text-emphasis);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .site-opensource
 {
-  margin: 0 auto 0.6rem;
+  margin: 0;
   color: var(--color-text-secondary);
+}
+
+.site-footer-links
+{
+  margin: 0;
 }
 
 .site-opensource a
@@ -513,6 +614,31 @@ a:hover
 .site-footer-logo
 {
   display: block;
-  margin: 0 auto 0.6rem;
+  margin: 0 auto 0.2rem;
   border-radius: 8px;
+}
+
+.site-social
+{
+  margin: 0;
+}
+
+@media (max-width: 900px)
+{
+  .site-footer-inner
+  {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .site-footer-column
+  {
+    align-items: center;
+  }
+
+  .site-footer-column--meta
+  {
+    align-items: center;
+    text-align: center;
+  }
 }

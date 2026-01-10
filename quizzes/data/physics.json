@@ -1,0 +1,298 @@
+{
+  "title": "Physics",
+  "description": "Motion, forces, energy, and basic physical laws.",
+  "questions": [
+    {
+      "id": "inertia-definition",
+      "prompt": "Newton’s First Law is often explained using the concept of…",
+      "choices": [
+        "Inertia",
+        "Friction",
+        "Gravity",
+        "Pressure"
+      ],
+      "correctIndex": 0,
+      "explanation": "Newton’s First Law says an object stays at rest or in uniform straight-line motion unless acted on by a net external force—this resistance to change is inertia.",
+      "sourceUrl": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/aircraft-motion-newtons-first-law/",
+      "sourceLabel": "NASA Glenn: Newton's First Law"
+    },
+    {
+      "id": "force-unit",
+      "prompt": "What is the SI unit of force?",
+      "choices": [
+        "Newton (N)",
+        "Joule (J)",
+        "Watt (W)",
+        "Pascal (Pa)"
+      ],
+      "correctIndex": 0,
+      "explanation": "A newton (N) is the SI unit of force.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Newton_(unit)",
+      "sourceLabel": "Wikipedia: Newton (unit)"
+    },
+    {
+      "id": "gravity-acceleration",
+      "prompt": "Near Earth’s surface, the acceleration due to gravity is approximately…",
+      "choices": [
+        "9.8 m/s²",
+        "1.6 m/s²",
+        "3.7 m/s²",
+        "24.8 m/s²"
+      ],
+      "correctIndex": 0,
+      "explanation": "On Earth, g is about 9.81 m/s² (it varies slightly by location).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Standard_gravity",
+      "sourceLabel": "Wikipedia: Standard gravity"
+    },
+    {
+      "id": "conservation-energy",
+      "prompt": "The conservation of energy means that energy…",
+      "choices": [
+        "Cannot be created or destroyed, only transformed",
+        "Is always lost as heat",
+        "Only exists in moving objects",
+        "Stops existing at low temperature"
+      ],
+      "correctIndex": 0,
+      "explanation": "Within a closed system, total energy remains constant, though it can change forms (kinetic, potential, thermal, etc.).",
+      "sourceUrl": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/conservation-of-energy/",
+      "sourceLabel": "NASA Glenn: Conservation of Energy"
+    },
+    {
+      "id": "energy-unit",
+      "prompt": "What is the SI unit of energy?",
+      "choices": [
+        "Joule (J)",
+        "Newton (N)",
+        "Tesla (T)",
+        "Ampere (A)"
+      ],
+      "correctIndex": 0,
+      "explanation": "A joule (J) is the SI unit of energy and work.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Joule",
+      "sourceLabel": "Wikipedia: Joule"
+    },
+    {
+      "id": "kinetic-energy",
+      "prompt": "Which formula gives kinetic energy?",
+      "choices": [
+        "½mv²",
+        "mgh",
+        "F = ma",
+        "V = IR"
+      ],
+      "correctIndex": 0,
+      "explanation": "Kinetic energy of an object moving at speed v is KE = ½mv².",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kinetic_energy",
+      "sourceLabel": "Wikipedia: Kinetic energy"
+    },
+    {
+      "id": "pendulum-period",
+      "prompt": "For small swings, the period of a simple pendulum depends mostly on…",
+      "choices": [
+        "Length and gravity",
+        "Mass only",
+        "Color of the bob",
+        "Air pressure only"
+      ],
+      "correctIndex": 0,
+      "explanation": "For small angles, T ≈ 2π√(L/g). Mass does not appear in the ideal formula.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pendulum#Period_of_oscillation",
+      "sourceLabel": "Wikipedia: Pendulum (period)",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Simple_gravity_pendulum.svg",
+        "alt": "Diagram of a simple pendulum",
+        "credit": "Wikimedia Commons",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Simple_gravity_pendulum.svg"
+      }
+    },
+    {
+      "id": "speed-vs-velocity",
+      "prompt": "What is the main difference between speed and velocity?",
+      "choices": [
+        "Velocity includes direction",
+        "Speed includes direction",
+        "Speed is always constant",
+        "Velocity cannot change"
+      ],
+      "correctIndex": 0,
+      "explanation": "Speed is a scalar (how fast), while velocity is a vector (how fast and in what direction).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Velocity",
+      "sourceLabel": "Wikipedia: Velocity"
+    },
+    {
+      "id": "moon-orbit",
+      "prompt": "Why doesn’t the Moon fall straight down to Earth?",
+      "choices": [
+        "It is moving sideways fast enough to keep orbiting",
+        "There is no gravity in space",
+        "Earth repels the Moon",
+        "The Moon is held up by air"
+      ],
+      "correctIndex": 0,
+      "explanation": "The Moon is constantly falling toward Earth, but its sideways velocity makes it keep missing—this is orbit.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Orbit",
+      "sourceLabel": "Wikipedia: Orbit"
+    },
+    {
+      "id": "mobius-strip",
+      "prompt": "A Möbius strip is special because it has…",
+      "choices": [
+        "One side and one edge",
+        "Two sides and one edge",
+        "One side and two edges",
+        "Two sides and two edges"
+      ],
+      "correctIndex": 0,
+      "explanation": "A Möbius strip is a non‑orientable surface: it has only one side and one boundary curve.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/M%C3%B6bius_strip",
+      "sourceLabel": "Wikipedia: Möbius strip",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mobius_strip.jpg/640px-Mobius_strip.jpg",
+        "alt": "A paper Möbius strip",
+        "credit": "Wikimedia Commons",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Mobius_strip.jpg"
+      }
+    },
+    {
+      "id": "speed-of-light",
+      "prompt": "The speed of light in vacuum is exactly…",
+      "choices": [
+        "299,792,458 m/s",
+        "300,000 km/s (approx.)",
+        "150,000,000 m/s",
+        "3,000,000 m/s"
+      ],
+      "correctIndex": 0,
+      "explanation": "By definition, the speed of light in vacuum c is exactly 299,792,458 m/s (≈ 300,000 km/s).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Speed_of_light",
+      "sourceLabel": "Wikipedia: Speed of light"
+    },
+    {
+      "id": "ohms-law",
+      "prompt": "Ohm’s law relates voltage (V), current (I), and resistance (R) as…",
+      "choices": [
+        "V = IR",
+        "V = I/R",
+        "I = VR",
+        "R = VI²"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ohm’s law for many conductors: V = I × R.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ohm%27s_law",
+      "sourceLabel": "Wikipedia: Ohm's law"
+    },
+    {
+      "id": "newton-second-law",
+      "prompt": "Newton’s Second Law is commonly written as…",
+      "choices": [
+        "F = ma",
+        "E = mc²",
+        "V = IR",
+        "pV = nRT"
+      ],
+      "correctIndex": 0,
+      "explanation": "Net force equals mass times acceleration.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion",
+      "sourceLabel": "Wikipedia: Newton's laws of motion"
+    },
+    {
+      "id": "newton-third-law",
+      "prompt": "Newton’s Third Law says that…",
+      "choices": [
+        "For every action there is an equal and opposite reaction",
+        "Objects keep moving unless a force acts on them",
+        "Force equals mass times acceleration",
+        "Energy is always conserved"
+      ],
+      "correctIndex": 0,
+      "explanation": "Forces come in pairs between interacting objects.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion",
+      "sourceLabel": "Wikipedia: Newton's laws of motion"
+    },
+    {
+      "id": "power-unit",
+      "prompt": "What is the SI unit of power?",
+      "choices": [
+        "Watt (W)",
+        "Joule (J)",
+        "Newton (N)",
+        "Volt (V)"
+      ],
+      "correctIndex": 0,
+      "explanation": "Power is energy per unit time; 1 watt = 1 joule/second.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Watt",
+      "sourceLabel": "Wikipedia: Watt"
+    },
+    {
+      "id": "momentum-definition",
+      "prompt": "Momentum is defined as…",
+      "choices": [
+        "mass × velocity",
+        "force × distance",
+        "mass ÷ time",
+        "energy ÷ speed"
+      ],
+      "correctIndex": 0,
+      "explanation": "Linear momentum p = mv.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Momentum",
+      "sourceLabel": "Wikipedia: Momentum"
+    },
+    {
+      "id": "frequency-unit",
+      "prompt": "The SI unit of frequency is…",
+      "choices": [
+        "Hertz (Hz)",
+        "Pascal (Pa)",
+        "Tesla (T)",
+        "Ohm (Ω)"
+      ],
+      "correctIndex": 0,
+      "explanation": "1 hertz means one cycle per second.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hertz",
+      "sourceLabel": "Wikipedia: Hertz"
+    },
+    {
+      "id": "electric-charge-unit",
+      "prompt": "What is the SI unit of electric charge?",
+      "choices": [
+        "Coulomb (C)",
+        "Ampere (A)",
+        "Volt (V)",
+        "Watt (W)"
+      ],
+      "correctIndex": 0,
+      "explanation": "Charge is measured in coulombs.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Coulomb",
+      "sourceLabel": "Wikipedia: Coulomb"
+    },
+    {
+      "id": "wave-speed",
+      "prompt": "Wave speed is given by…",
+      "choices": [
+        "v = fλ",
+        "v = ma",
+        "v = IR",
+        "v = ½mv²"
+      ],
+      "correctIndex": 0,
+      "explanation": "Speed equals frequency times wavelength.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wave",
+      "sourceLabel": "Wikipedia: Wave"
+    },
+    {
+      "id": "series-circuit-current",
+      "prompt": "In a simple series circuit, the current is…",
+      "choices": [
+        "The same through all components",
+        "Different through each component",
+        "Always zero",
+        "Only present in the battery"
+      ],
+      "correctIndex": 0,
+      "explanation": "Series components share the same current; voltage divides across them.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Series_and_parallel_circuits",
+      "sourceLabel": "Wikipedia: Series and parallel circuits"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Makes the site responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Quizzes with sources, explanations, and category-based questions.">
+
+  <link rel="preload" href="/fonts/source-sans-3/SourceSans3-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+
+  <title>Quizzes | Marins PlayLab</title>
+
+  <script src="/js/theme-init.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="/media/logo.webp">
+
+  <!-- Bootstrap CSS (for layout, grid, navbar, buttons) -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- website custom CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/quizzes/quizzes.css">
+</head>
+<body>
+
+  <div class="no-js-warning" role="alert">
+    JavaScript is required to run this website. Please enable it to view content.
+  </div>
+
+  <!-- Header will be loaded here using JavaScript -->
+  <div id="header"></div>
+
+  <!-- Main page content -->
+  <main class="site-main quiz-main">
+    <div class="container quiz-container">
+      <section class="quiz-page" data-quiz-page data-quiz-state="idle">
+        <header class="quiz-header">
+          <h1>Quizzes <span class="quiz-title-version">v2026.1.10 (Build 0.1 alpha)</span></h1>
+          <button class="quiz-category-link" type="button" data-quiz-category-title hidden></button>
+          <div class="quiz-category-link quiz-category-preview" data-quiz-category-preview data-preview-visible="false" aria-hidden="true"></div>
+        </header>
+
+        <div class="quiz-layout">
+          <div class="quiz-panel quiz-panel--categories">
+            <div class="quiz-panel-header">
+              <h2>Categories</h2>
+            </div>
+            <div class="quiz-wheel" data-quiz-wheel>
+              <svg class="quiz-wheel-svg" viewBox="0 0 200 200" role="group" aria-label="Quiz categories wheel">
+                <defs>
+                  <filter id="quiz-icon-invert" color-interpolation-filters="sRGB">
+                    <feColorMatrix
+                      type="matrix"
+                      values="-1 0 0 0 1
+                              0 -1 0 0 1
+                              0 0 -1 0 1
+                              0 0 0 1 0"/>
+                  </filter>
+                </defs>
+                <g data-quiz-slices></g>
+              </svg>
+            </div>
+            <p class="quiz-credits">
+              Icons by
+              <a href="https://lucide.dev" target="_blank" rel="noopener noreferrer">Lucide</a>,
+              licensed under the
+              <a href="https://lucide.dev/license" target="_blank" rel="noopener noreferrer">ISC License</a>.
+            </p>
+            <div class="quiz-category-detail" data-quiz-category-detail>
+              <p class="quiz-status" role="status" aria-live="polite">Loading categories...</p>
+            </div>
+          </div>
+
+          <div class="quiz-panel quiz-panel--play">
+            <div class="quiz-play" data-quiz-play>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer will be loaded here using JavaScript -->
+  <div id="footer"></div>
+
+  <!-- Bootstrap JS (needed for navbar toggle on mobile) -->
+  <script src="/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- JavaScript that loads header and footer -->
+  <script src="/js/template-loader.js" defer></script>
+  <script src="/js/theme-toggle.js" defer></script>
+  <script src="/quizzes/quizzes.js" defer></script>
+</body>
+</html>

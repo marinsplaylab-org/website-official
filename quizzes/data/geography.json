@@ -1,0 +1,292 @@
+{
+  "title": "Geography",
+  "description": "Maps, coordinates, continents, oceans, and countries.",
+  "questions": [
+    {
+      "id": "equator",
+      "prompt": "What is the imaginary line at 0° latitude called?",
+      "choices": [
+        "Equator",
+        "Prime Meridian",
+        "Tropic of Cancer",
+        "Arctic Circle"
+      ],
+      "correctIndex": 0,
+      "explanation": "The equator is the circle of latitude at 0°, dividing Earth into Northern and Southern Hemispheres.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Equator",
+      "sourceLabel": "Wikipedia: Equator"
+    },
+    {
+      "id": "prime-meridian",
+      "prompt": "What is the imaginary line at 0° longitude called?",
+      "choices": [
+        "Prime Meridian",
+        "Equator",
+        "International Date Line",
+        "Tropic of Capricorn"
+      ],
+      "correctIndex": 0,
+      "explanation": "The Prime Meridian (Greenwich meridian) is defined as 0° longitude.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prime_meridian",
+      "sourceLabel": "Wikipedia: Prime meridian"
+    },
+    {
+      "id": "latitude-measures",
+      "prompt": "Latitude measures how far a location is…",
+      "choices": [
+        "North or south of the equator",
+        "East or west of the Prime Meridian",
+        "Above sea level",
+        "From the nearest ocean"
+      ],
+      "correctIndex": 0,
+      "explanation": "Latitude is the angular distance north or south of the equator.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Latitude",
+      "sourceLabel": "Wikipedia: Latitude"
+    },
+    {
+      "id": "longitude-measures",
+      "prompt": "Longitude measures how far a location is…",
+      "choices": [
+        "East or west of the Prime Meridian",
+        "North or south of the equator",
+        "Above sea level",
+        "From the nearest mountain"
+      ],
+      "correctIndex": 0,
+      "explanation": "Longitude is the angular distance east or west of the Prime Meridian.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Longitude",
+      "sourceLabel": "Wikipedia: Longitude"
+    },
+    {
+      "id": "largest-ocean",
+      "prompt": "What is the largest ocean on Earth by area?",
+      "choices": [
+        "Pacific Ocean",
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Arctic Ocean"
+      ],
+      "correctIndex": 0,
+      "explanation": "The Pacific Ocean is the largest and deepest ocean.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pacific_Ocean",
+      "sourceLabel": "Wikipedia: Pacific Ocean"
+    },
+    {
+      "id": "largest-continent",
+      "prompt": "What is the largest continent by land area?",
+      "choices": [
+        "Asia",
+        "Africa",
+        "North America",
+        "Antarctica"
+      ],
+      "correctIndex": 0,
+      "explanation": "Asia is the largest continent by land area and population.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Asia",
+      "sourceLabel": "Wikipedia: Asia"
+    },
+    {
+      "id": "number-of-continents",
+      "prompt": "How many continents are commonly recognized in the 7‑continent model?",
+      "choices": [
+        "7",
+        "5",
+        "6",
+        "8"
+      ],
+      "correctIndex": 0,
+      "explanation": "A common convention lists: Africa, Antarctica, Asia, Europe, North America, South America, and Australia/Oceania.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Continent",
+      "sourceLabel": "Wikipedia: Continent"
+    },
+    {
+      "id": "highest-mountain",
+      "prompt": "What is the highest mountain above sea level?",
+      "choices": [
+        "Mount Everest",
+        "K2",
+        "Kangchenjunga",
+        "Denali"
+      ],
+      "correctIndex": 0,
+      "explanation": "Mount Everest is the highest mountain above mean sea level.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mount_Everest",
+      "sourceLabel": "Wikipedia: Mount Everest"
+    },
+    {
+      "id": "largest-country-area",
+      "prompt": "Which country has the largest land area?",
+      "choices": [
+        "Russia",
+        "Canada",
+        "China",
+        "United States"
+      ],
+      "correctIndex": 0,
+      "explanation": "Russia is the largest country by total area.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Russia",
+      "sourceLabel": "Wikipedia: Russia"
+    },
+    {
+      "id": "capital-japan",
+      "prompt": "What is the capital of Japan?",
+      "choices": [
+        "Tokyo",
+        "Kyoto",
+        "Osaka",
+        "Sapporo"
+      ],
+      "correctIndex": 0,
+      "explanation": "Tokyo is Japan’s capital and largest metropolitan area.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tokyo",
+      "sourceLabel": "Wikipedia: Tokyo"
+    },
+    {
+      "id": "map-scale",
+      "prompt": "On a map, what does the scale describe?",
+      "choices": [
+        "The relationship between map distance and real distance",
+        "The number of countries shown",
+        "The direction of north",
+        "The age of the map"
+      ],
+      "correctIndex": 0,
+      "explanation": "Map scale tells you how a distance on the map corresponds to a distance in the real world.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Map_scale",
+      "sourceLabel": "Wikipedia: Map scale"
+    },
+    {
+      "id": "world-map-image",
+      "prompt": "This blank outline is mainly used to show…",
+      "choices": [
+        "Global location (where things are on Earth)",
+        "How atoms bond",
+        "How tides form",
+        "How electricity flows"
+      ],
+      "correctIndex": 0,
+      "explanation": "World maps are used to show locations and spatial relationships at a global scale.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/World_map",
+      "sourceLabel": "Wikipedia: World map",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg",
+        "alt": "A simplified outline world map",
+        "credit": "Wikimedia Commons",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:World_map_-_low_resolution.svg"
+      }
+    },
+    {
+      "id": "hemispheres-equator",
+      "prompt": "The Equator divides Earth into the…",
+      "choices": [
+        "Northern and Southern Hemispheres",
+        "Eastern and Western Hemispheres",
+        "Arctic and Antarctic Circles",
+        "Tropics and Poles"
+      ],
+      "correctIndex": 0,
+      "explanation": "The Equator is the boundary between north and south hemispheres.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Equator",
+      "sourceLabel": "Wikipedia: Equator"
+    },
+    {
+      "id": "time-zones-cause",
+      "prompt": "Time zones exist mainly because Earth…",
+      "choices": [
+        "Rotates, so local solar time varies by longitude",
+        "Is tilted on its axis",
+        "Has an elliptical orbit",
+        "Has mountains and oceans"
+      ],
+      "correctIndex": 0,
+      "explanation": "Different longitudes face the Sun at different times due to rotation.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Time_zone",
+      "sourceLabel": "Wikipedia: Time zone"
+    },
+    {
+      "id": "gps-uses",
+      "prompt": "GPS is mainly used to determine…",
+      "choices": [
+        "Location using signals from satellites",
+        "Weather using ocean sensors",
+        "Earthquakes using seismometers",
+        "Air pressure using balloons"
+      ],
+      "correctIndex": 0,
+      "explanation": "GPS calculates position from satellite timing signals.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Global_Positioning_System",
+      "sourceLabel": "Wikipedia: Global Positioning System"
+    },
+    {
+      "id": "map-projection-problem",
+      "prompt": "A common problem with map projections is that they…",
+      "choices": [
+        "Distort size, shape, or distance",
+        "Show the Earth as perfectly flat",
+        "Remove oceans from maps",
+        "Only work for small planets"
+      ],
+      "correctIndex": 0,
+      "explanation": "Projecting a sphere onto a flat surface always introduces distortion.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Map_projection",
+      "sourceLabel": "Wikipedia: Map projection"
+    },
+    {
+      "id": "largest-desert",
+      "prompt": "The largest desert on Earth (by area) is…",
+      "choices": [
+        "Antarctica",
+        "Sahara",
+        "Gobi",
+        "Arabian Desert"
+      ],
+      "correctIndex": 0,
+      "explanation": "Antarctica is a cold desert with extremely low precipitation.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Desert",
+      "sourceLabel": "Wikipedia: Desert"
+    },
+    {
+      "id": "river-longest",
+      "prompt": "Which river is often cited as one of the two longest in the world (depending on measurement)?",
+      "choices": [
+        "Nile",
+        "Danube",
+        "Thames",
+        "Rhine"
+      ],
+      "correctIndex": 0,
+      "explanation": "The Nile is commonly listed among the longest rivers (often compared with the Amazon).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nile",
+      "sourceLabel": "Wikipedia: Nile"
+    },
+    {
+      "id": "tropic-of-cancer",
+      "prompt": "The Tropic of Cancer is located at about…",
+      "choices": [
+        "23.5° N",
+        "23.5° S",
+        "66.5° N",
+        "0°"
+      ],
+      "correctIndex": 0,
+      "explanation": "It marks the northernmost latitude where the Sun can be directly overhead.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tropic_of_Cancer",
+      "sourceLabel": "Wikipedia: Tropic of Cancer"
+    },
+    {
+      "id": "capital-australia",
+      "prompt": "What is the capital of Australia?",
+      "choices": [
+        "Canberra",
+        "Sydney",
+        "Melbourne",
+        "Perth"
+      ],
+      "correctIndex": 0,
+      "explanation": "Canberra is the capital city of Australia.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Canberra",
+      "sourceLabel": "Wikipedia: Canberra"
+    }
+  ]
+}

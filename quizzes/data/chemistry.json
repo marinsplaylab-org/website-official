@@ -1,0 +1,292 @@
+{
+  "title": "Chemistry",
+  "description": "Atoms, elements, bonds, and core chemistry concepts.",
+  "questions": [
+    {
+      "id": "atomic-number",
+      "prompt": "The atomic number of an element equals the number of…",
+      "choices": [
+        "Protons in its nucleus",
+        "Neutrons in its nucleus",
+        "Atoms in a sample",
+        "Molecules in a compound"
+      ],
+      "correctIndex": 0,
+      "explanation": "Atomic number (Z) is defined as the number of protons in the nucleus of an atom of that element.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Atomic_number",
+      "sourceLabel": "Wikipedia: Atomic number"
+    },
+    {
+      "id": "water-formula",
+      "prompt": "What is the chemical formula for water?",
+      "choices": [
+        "H₂O",
+        "CO₂",
+        "NaCl",
+        "O₂"
+      ],
+      "correctIndex": 0,
+      "explanation": "Water is composed of hydrogen and oxygen in a 2:1 ratio (H₂O).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Water",
+      "sourceLabel": "Wikipedia: Water"
+    },
+    {
+      "id": "ph-neutral",
+      "prompt": "At room temperature, pure water is approximately…",
+      "choices": [
+        "Neutral (pH ~7)",
+        "Strongly acidic (pH ~1)",
+        "Strongly basic (pH ~13)",
+        "Always pH 0"
+      ],
+      "correctIndex": 0,
+      "explanation": "Neutral solutions are around pH 7 (exact pH can vary slightly with conditions).",
+      "sourceUrl": "https://goldbook.iupac.org/terms/view/P04524",
+      "sourceLabel": "IUPAC Gold Book: pH"
+    },
+    {
+      "id": "acidic-ph",
+      "prompt": "A solution with pH 3 is…",
+      "choices": [
+        "Acidic",
+        "Neutral",
+        "Basic",
+        "Impossible to measure"
+      ],
+      "correctIndex": 0,
+      "explanation": "Lower pH indicates higher hydrogen-ion activity; pH < 7 is acidic.",
+      "sourceUrl": "https://goldbook.iupac.org/terms/view/P04524",
+      "sourceLabel": "IUPAC Gold Book: pH"
+    },
+    {
+      "id": "avogadro-constant",
+      "prompt": "Avogadro’s constant is exactly…",
+      "choices": [
+        "6.02214076×10²³ mol⁻¹",
+        "6.67×10⁻¹¹ N·m²/kg²",
+        "9.81 m/s²",
+        "3.00×10⁸ m/s"
+      ],
+      "correctIndex": 0,
+      "explanation": "Avogadro’s constant defines the number of entities in one mole.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Avogadro_constant",
+      "sourceLabel": "Wikipedia: Avogadro constant"
+    },
+    {
+      "id": "mole-definition",
+      "prompt": "One mole is the amount of substance containing…",
+      "choices": [
+        "Exactly Avogadro’s number of entities",
+        "One kilogram of atoms",
+        "One liter of gas always",
+        "One proton"
+      ],
+      "correctIndex": 0,
+      "explanation": "The mole is defined via Avogadro’s constant; it corresponds to exactly 6.02214076×10²³ specified entities.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mole_(unit)",
+      "sourceLabel": "Wikipedia: Mole (unit)"
+    },
+    {
+      "id": "ionic-bond",
+      "prompt": "An ionic bond typically forms when electrons are…",
+      "choices": [
+        "Transferred between atoms",
+        "Shared equally",
+        "Destroyed",
+        "Converted into neutrons"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ionic bonding involves electron transfer and electrostatic attraction between resulting ions.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ionic_bonding",
+      "sourceLabel": "Wikipedia: Ionic bonding"
+    },
+    {
+      "id": "covalent-bond",
+      "prompt": "A covalent bond typically forms when electrons are…",
+      "choices": [
+        "Shared between atoms",
+        "Transferred between atoms",
+        "Removed from the atom entirely",
+        "Frozen in place"
+      ],
+      "correctIndex": 0,
+      "explanation": "Covalent bonding involves sharing electron pairs between atoms.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Covalent_bond",
+      "sourceLabel": "Wikipedia: Covalent bond"
+    },
+    {
+      "id": "periodic-table-order",
+      "prompt": "In the modern periodic table, elements are arranged primarily by increasing…",
+      "choices": [
+        "Atomic number",
+        "Atomic mass",
+        "Density",
+        "Melting point"
+      ],
+      "correctIndex": 0,
+      "explanation": "The periodic table is organized mainly by atomic number, which corresponds to the number of protons.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Periodic_table",
+      "sourceLabel": "Wikipedia: Periodic table"
+    },
+    {
+      "id": "states-of-matter",
+      "prompt": "Which option lists common states of matter?",
+      "choices": [
+        "Solid, liquid, gas, plasma",
+        "Rock, metal, wood, plastic",
+        "Heat, light, sound, gravity",
+        "Acid, base, salt, sugar"
+      ],
+      "correctIndex": 0,
+      "explanation": "Matter commonly appears as solids, liquids, gases, and plasma (at high energy).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/State_of_matter",
+      "sourceLabel": "Wikipedia: State of matter"
+    },
+    {
+      "id": "conservation-of-mass",
+      "prompt": "In a closed system, the law of conservation of mass means mass is…",
+      "choices": [
+        "Neither created nor destroyed",
+        "Always increasing",
+        "Always decreasing",
+        "Only conserved for gases"
+      ],
+      "correctIndex": 0,
+      "explanation": "For ordinary chemical reactions in a closed system, total mass is conserved.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Conservation_of_mass",
+      "sourceLabel": "Wikipedia: Conservation of mass"
+    },
+    {
+      "id": "periodic-table-image",
+      "prompt": "This chart is mainly used to organize…",
+      "choices": [
+        "Chemical elements",
+        "Planets",
+        "Earthquakes",
+        "Biomes"
+      ],
+      "correctIndex": 0,
+      "explanation": "The periodic table organizes the chemical elements and highlights repeating (periodic) trends.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Periodic_table",
+      "sourceLabel": "Wikipedia: Periodic table",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Periodic_table_large.svg",
+        "alt": "A periodic table of the elements",
+        "credit": "Wikimedia Commons",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Periodic_table_large.svg"
+      }
+    },
+    {
+      "id": "proton-number",
+      "prompt": "An element’s identity is determined by its…",
+      "choices": [
+        "Number of protons",
+        "Number of neutrons",
+        "Number of electrons",
+        "Atomic mass only"
+      ],
+      "correctIndex": 0,
+      "explanation": "The atomic number equals the number of protons, which defines the element.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Atomic_number",
+      "sourceLabel": "Wikipedia: Atomic number"
+    },
+    {
+      "id": "isotope-definition",
+      "prompt": "Isotopes are atoms of the same element that have different…",
+      "choices": [
+        "Numbers of neutrons",
+        "Numbers of protons",
+        "Chemical symbols",
+        "Atomic numbers"
+      ],
+      "correctIndex": 0,
+      "explanation": "Isotopes share proton count (element) but differ in neutron count.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Isotope",
+      "sourceLabel": "Wikipedia: Isotope"
+    },
+    {
+      "id": "electron-shells",
+      "prompt": "Electrons in an atom primarily occupy…",
+      "choices": [
+        "Energy levels (shells/orbitals)",
+        "The nucleus only",
+        "Neutrons",
+        "Protons"
+      ],
+      "correctIndex": 0,
+      "explanation": "Electrons are found in quantized energy levels around the nucleus.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Electron_configuration",
+      "sourceLabel": "Wikipedia: Electron configuration"
+    },
+    {
+      "id": "ionic-compound-example",
+      "prompt": "Which is an ionic compound?",
+      "choices": [
+        "Sodium chloride (NaCl)",
+        "Methane (CH₄)",
+        "Oxygen (O₂)",
+        "Carbon dioxide (CO₂)"
+      ],
+      "correctIndex": 0,
+      "explanation": "NaCl forms from ions (Na⁺ and Cl⁻).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ionic_compound",
+      "sourceLabel": "Wikipedia: Ionic compound"
+    },
+    {
+      "id": "covalent-bond-definition",
+      "prompt": "A covalent bond involves…",
+      "choices": [
+        "Sharing electron pairs",
+        "Transfer of protons",
+        "Sharing neutrons",
+        "Destroying electrons"
+      ],
+      "correctIndex": 0,
+      "explanation": "Covalent bonds are formed by sharing electrons between atoms.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Covalent_bond",
+      "sourceLabel": "Wikipedia: Covalent bond"
+    },
+    {
+      "id": "solution-definition",
+      "prompt": "In a solution, the substance present in the larger amount is the…",
+      "choices": [
+        "Solvent",
+        "Solute",
+        "Precipitate",
+        "Catalyst"
+      ],
+      "correctIndex": 0,
+      "explanation": "The solvent dissolves the solute.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Solution",
+      "sourceLabel": "Wikipedia: Solution"
+    },
+    {
+      "id": "gas-law",
+      "prompt": "The ideal gas law is…",
+      "choices": [
+        "pV = nRT",
+        "F = ma",
+        "V = IR",
+        "E = mc²"
+      ],
+      "correctIndex": 0,
+      "explanation": "It relates pressure, volume, amount of gas, and temperature.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ideal_gas_law",
+      "sourceLabel": "Wikipedia: Ideal gas law"
+    },
+    {
+      "id": "ph-scale",
+      "prompt": "On the pH scale, a lower pH means a solution is…",
+      "choices": [
+        "More acidic",
+        "More basic",
+        "More salty",
+        "More metallic"
+      ],
+      "correctIndex": 0,
+      "explanation": "Lower pH corresponds to higher hydrogen ion activity (more acidic).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/PH",
+      "sourceLabel": "Wikipedia: pH"
+    }
+  ]
+}

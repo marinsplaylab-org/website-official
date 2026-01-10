@@ -1,0 +1,292 @@
+{
+  "title": "Astronomy",
+  "description": "Planets, stars, galaxies, and basic space concepts.",
+  "questions": [
+    {
+      "id": "milky-way-name",
+      "prompt": "What is the name of the galaxy that contains our Solar System?",
+      "choices": [
+        "Milky Way",
+        "Andromeda",
+        "Sombrero Galaxy",
+        "Whirlpool Galaxy"
+      ],
+      "correctIndex": 0,
+      "explanation": "Our Solar System is inside the Milky Way galaxy.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Milky_Way",
+      "sourceLabel": "Wikipedia: Milky Way"
+    },
+    {
+      "id": "closest-star",
+      "prompt": "What is the closest star to Earth?",
+      "choices": [
+        "The Sun",
+        "Proxima Centauri",
+        "Sirius",
+        "Betelgeuse"
+      ],
+      "correctIndex": 0,
+      "explanation": "The Sun is Earth's nearest star; Proxima Centauri is the nearest star beyond the Sun.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sun",
+      "sourceLabel": "Wikipedia: Sun"
+    },
+    {
+      "id": "red-planet",
+      "prompt": "Which planet is often called the “Red Planet”?",
+      "choices": [
+        "Mars",
+        "Jupiter",
+        "Venus",
+        "Neptune"
+      ],
+      "correctIndex": 0,
+      "explanation": "Mars appears reddish largely because iron-rich dust and rocks are oxidized (rusted).",
+      "sourceUrl": "https://spaceplace.nasa.gov/all-about-mars/",
+      "sourceLabel": "NASA Space Place: All About Mars"
+    },
+    {
+      "id": "largest-planet",
+      "prompt": "What is the largest planet in our Solar System?",
+      "choices": [
+        "Jupiter",
+        "Saturn",
+        "Neptune",
+        "Earth"
+      ],
+      "correctIndex": 0,
+      "explanation": "Jupiter is the largest planet by diameter and mass.",
+      "sourceUrl": "https://science.nasa.gov/solar-system/planets/planet-sizes-and-locations-in-our-solar-system/",
+      "sourceLabel": "NASA Science: Planet Sizes and Locations"
+    },
+    {
+      "id": "closest-planet-to-sun",
+      "prompt": "Which planet is closest to the Sun?",
+      "choices": [
+        "Mercury",
+        "Venus",
+        "Earth",
+        "Mars"
+      ],
+      "correctIndex": 0,
+      "explanation": "Mercury is the innermost planet and has the shortest orbital period.",
+      "sourceUrl": "https://science.nasa.gov/resource/orbits-and-keplers-laws/",
+      "sourceLabel": "NASA Science: Orbits and Kepler's Laws"
+    },
+    {
+      "id": "light-year",
+      "prompt": "A light-year is a unit of…",
+      "choices": [
+        "Distance",
+        "Time",
+        "Brightness",
+        "Mass"
+      ],
+      "correctIndex": 0,
+      "explanation": "A light-year is the distance light travels in vacuum in one year.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Light-year",
+      "sourceLabel": "Wikipedia: Light-year"
+    },
+    {
+      "id": "asteroid-belt-location",
+      "prompt": "Where is the main asteroid belt located?",
+      "choices": [
+        "Between Mars and Jupiter",
+        "Between Earth and Mars",
+        "Between Jupiter and Saturn",
+        "Beyond Neptune"
+      ],
+      "correctIndex": 0,
+      "explanation": "The main asteroid belt orbits the Sun between Mars and Jupiter.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Asteroid_belt",
+      "sourceLabel": "Wikipedia: Asteroid belt"
+    },
+    {
+      "id": "meteor-definition",
+      "prompt": "What do we call the streak of light when a small space rock burns in Earth’s atmosphere?",
+      "choices": [
+        "Meteor",
+        "Comet",
+        "Asteroid",
+        "Galaxy"
+      ],
+      "correctIndex": 0,
+      "explanation": "A meteor is the visible streak of light produced when a meteoroid heats up in Earth's atmosphere.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Meteor",
+      "sourceLabel": "Wikipedia: Meteor"
+    },
+    {
+      "id": "earth-year",
+      "prompt": "A “year” on Earth is mainly defined by…",
+      "choices": [
+        "One orbit around the Sun",
+        "One rotation on its axis",
+        "One full moon cycle",
+        "One season"
+      ],
+      "correctIndex": 0,
+      "explanation": "A year is based on Earth's orbital period around the Sun (about 365 days plus ~6 hours).",
+      "sourceUrl": "https://spaceplace.nasa.gov/leap-year/en/",
+      "sourceLabel": "NASA Space Place: What Is a Leap Year?"
+    },
+    {
+      "id": "saturn-rings",
+      "prompt": "Which planet is famous for its large, bright ring system?",
+      "choices": [
+        "Saturn",
+        "Mercury",
+        "Mars",
+        "Venus"
+      ],
+      "correctIndex": 0,
+      "explanation": "Saturn's rings are made mostly of ice particles and rocky debris.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rings_of_Saturn",
+      "sourceLabel": "Wikipedia: Rings of Saturn",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg",
+        "alt": "Saturn with its rings, photographed during equinox",
+        "credit": "NASA/JPL/Space Science Institute",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Saturn_during_Equinox.jpg"
+      }
+    },
+    {
+      "id": "kuiper-belt",
+      "prompt": "The Kuiper Belt is located…",
+      "choices": [
+        "Beyond Neptune",
+        "Between Earth and Mars",
+        "Inside Mercury’s orbit",
+        "Between Jupiter and Saturn"
+      ],
+      "correctIndex": 0,
+      "explanation": "The Kuiper Belt is a region beyond Neptune containing many icy bodies (including dwarf planets).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kuiper_belt",
+      "sourceLabel": "Wikipedia: Kuiper belt"
+    },
+    {
+      "id": "venus-pressure",
+      "prompt": "Compared to Earth, Venus’s surface pressure is…",
+      "choices": [
+        "About 92× higher",
+        "About the same",
+        "About 10× lower",
+        "Near vacuum"
+      ],
+      "correctIndex": 0,
+      "explanation": "Venus has a very dense CO₂ atmosphere; surface pressure is about 92 times Earth's.",
+      "sourceUrl": "https://astrobiology.nasa.gov/nai/media/medialibrary/2016/01/Astrobiology-Habitability-Cards.pdf",
+      "sourceLabel": "NASA Astrobiology: Habitability Cards (Venus)"
+    },
+    {
+      "id": "moon-phases-cause",
+      "prompt": "Moon phases are mainly caused by…",
+      "choices": [
+        "The Moon’s position relative to the Sun and Earth",
+        "Earth’s shadow covering the Moon each week",
+        "Changes in the Moon’s distance from Earth",
+        "The Moon producing its own light"
+      ],
+      "correctIndex": 0,
+      "explanation": "Phases are the changing view of the Moon’s sunlit half as it orbits Earth.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lunar_phase",
+      "sourceLabel": "Wikipedia: Lunar phase"
+    },
+    {
+      "id": "seasons-cause",
+      "prompt": "Earth’s seasons are mainly caused by…",
+      "choices": [
+        "Earth’s axial tilt",
+        "Earth being closer to the Sun in summer",
+        "Changes in Earth’s rotation speed",
+        "The Moon blocking sunlight"
+      ],
+      "correctIndex": 0,
+      "explanation": "Tilt changes sun angle and day length through the year.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Season",
+      "sourceLabel": "Wikipedia: Season"
+    },
+    {
+      "id": "exoplanet-definition",
+      "prompt": "An exoplanet is…",
+      "choices": [
+        "A planet that orbits a star outside our Solar System",
+        "A planet made mostly of ice",
+        "A planet with rings",
+        "A moon that orbits a planet"
+      ],
+      "correctIndex": 0,
+      "explanation": "Exoplanets orbit stars other than the Sun.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Exoplanet",
+      "sourceLabel": "Wikipedia: Exoplanet"
+    },
+    {
+      "id": "event-horizon",
+      "prompt": "The event horizon of a black hole is the…",
+      "choices": [
+        "Boundary beyond which light cannot escape",
+        "Center of the black hole",
+        "Ring of debris orbiting the black hole",
+        "Point where gravity becomes zero"
+      ],
+      "correctIndex": 0,
+      "explanation": "Crossing the event horizon means escape would require faster-than-light travel.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Event_horizon",
+      "sourceLabel": "Wikipedia: Event horizon"
+    },
+    {
+      "id": "spectroscopy-use",
+      "prompt": "Astronomers use spectroscopy mainly to…",
+      "choices": [
+        "Identify the composition and motion of distant objects",
+        "Make stars brighter",
+        "Measure distances using sound waves",
+        "Count how many planets are in the Solar System"
+      ],
+      "correctIndex": 0,
+      "explanation": "Spectral lines reveal elements and Doppler shifts reveal motion.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Astronomical_spectroscopy",
+      "sourceLabel": "Wikipedia: Astronomical spectroscopy"
+    },
+    {
+      "id": "hubble-law",
+      "prompt": "Hubble’s law (for nearby galaxies) says that…",
+      "choices": [
+        "Farther galaxies recede faster",
+        "All galaxies are moving toward the Milky Way",
+        "The universe is shrinking over time",
+        "Stars orbit planets"
+      ],
+      "correctIndex": 0,
+      "explanation": "Recession speed increases roughly with distance due to cosmic expansion.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hubble%27s_law",
+      "sourceLabel": "Wikipedia: Hubble's law"
+    },
+    {
+      "id": "constellation-definition",
+      "prompt": "A constellation is best described as…",
+      "choices": [
+        "A recognized pattern/region of stars as seen from Earth",
+        "A cluster of stars physically close together",
+        "A type of galaxy",
+        "A planet’s ring system"
+      ],
+      "correctIndex": 0,
+      "explanation": "Constellations are sky patterns/regions; the stars are not usually near each other in space.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Constellation",
+      "sourceLabel": "Wikipedia: Constellation"
+    },
+    {
+      "id": "dwarf-planet-example",
+      "prompt": "Which is a dwarf planet?",
+      "choices": [
+        "Pluto",
+        "Europa",
+        "Titan",
+        "Io"
+      ],
+      "correctIndex": 0,
+      "explanation": "Pluto is classified as a dwarf planet; the others are moons.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dwarf_planet",
+      "sourceLabel": "Wikipedia: Dwarf planet"
+    }
+  ]
+}

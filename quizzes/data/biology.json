@@ -1,0 +1,292 @@
+{
+  "title": "Biology",
+  "description": "Cells, genetics, and basic life processes.",
+  "questions": [
+    {
+      "id": "unit-of-life",
+      "prompt": "What is the basic unit of life?",
+      "choices": [
+        "Cell",
+        "Atom",
+        "Rock",
+        "Galaxy"
+      ],
+      "correctIndex": 0,
+      "explanation": "Cells are the smallest units that can carry out all processes needed for life.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cell_(biology)",
+      "sourceLabel": "Wikipedia: Cell"
+    },
+    {
+      "id": "mitochondria-function",
+      "prompt": "Mitochondria are often called the “powerhouses” of the cell because they…",
+      "choices": [
+        "Produce much of the cell’s ATP energy",
+        "Store DNA only",
+        "Make chlorophyll",
+        "Build the cell wall"
+      ],
+      "correctIndex": 0,
+      "explanation": "Mitochondria generate energy for cells, packaged as ATP.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mitochondrion",
+      "sourceLabel": "Wikipedia: Mitochondrion"
+    },
+    {
+      "id": "dna-role",
+      "prompt": "DNA is the molecule that primarily…",
+      "choices": [
+        "Carries genetic information",
+        "Carries oxygen in blood",
+        "Digests food",
+        "Creates sunlight"
+      ],
+      "correctIndex": 0,
+      "explanation": "DNA stores genetic information used for development and functioning of organisms.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/DNA",
+      "sourceLabel": "Wikipedia: DNA"
+    },
+    {
+      "id": "dna-shape",
+      "prompt": "DNA is shaped like a…",
+      "choices": [
+        "Double helix",
+        "Cube",
+        "Flat sheet",
+        "Perfect sphere"
+      ],
+      "correctIndex": 0,
+      "explanation": "DNA is made of two strands that wind around each other like a twisted ladder (a double helix).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/DNA",
+      "sourceLabel": "Wikipedia: DNA",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/DNA_chemical_structure.svg",
+        "alt": "Simplified diagram of DNA structure",
+        "credit": "Wikimedia Commons",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:DNA_chemical_structure.svg"
+      }
+    },
+    {
+      "id": "ribosomes-job",
+      "prompt": "Ribosomes are the cell structures that…",
+      "choices": [
+        "Build proteins",
+        "Store fats",
+        "Pump blood",
+        "Absorb sunlight"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ribosomes assemble amino acids into proteins (translation).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ribosome",
+      "sourceLabel": "Wikipedia: Ribosome"
+    },
+    {
+      "id": "photosynthesis-input",
+      "prompt": "During photosynthesis, plants take in…",
+      "choices": [
+        "Carbon dioxide",
+        "Oxygen",
+        "Nitrogen",
+        "Helium"
+      ],
+      "correctIndex": 0,
+      "explanation": "Photosynthesis uses carbon dioxide and water (with light) to build sugars and release oxygen.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Photosynthesis",
+      "sourceLabel": "Wikipedia: Photosynthesis"
+    },
+    {
+      "id": "photosynthesis-organelle",
+      "prompt": "Photosynthesis happens mainly in which cell organelle?",
+      "choices": [
+        "Chloroplast",
+        "Mitochondrion",
+        "Nucleus",
+        "Ribosome"
+      ],
+      "correctIndex": 0,
+      "explanation": "In plants and algae, photosynthesis occurs in chloroplasts.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chloroplast",
+      "sourceLabel": "Wikipedia: Chloroplast"
+    },
+    {
+      "id": "amino-acids-make",
+      "prompt": "Proteins are built from smaller units called…",
+      "choices": [
+        "Amino acids",
+        "Nucleotides",
+        "Sugars",
+        "Fatty acids only"
+      ],
+      "correctIndex": 0,
+      "explanation": "Amino acids are linked together to form proteins.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Amino_acid",
+      "sourceLabel": "Wikipedia: Amino acid"
+    },
+    {
+      "id": "cell-membrane",
+      "prompt": "The cell membrane is important because it…",
+      "choices": [
+        "Controls what enters and leaves the cell",
+        "Creates gravity",
+        "Stops all chemicals from entering",
+        "Turns cells into rocks"
+      ],
+      "correctIndex": 0,
+      "explanation": "Cell membranes are selectively permeable, helping maintain a stable internal environment.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cell_membrane",
+      "sourceLabel": "Wikipedia: Cell membrane"
+    },
+    {
+      "id": "homeostasis",
+      "prompt": "Homeostasis refers to an organism’s ability to…",
+      "choices": [
+        "Maintain internal balance",
+        "Grow without nutrients",
+        "Live without water",
+        "Stop evolution"
+      ],
+      "correctIndex": 0,
+      "explanation": "Homeostasis is regulation that keeps internal conditions within a workable range (e.g., temperature, pH).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Homeostasis",
+      "sourceLabel": "Wikipedia: Homeostasis"
+    },
+    {
+      "id": "chromosome-number-human",
+      "prompt": "How many chromosomes do humans typically have in most body cells?",
+      "choices": [
+        "46",
+        "23",
+        "92",
+        "44"
+      ],
+      "correctIndex": 0,
+      "explanation": "Humans typically have 46 chromosomes (23 pairs) in somatic cells.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Human_chromosome",
+      "sourceLabel": "Wikipedia: Human chromosomes"
+    },
+    {
+      "id": "roots-function",
+      "prompt": "In most plants, roots mainly…",
+      "choices": [
+        "Absorb water and minerals",
+        "Do photosynthesis",
+        "Produce sound",
+        "Generate electricity"
+      ],
+      "correctIndex": 0,
+      "explanation": "Roots anchor the plant and absorb water and dissolved nutrients from the soil.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Root",
+      "sourceLabel": "Wikipedia: Root"
+    },
+    {
+      "id": "cell-theory",
+      "prompt": "Cell theory states that…",
+      "choices": [
+        "All living things are made of cells",
+        "Cells are only found in animals",
+        "Only plants have cells",
+        "Cells form only in the oceans"
+      ],
+      "correctIndex": 0,
+      "explanation": "A core idea is that organisms are composed of cells, the basic unit of life.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cell_theory",
+      "sourceLabel": "Wikipedia: Cell theory"
+    },
+    {
+      "id": "natural-selection",
+      "prompt": "Natural selection is…",
+      "choices": [
+        "Differential survival and reproduction of individuals with heritable traits",
+        "A way organisms choose their traits",
+        "A process only in plants",
+        "A change that happens instantly in all individuals"
+      ],
+      "correctIndex": 0,
+      "explanation": "Traits affecting survival/reproduction can become more common over generations.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Natural_selection",
+      "sourceLabel": "Wikipedia: Natural selection"
+    },
+    {
+      "id": "mitosis-purpose",
+      "prompt": "Mitosis mainly produces…",
+      "choices": [
+        "Two genetically identical daughter cells",
+        "Four genetically different cells",
+        "A single cell with double DNA forever",
+        "Only gametes (sperm/eggs)"
+      ],
+      "correctIndex": 0,
+      "explanation": "Mitosis is cell division for growth and repair, producing identical cells.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mitosis",
+      "sourceLabel": "Wikipedia: Mitosis"
+    },
+    {
+      "id": "meiosis-purpose",
+      "prompt": "Meiosis is important because it…",
+      "choices": [
+        "Produces gametes with half the chromosome number",
+        "Produces identical body cells",
+        "Stops mutations completely",
+        "Makes DNA disappear"
+      ],
+      "correctIndex": 0,
+      "explanation": "Meiosis makes haploid gametes and increases genetic variation.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Meiosis",
+      "sourceLabel": "Wikipedia: Meiosis"
+    },
+    {
+      "id": "enzyme-role",
+      "prompt": "Enzymes are best described as…",
+      "choices": [
+        "Biological catalysts that speed up reactions",
+        "Sugars used for energy storage",
+        "Structures that store genetic information",
+        "Types of cells"
+      ],
+      "correctIndex": 0,
+      "explanation": "Enzymes lower activation energy, increasing reaction rates.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Enzyme",
+      "sourceLabel": "Wikipedia: Enzyme"
+    },
+    {
+      "id": "ecosystem-definition",
+      "prompt": "An ecosystem includes…",
+      "choices": [
+        "Organisms and their physical environment interacting",
+        "Only animals in a region",
+        "Only plants in a region",
+        "Only the climate of a region"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ecosystems include living communities and non-living factors interacting.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ecosystem",
+      "sourceLabel": "Wikipedia: Ecosystem"
+    },
+    {
+      "id": "rna-vs-dna",
+      "prompt": "A common difference between RNA and DNA is that RNA usually…",
+      "choices": [
+        "Is single-stranded and uses uracil instead of thymine",
+        "Is double-stranded and uses thymine",
+        "Has no bases at all",
+        "Cannot be found in cells"
+      ],
+      "correctIndex": 0,
+      "explanation": "RNA often is single-stranded and uses uracil (U) where DNA uses thymine (T).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ribonucleic_acid",
+      "sourceLabel": "Wikipedia: RNA"
+    },
+    {
+      "id": "immune-system-antibody",
+      "prompt": "Antibodies are produced by…",
+      "choices": [
+        "B cells (plasma cells)",
+        "Red blood cells",
+        "Neurons",
+        "Plant roots"
+      ],
+      "correctIndex": 0,
+      "explanation": "B cells can differentiate into plasma cells that secrete antibodies.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Antibody",
+      "sourceLabel": "Wikipedia: Antibody"
+    }
+  ]
+}

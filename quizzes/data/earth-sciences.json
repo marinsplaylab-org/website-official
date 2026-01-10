@@ -1,0 +1,292 @@
+{
+  "title": "Earth Sciences",
+  "description": "Atmosphere, oceans, weather, climate, and geology.",
+  "questions": [
+    {
+      "id": "atmosphere-main-gas",
+      "prompt": "What is the most abundant gas in Earth’s atmosphere?",
+      "choices": [
+        "Nitrogen",
+        "Oxygen",
+        "Carbon dioxide",
+        "Hydrogen"
+      ],
+      "correctIndex": 0,
+      "explanation": "Dry air is mostly nitrogen (~78%) and oxygen (~21%), with trace gases and variable water vapor.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth",
+      "sourceLabel": "Wikipedia: Atmosphere of Earth"
+    },
+    {
+      "id": "water-cycle-evaporation",
+      "prompt": "In the water cycle, what process turns liquid water into water vapor?",
+      "choices": [
+        "Evaporation",
+        "Condensation",
+        "Precipitation",
+        "Infiltration"
+      ],
+      "correctIndex": 0,
+      "explanation": "Evaporation is when liquid water gains enough energy to become water vapor.",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/the-water-cycle/",
+      "sourceLabel": "NASA Earth Observatory: The Water Cycle"
+    },
+    {
+      "id": "weather-layer",
+      "prompt": "Most weather happens in which layer of the atmosphere?",
+      "choices": [
+        "Troposphere",
+        "Stratosphere",
+        "Mesosphere",
+        "Thermosphere"
+      ],
+      "correctIndex": 0,
+      "explanation": "Weather mainly occurs in the troposphere, the lowest layer of the atmosphere.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Troposphere",
+      "sourceLabel": "Wikipedia: Troposphere"
+    },
+    {
+      "id": "plate-tectonics",
+      "prompt": "Plate tectonics explains the movement of…",
+      "choices": [
+        "Earth’s lithospheric plates",
+        "Ocean currents only",
+        "Cloud formations",
+        "The Moon’s orbit"
+      ],
+      "correctIndex": 0,
+      "explanation": "Plate tectonics describes how rigid plates of Earth's lithosphere move and interact.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Plate_tectonics",
+      "sourceLabel": "Wikipedia: Plate tectonics"
+    },
+    {
+      "id": "igneous-rock",
+      "prompt": "Igneous rock forms when…",
+      "choices": [
+        "Magma or lava cools and solidifies",
+        "Plants compact into coal",
+        "Sand turns into clay",
+        "Salt dissolves in water"
+      ],
+      "correctIndex": 0,
+      "explanation": "Igneous rocks form by cooling and solidifying molten rock (magma below ground, lava at the surface).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Igneous_rock",
+      "sourceLabel": "Wikipedia: Igneous rock"
+    },
+    {
+      "id": "earthquake-magnitude",
+      "prompt": "What scale is commonly used today to estimate earthquake size across a wide range of magnitudes?",
+      "choices": [
+        "Moment magnitude (Mw)",
+        "Celsius scale",
+        "Beaufort scale",
+        "UV index"
+      ],
+      "correctIndex": 0,
+      "explanation": "Moment magnitude (Mw) is widely used because it works well even for very large earthquakes.",
+      "sourceUrl": "https://www.usgs.gov/faqs/moment-magnitude-richter-scale-what-are-different-magnitude-scales-and-why-are-there-so-many",
+      "sourceLabel": "USGS: Moment magnitude and other scales"
+    },
+    {
+      "id": "tides-cause",
+      "prompt": "What is the main cause of ocean tides on Earth?",
+      "choices": [
+        "The Moon’s gravity",
+        "Earth’s magnetic field",
+        "Volcanoes",
+        "Earth’s shadow"
+      ],
+      "correctIndex": 0,
+      "explanation": "Most tidal forcing comes from the Moon’s gravity (the Sun also contributes).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tide",
+      "sourceLabel": "Wikipedia: Tide"
+    },
+    {
+      "id": "greenhouse-gas",
+      "prompt": "Which gas is a major human-caused greenhouse gas?",
+      "choices": [
+        "Carbon dioxide (CO₂)",
+        "Nitrogen (N₂)",
+        "Helium (He)",
+        "Neon (Ne)"
+      ],
+      "correctIndex": 0,
+      "explanation": "CO₂ is a key greenhouse gas increased by human activities such as burning fossil fuels.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Greenhouse_gas",
+      "sourceLabel": "Wikipedia: Greenhouse gas"
+    },
+    {
+      "id": "ozone-layer",
+      "prompt": "The ozone layer that absorbs much of the Sun’s UV radiation is mainly in the…",
+      "choices": [
+        "Stratosphere",
+        "Troposphere",
+        "Mesosphere",
+        "Exosphere"
+      ],
+      "correctIndex": 0,
+      "explanation": "Stratospheric ozone absorbs harmful ultraviolet radiation and is often discussed in the context of the Antarctic ozone hole.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ozone_layer",
+      "sourceLabel": "Wikipedia: Ozone layer"
+    },
+    {
+      "id": "outer-core",
+      "prompt": "Earth’s magnetic field is generated mainly by motion in the…",
+      "choices": [
+        "Liquid outer core",
+        "Solid inner core",
+        "Crust",
+        "Upper atmosphere"
+      ],
+      "correctIndex": 0,
+      "explanation": "Convection and flow in the liquid outer core drive a geodynamo that produces Earth's magnetic field.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Earth%27s_outer_core",
+      "sourceLabel": "Wikipedia: Earth's outer core"
+    },
+    {
+      "id": "freshwater-storage",
+      "prompt": "Most of Earth’s freshwater is stored in…",
+      "choices": [
+        "Ice caps and glaciers",
+        "Rivers",
+        "The atmosphere",
+        "Oceans"
+      ],
+      "correctIndex": 0,
+      "explanation": "Most freshwater is locked up in ice and glaciers; a large fraction is also stored underground.",
+      "sourceUrl": "https://www.usgs.gov/water-science-school/science/how-much-water-there-earth",
+      "sourceLabel": "USGS: How much water is there on Earth?"
+    },
+    {
+      "id": "hurricane-image",
+      "prompt": "Which natural hazard is shown in this satellite image?",
+      "choices": [
+        "Hurricane (tropical cyclone)",
+        "Volcanic eruption",
+        "Earthquake fault",
+        "Tsunami wave"
+      ],
+      "correctIndex": 0,
+      "explanation": "The image shows a hurricane with a clear spiral structure and an eye.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hurricane_Isabel",
+      "sourceLabel": "Wikipedia: Hurricane Isabel",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Hurricane_Isabel_from_ISS.jpg",
+        "alt": "Hurricane Isabel photographed from the International Space Station",
+        "credit": "NASA / Wikimedia Commons",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Hurricane_Isabel_from_ISS.jpg"
+      }
+    },
+    {
+      "id": "earth-age",
+      "prompt": "Earth is approximately…",
+      "choices": [
+        "4.54 billion years old",
+        "454 million years old",
+        "45.4 million years old",
+        "4.54 million years old"
+      ],
+      "correctIndex": 0,
+      "explanation": "Radiometric dating places Earth’s age at about 4.54 billion years.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Age_of_Earth",
+      "sourceLabel": "Wikipedia: Age of Earth"
+    },
+    {
+      "id": "rock-cycle",
+      "prompt": "The rock cycle describes…",
+      "choices": [
+        "How rocks change between igneous, sedimentary, and metamorphic forms",
+        "How oceans form from rain",
+        "How planets orbit stars",
+        "How wind speed is measured"
+      ],
+      "correctIndex": 0,
+      "explanation": "Heat, pressure, erosion, and melting drive transitions among rock types.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rock_cycle",
+      "sourceLabel": "Wikipedia: Rock cycle"
+    },
+    {
+      "id": "coriolis-effect",
+      "prompt": "The Coriolis effect is mainly due to…",
+      "choices": [
+        "Earth’s rotation",
+        "Earth’s magnetic field",
+        "The Moon’s gravity",
+        "Seasonal changes"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rotation causes moving air/water to appear deflected in rotating frames.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Coriolis_force",
+      "sourceLabel": "Wikipedia: Coriolis force"
+    },
+    {
+      "id": "earth-layers-order",
+      "prompt": "Which order correctly lists Earth’s main layers from outside to inside?",
+      "choices": [
+        "Crust → Mantle → Core",
+        "Mantle → Crust → Core",
+        "Core → Mantle → Crust",
+        "Crust → Core → Mantle"
+      ],
+      "correctIndex": 0,
+      "explanation": "Earth has a crust, mantle, and core (with inner/outer core subdivisions).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Internal_structure_of_Earth",
+      "sourceLabel": "Wikipedia: Internal structure of Earth"
+    },
+    {
+      "id": "el-nino",
+      "prompt": "El Niño is associated with…",
+      "choices": [
+        "Warming of the central/eastern tropical Pacific Ocean",
+        "A sudden shift of Earth’s magnetic poles",
+        "A type of hurricane",
+        "A volcanic eruption pattern"
+      ],
+      "correctIndex": 0,
+      "explanation": "El Niño is the warm phase of ENSO in the tropical Pacific.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/El_Ni%C3%B1o",
+      "sourceLabel": "Wikipedia: El Niño"
+    },
+    {
+      "id": "wind-forms",
+      "prompt": "Wind is primarily caused by…",
+      "choices": [
+        "Air moving from high pressure to low pressure",
+        "Earth’s orbit around the Sun",
+        "Ocean tides",
+        "Volcanic eruptions"
+      ],
+      "correctIndex": 0,
+      "explanation": "Pressure differences (often from uneven heating) drive air movement.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wind",
+      "sourceLabel": "Wikipedia: Wind"
+    },
+    {
+      "id": "tsunami-cause",
+      "prompt": "Most tsunamis are caused by…",
+      "choices": [
+        "Undersea earthquakes displacing water",
+        "Strong winds over the ocean",
+        "Melting sea ice",
+        "Lightning storms"
+      ],
+      "correctIndex": 0,
+      "explanation": "Seafloor displacement moves large water volumes, generating long waves.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tsunami",
+      "sourceLabel": "Wikipedia: Tsunami"
+    },
+    {
+      "id": "mineral-definition",
+      "prompt": "A mineral is best defined as…",
+      "choices": [
+        "A naturally occurring, inorganic solid with a definite chemical composition and crystal structure",
+        "Any rock found in nature",
+        "Any metal used in industry",
+        "Any substance that dissolves in water"
+      ],
+      "correctIndex": 0,
+      "explanation": "Minerals have specific compositions and ordered crystal structures.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mineral",
+      "sourceLabel": "Wikipedia: Mineral"
+    }
+  ]
+}

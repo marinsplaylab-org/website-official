@@ -3,7 +3,7 @@
   <div class="container">
 
     <!-- Website logo / name -->
-    <a class="navbar-brand d-flex align-items-center" href="https://marinsplaylab.org/">
+    <a class="navbar-brand d-flex align-items-center" href="/">
       <img src="/media/logo.webp" alt="Logo" width="40" height="40" class="me-2">
       Marins PlayLab
     </a>
@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
         <!-- ms-auto pushes links to the right -->
-        <li class="nav-item"><a class="nav-link" href="https://marinsplaylab.org/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
       </ul>
 
@@ -97,11 +97,29 @@
 
       <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 site-header-actions">
         <button
-          class="btn btn-sm btn-outline-light site-theme-toggle"
+          class="site-theme-toggle"
           type="button"
           data-theme-toggle
           aria-pressed="false">
-          <span data-theme-label>Light mode</span>
+          <span class="site-theme-toggle-thumb" aria-hidden="true">
+            <img
+              class="site-theme-toggle-icon site-theme-toggle-icon--light"
+              src="/media/icon-sun.svg"
+              alt=""
+              width="16"
+              height="16"
+              loading="lazy"
+              decoding="async">
+            <img
+              class="site-theme-toggle-icon site-theme-toggle-icon--dark"
+              src="/media/icon-moon.svg"
+              alt=""
+              width="16"
+              height="16"
+              loading="lazy"
+              decoding="async">
+          </span>
+          <span class="visually-hidden" data-theme-label>Light mode</span>
         </button>
       </div>
     </div>

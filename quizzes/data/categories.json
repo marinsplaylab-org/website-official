@@ -1,0 +1,79 @@
+{
+  "categories": [
+    {
+      "id": "astronomy",
+      "title": "Astronomy",
+      "description": "Solar system, stars, galaxies, and space basics.",
+      "questionCount": 10,
+      "icon": "/quizzes/media/icon-astronomy.svg",
+      "dataUrl": "/quizzes/data/astronomy.json"
+    },
+    {
+      "id": "physics",
+      "title": "Physics",
+      "description": "Motion, forces, energy, waves, and electricity.",
+      "questionCount": 10,
+      "colors": {
+        "base": "rgba(248, 113, 113, 0.44)",
+        "hover": "rgba(248, 113, 113, 0.7)",
+        "active": "rgba(248, 113, 113, 0.9)",
+        "glow": "rgba(248, 113, 113, 0.55)",
+        "glowStrong": "rgba(248, 113, 113, 0.9)",
+        "stroke": "rgba(248, 113, 113, 0.8)",
+        "strokeStrong": "rgba(248, 113, 113, 1)"
+      },
+      "icon": "/quizzes/media/icon-physics.svg",
+      "dataUrl": "/quizzes/data/physics.json"
+    },
+    {
+      "id": "earth-sciences",
+      "title": "Earth Sciences",
+      "description": "Weather, oceans, climate, geology, and natural hazards.",
+      "questionCount": 10,
+      "icon": "/quizzes/media/icon-earth.svg",
+      "dataUrl": "/quizzes/data/earth-sciences.json"
+    },
+    {
+      "id": "geography",
+      "title": "Geography",
+      "description": "Maps, coordinates, places, and Earth regions.",
+      "questionCount": 10,
+      "icon": "/quizzes/media/icon-geography.svg",
+      "dataUrl": "/quizzes/data/geography.json"
+    },
+    {
+      "id": "biology",
+      "title": "Biology",
+      "description": "Cells, genetics, evolution, and life processes.",
+      "questionCount": 10,
+      "colors": {
+        "base": "rgba(34, 197, 94, 0.44)",
+        "hover": "rgba(34, 197, 94, 0.7)",
+        "active": "rgba(34, 197, 94, 0.9)",
+        "glow": "rgba(34, 197, 94, 0.55)",
+        "glowStrong": "rgba(34, 197, 94, 0.9)",
+        "stroke": "rgba(34, 197, 94, 0.8)",
+        "strokeStrong": "rgba(34, 197, 94, 1)"
+      },
+      "icon": "/quizzes/media/icon-biology.svg",
+      "dataUrl": "/quizzes/data/biology.json"
+    },
+    {
+      "id": "chemistry",
+      "title": "Chemistry",
+      "description": "Atoms, bonding, reactions, and chemical basics.",
+      "questionCount": 10,
+      "colors": {
+        "base": "rgba(99, 102, 241, 0.46)",
+        "hover": "rgba(129, 140, 248, 0.72)",
+        "active": "rgba(147, 51, 234, 0.9)",
+        "glow": "rgba(59, 130, 246, 0.55)",
+        "glowStrong": "rgba(139, 92, 246, 0.85)",
+        "stroke": "rgba(99, 102, 241, 0.85)",
+        "strokeStrong": "rgba(139, 92, 246, 1)"
+      },
+      "icon": "/quizzes/media/icon-chemistry.svg",
+      "dataUrl": "/quizzes/data/chemistry.json"
+    }
+  ]
+}

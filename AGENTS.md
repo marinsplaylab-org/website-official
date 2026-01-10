@@ -11,7 +11,7 @@ Guidance for automated changes in this repository.
 - Shared JS: `js/` (homepage scripts in `js/home/`)
 - Global media: `media/`
 - Fonts (WOFF2 only): `fonts/`
-- Project builds: `solar-system-simulation/`, `stem-toolkits/`
+- Project builds: `solar-system-simulation/`, `stem-toolkits/`, `quizzes/`
 - Project media: `/<project>/media/`
 - Project-only CSS/JS should live inside that project folder.
 
@@ -43,6 +43,11 @@ Guidance for automated changes in this repository.
 - Keep README and AGENTS in sync when rules change.
 - Comments are brief and intent-focused; include what and why, plus an example only when it clarifies non-obvious behavior.
 - Use simple English in comments and UI copy; avoid conversational phrasing.
+
+## Quizzes Updates
+- Add categories in `quizzes/data/categories.json` with `id`, `title`, `description`, `questionCount`, `icon`, `dataUrl` (optional `colors`).
+- Create category question banks in `quizzes/data/` and keep question objects complete (`id`, `prompt`, `choices`, `correctIndex`, `explanation`, `sourceUrl`, `sourceLabel`).
+- Store category icons in `quizzes/media/` as SVG and use root-absolute paths.
 
 ## Suggested Checks
 - Run `python3 -m http.server` and open `http://localhost:8000`.

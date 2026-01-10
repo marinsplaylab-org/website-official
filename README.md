@@ -15,7 +15,7 @@ MIT License. See `LICENSE`.
 - Global media: `media/`, `fonts/`
 - Project media: `/<project>/media/`
 - Project-only styles/scripts: `/<project>/`
-- Project builds: `solar-system-simulation/`, `stem-toolkits/`
+- Project builds: `solar-system-simulation/`, `stem-toolkits/`, `quizzes/`
 
 ## Forking and Project Sources
 - The template design lives in `templates/`, `css/`, and `js/`.
@@ -75,6 +75,22 @@ Press `Ctrl + C` in the Terminal where the server is running.
 - File map: `/stem-toolkits/stem-toolkits.js` (rendering logic)
 - File map: `/stem-toolkits/stem-toolkits.css` (page styles)
 
+## Quizzes
+- Data lives in `quizzes/data/` (categories and question banks).
+- Page layout lives in `quizzes/index.html` with styles in `quizzes/quizzes.css`.
+- Rendering logic lives in `quizzes/quizzes.js`.
+- Categories can include optional `colors` overrides for wheel accents (base/hover/active/glow/stroke).
+- File map: `/quizzes/index.html` (page layout)
+- File map: `/quizzes/data/*.json` (category/question data)
+- File map: `/quizzes/quizzes.js` (rendering logic)
+- File map: `/quizzes/quizzes.css` (page styles)
+
+### Add a Quiz Category
+1. Add a new entry in `quizzes/data/categories.json` with `id`, `title`, `description`, `questionCount`, `icon`, and `dataUrl` (optional `colors`).
+2. Create the category data file at the `dataUrl` path with `title`, `description`, and a `questions` array.
+3. Each question needs `id`, `prompt`, `choices`, `correctIndex`, `explanation`, `sourceUrl`, `sourceLabel` (optional `image` object).
+4. Place the icon SVG in `quizzes/media/` and reference it with a root-absolute path.
+
 ## Adding a Project
 - Create a folder like `/my-project/` with an `index.html` entry page
 - Add a card to `templates/home-project-list.html` with title, summary, badges, and link
@@ -113,6 +129,9 @@ Press `Ctrl + C` in the Terminal where the server is running.
 - Brotli-compressed Unity builds (.br)
 - Apache/LiteSpeed .htaccess (extensionless routes, Brotli headers)
 - Cloudflare (CDN and security proxy)
+
+## Credits
+- Quizzes category icons: Lucide (https://lucide.dev), ISC License (https://lucide.dev/license)
 
 ## Contributing / Feedback
 This is an open-source project. At the moment, we are **not accepting code pull requests**.
