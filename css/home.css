@@ -70,7 +70,14 @@
   gap: 0.75rem;
 }
 
-.project-github
+.project-links
+{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.project-link
 {
   display: inline-flex;
   align-items: center;
@@ -83,21 +90,21 @@
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
 }
 
-.project-github:hover,
-.project-github:focus-visible
+.project-link:hover,
+.project-link:focus-visible
 {
   transform: translateY(-1px);
   border-color: var(--border-accent-strong);
   background: var(--surface-panel-hover);
 }
 
-.project-github:focus-visible
+.project-link:focus-visible
 {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
-.project-github-icon
+.project-link-icon
 {
   width: 18px;
   height: 18px;
@@ -107,8 +114,8 @@
   transition: opacity 120ms ease;
 }
 
-.project-github:hover .project-github-icon,
-.project-github:focus-visible .project-github-icon
+.project-link:hover .project-link-icon,
+.project-link:focus-visible .project-link-icon
 {
   opacity: 1;
 }

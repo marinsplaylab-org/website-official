@@ -94,7 +94,9 @@
     categoryTitle: null,
     categoryPreview: null,
     wheel: null,
-    quizContainer: null
+    quizContainer: null,
+    menuLink: null,
+    titleLink: null
   };
 
   const _state = {
@@ -377,6 +379,11 @@
         _elements.main.removeAttribute("data-quiz-state");
       }
     }
+
+    if (_elements.menuLink)
+    {
+      _elements.menuLink.hidden = _stateValue !== "active";
+    }
   }
 
   function returnToWheel()
@@ -481,16 +488,7 @@
       return;
     }
 
-    const _hasContent = populateCategoryLabel(_elements.categoryTitle, _category, true);
-    if (_hasContent)
-    {
-      _elements.categoryTitle.setAttribute("aria-label", `Back to categories from ${_category.title}`);
-      _elements.categoryTitle.hidden = false;
-      return;
-    }
-
     _elements.categoryTitle.textContent = "";
-    _elements.categoryTitle.removeAttribute("aria-label");
     _elements.categoryTitle.hidden = true;
   }
 
@@ -853,25 +851,44 @@
 
   function createQuestionImage(_imageData)
   {
-    if (!_imageData || !_imageData.url)
-    {
-      return null;
-    }
-
     const _figure = document.createElement("figure");
     _figure.className = "quiz-question-image";
+
+    const _frame = document.createElement("div");
+    _frame.className = "quiz-question-image-frame";
+    _figure.appendChild(_frame);
+
+    if (!_imageData || !_imageData.url)
+    {
+      _figure.dataset.hasImage = "false";
+      _figure.setAttribute("aria-hidden", "true");
+      return _figure;
+    }
+
+    _figure.dataset.hasImage = "true";
 
     const _image = document.createElement("img");
     _image.src = _imageData.url;
     _image.alt = _imageData.alt || "";
     _image.loading = "lazy";
     _image.decoding = "async";
+    let _caption = null;
+    _image.addEventListener("error", () =>
+    {
+      _figure.dataset.hasImage = "false";
+      _figure.setAttribute("aria-hidden", "true");
+      _image.remove();
+      if (_caption)
+      {
+        _caption.remove();
+      }
+    }, { once: true });
 
-    _figure.appendChild(_image);
+    _frame.appendChild(_image);
 
     if (_imageData.credit)
     {
-      const _caption = document.createElement("figcaption");
+      _caption = document.createElement("figcaption");
       _caption.className = "quiz-image-credit";
 
       const _creditText = document.createTextNode("Image: ");
@@ -905,10 +922,12 @@
     _feedback.dataset.state = "pending";
     _feedback.setAttribute("role", "status");
     _feedback.setAttribute("aria-live", "polite");
+    _feedback.setAttribute("aria-hidden", "true");
+    _feedback.hidden = true;
 
     const _title = document.createElement("p");
     _title.className = "quiz-feedback-title";
-    _title.textContent = "Select an answer to view the explanation.";
+    _title.textContent = "";
 
     const _body = document.createElement("div");
     _body.className = "quiz-feedback-body";
@@ -951,7 +970,50 @@
     };
   }
 
-  function handleAnswer(_question, _selectedIndex, _choiceButtons, _feedbackElements, _scoreElement)
+  function getProgressValue()
+  {
+    if (!_state.questions.length)
+    {
+      return 0;
+    }
+
+    const _completedCount = Math.min(_state.answers.length, _state.questions.length);
+    return (_completedCount / _state.questions.length) * 100;
+  }
+
+  function renderProgressDots(_container)
+  {
+    if (!_container)
+    {
+      return;
+    }
+
+    _container.innerHTML = "";
+    for (let _index = 0; _index < _state.questions.length; _index += 1)
+    {
+      const _dot = document.createElement("span");
+      _dot.className = "quiz-progress-dot";
+
+      if (_index < _state.answers.length)
+      {
+        _dot.classList.add(_state.answers[_index].correct ? "is-correct" : "is-incorrect");
+      }
+
+      _container.appendChild(_dot);
+    }
+  }
+
+  function updateProgressIndicators(_progressBar, _dotContainer)
+  {
+    if (_progressBar)
+    {
+      _progressBar.style.width = `${getProgressValue()}%`;
+    }
+
+    renderProgressDots(_dotContainer);
+  }
+
+  function handleAnswer(_question, _selectedIndex, _choiceButtons, _feedbackElements, _scoreElement, _progressBar, _progressDots, _selectedChoiceItem, _actionContainer)
   {
     const _correctIndex = Number.isInteger(_question.correctIndex) ? _question.correctIndex : -1;
     const _isCorrect = _selectedIndex === _correctIndex;
@@ -980,14 +1042,36 @@
       correct: _isCorrect
     });
 
+    updateProgressIndicators(_progressBar, _progressDots);
+
     const _correctAnswer = _question.choices && _question.choices[_correctIndex]
       ? _question.choices[_correctIndex]
       : "Unknown";
 
     _feedbackElements.title.textContent = _isCorrect ? "Correct" : "Incorrect";
     _feedbackElements.container.dataset.state = _isCorrect ? "correct" : "incorrect";
+    _feedbackElements.container.hidden = false;
+    _feedbackElements.container.removeAttribute("aria-hidden");
     _feedbackElements.answerLine.textContent = `Correct answer: ${_correctAnswer}.`;
     _feedbackElements.body.hidden = false;
+
+    if (_selectedChoiceItem)
+    {
+      if (!_feedbackElements.container.isConnected)
+      {
+        _selectedChoiceItem.appendChild(_feedbackElements.container);
+      }
+
+      if (_actionContainer && !_actionContainer.isConnected)
+      {
+        _selectedChoiceItem.appendChild(_actionContainer);
+      }
+    }
+
+    if (_actionContainer)
+    {
+      _actionContainer.hidden = false;
+    }
 
     if (_scoreElement)
     {
@@ -1027,7 +1111,14 @@
     _scoreText.className = "quiz-score";
     _scoreText.textContent = `Score: ${_state.score} / ${_state.questions.length}`;
 
-    _meta.append(_progress, _scoreText);
+    const _categoryMeta = document.createElement("div");
+    _categoryMeta.className = "quiz-category-meta";
+    if (_state.activeCategory)
+    {
+      populateCategoryLabel(_categoryMeta, _state.activeCategory, false);
+    }
+
+    _meta.append(_progress, _categoryMeta, _scoreText);
 
     const _title = document.createElement("h3");
     _title.textContent = _question.prompt || "Question";
@@ -1037,11 +1128,15 @@
 
     const _progressBar = document.createElement("div");
     _progressBar.className = "quiz-progress-bar";
-    const _progressValue = ((_state.questionIndex + 1) / _state.questions.length) * 100;
-    _progressBar.style.width = `${_progressValue}%`;
+    _progressBar.style.width = `${getProgressValue()}%`;
     _progressTrack.appendChild(_progressBar);
 
-    _card.append(_meta, _progressTrack, _title);
+    const _progressDots = document.createElement("div");
+    _progressDots.className = "quiz-progress-dots";
+    _progressDots.setAttribute("aria-hidden", "true");
+    renderProgressDots(_progressDots);
+
+    _card.append(_meta, _progressTrack, _progressDots, _title);
 
     const _imageFigure = createQuestionImage(_question.image);
     if (_imageFigure)
@@ -1059,13 +1154,34 @@
 
     const _nextButton = document.createElement("button");
     _nextButton.type = "button";
-    _nextButton.className = "btn btn-outline-light";
+    _nextButton.className = "quiz-action-button quiz-pill";
     _nextButton.textContent = "Next question";
     _nextButton.disabled = true;
+
+    const _exitButton = document.createElement("button");
+    _exitButton.type = "button";
+    _exitButton.className = "quiz-action-button quiz-pill";
+    _exitButton.textContent = "Back to menu";
+    _exitButton.addEventListener("click", (_event) =>
+    {
+      _event.preventDefault();
+      returnToWheel();
+    });
+
+    const _homeButton = document.createElement("button");
+    _homeButton.type = "button";
+    _homeButton.className = "quiz-action-button quiz-pill";
+    _homeButton.textContent = "Back to home";
+    _homeButton.addEventListener("click", (_event) =>
+    {
+      _event.preventDefault();
+      window.location.href = "/";
+    });
 
     _question.choices.forEach((_choice, _index) =>
     {
       const _choiceItem = document.createElement("li");
+      _choiceItem.className = "quiz-choice-item";
       const _choiceButton = document.createElement("button");
       _choiceButton.type = "button";
       _choiceButton.className = "quiz-choice";
@@ -1079,7 +1195,7 @@
         }
 
         _hasAnswered = true;
-        handleAnswer(_question, _index, _choiceButtons, _feedbackElements, _scoreText);
+        handleAnswer(_question, _index, _choiceButtons, _feedbackElements, _scoreText, _progressBar, _progressDots, _choiceItem, _actions);
 
         const _isLastQuestion = _state.questionIndex >= _state.questions.length - 1;
         _nextButton.textContent = _isLastQuestion ? "View results" : "Next question";
@@ -1113,9 +1229,10 @@
 
     const _actions = document.createElement("div");
     _actions.className = "quiz-actions";
-    _actions.appendChild(_nextButton);
+    _actions.hidden = true;
+    _actions.append(_nextButton, _exitButton, _homeButton);
 
-    _card.append(_choicesList, _feedbackElements.container, _actions);
+    _card.append(_choicesList);
     _elements.quizContainer.appendChild(_card);
   }
 
@@ -1173,7 +1290,17 @@
       returnToWheel();
     });
 
-    _actions.append(_retryButton, _chooseButton);
+    const _menuButton = document.createElement("button");
+    _menuButton.type = "button";
+    _menuButton.className = "btn btn-outline-light";
+    _menuButton.textContent = "Back to home";
+    _menuButton.addEventListener("click", (_event) =>
+    {
+      _event.preventDefault();
+      window.location.href = "/";
+    });
+
+    _actions.append(_retryButton, _menuButton, _chooseButton);
     _summary.append(_title, _score, _detail, _note, _disclaimer, _actions);
     _elements.quizContainer.appendChild(_summary);
   }
@@ -1273,6 +1400,8 @@
     _elements.categoryPreview = document.querySelector("[data-quiz-category-preview]");
     _elements.wheel = document.querySelector("[data-quiz-wheel]");
     _elements.quizContainer = document.querySelector("[data-quiz-play]");
+    _elements.menuLink = document.querySelector("[data-quiz-back-menu]");
+    _elements.titleLink = document.querySelector("[data-quiz-title-link]");
 
     if (!_elements.page || !_elements.categoryContainer || !_elements.categoryDetail || !_elements.quizContainer)
     {
@@ -1284,9 +1413,31 @@
     updateCategoryTitle(null);
     updateCategoryPreview(null);
 
-    if (_elements.categoryTitle)
+    if (_elements.titleLink)
     {
-      _elements.categoryTitle.addEventListener("click", (_event) =>
+      _elements.titleLink.addEventListener("click", (_event) =>
+      {
+        if (_event.defaultPrevented)
+        {
+          return;
+        }
+
+        if (_event.metaKey || _event.ctrlKey || _event.shiftKey || _event.altKey || _event.button !== 0)
+        {
+          return;
+        }
+
+        if (_state.activeCategory)
+        {
+          _event.preventDefault();
+          returnToWheel();
+        }
+      });
+    }
+
+    if (_elements.menuLink)
+    {
+      _elements.menuLink.addEventListener("click", (_event) =>
       {
         _event.preventDefault();
         returnToWheel();

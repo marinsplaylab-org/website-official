@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/quizzes/quizzes.css">
 </head>
-<body>
+<body class="quiz-project">
 
   <div class="no-js-warning" role="alert">
     JavaScript is required to run this website. Please enable it to view content.
@@ -40,9 +40,29 @@
     <div class="container quiz-container">
       <section class="quiz-page" data-quiz-page data-quiz-state="idle">
         <header class="quiz-header">
-          <h1>Quizzes <span class="quiz-title-version">v2026.1.10 (Build 0.1 alpha)</span></h1>
-          <button class="quiz-category-link" type="button" data-quiz-category-title hidden></button>
-          <div class="quiz-category-link quiz-category-preview" data-quiz-category-preview data-preview-visible="false" aria-hidden="true"></div>
+          <h1>
+            <a class="quiz-title-link" href="/quizzes/" data-quiz-title-link>
+              Quizzes
+            </a>
+          </h1>
+          <div class="quiz-header-actions">
+            <div class="quiz-header-buttons">
+              <button class="quiz-menu-link quiz-pill" type="button" data-quiz-back-menu hidden>
+                <svg class="quiz-menu-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span>Back to menu</span>
+              </button>
+              <a class="quiz-home-link quiz-pill" href="/">
+                <svg class="quiz-home-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span>Back to home</span>
+              </a>
+            </div>
+            <div class="quiz-category-link" data-quiz-category-title hidden></div>
+            <div class="quiz-category-link quiz-category-preview" data-quiz-category-preview data-preview-visible="false" aria-hidden="true"></div>
+          </div>
         </header>
 
         <div class="quiz-layout">
@@ -71,6 +91,7 @@
               licensed under the
               <a href="https://lucide.dev/license" target="_blank" rel="noopener noreferrer">ISC License</a>.
             </p>
+            <p class="quiz-version" data-quiz-version>v2026.1.10 (Build 0.1 alpha)</p>
             <div class="quiz-category-detail" data-quiz-category-detail>
               <p class="quiz-status" role="status" aria-live="polite">Loading categories...</p>
             </div>
