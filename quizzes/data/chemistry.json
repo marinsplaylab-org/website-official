@@ -1,6 +1,6 @@
 {
   "title": "Chemistry",
-  "description": "Atoms, elements, bonds, and core chemistry concepts.",
+  "description": "Atoms, bonding, reactions, and everyday chemicals.",
   "questions": [
     {
       "id": "atomic-number",
@@ -54,7 +54,7 @@
         "Impossible to measure"
       ],
       "correctIndex": 0,
-      "explanation": "Lower pH indicates higher hydrogen-ion activity; pH < 7 is acidic.",
+      "explanation": "Lower pH indicates higher hydrogen-ion activity. pH < 7 is acidic.",
       "sourceUrl": "https://goldbook.iupac.org/terms/view/P04524",
       "sourceLabel": "IUPAC Gold Book: pH"
     },
@@ -82,7 +82,7 @@
         "One proton"
       ],
       "correctIndex": 0,
-      "explanation": "The mole is defined via Avogadro’s constant; it corresponds to exactly 6.02214076×10²³ specified entities.",
+      "explanation": "The mole is defined via Avogadro’s constant. it corresponds to exactly 6.02214076×10²³ specified entities.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Mole_(unit)",
       "sourceLabel": "Wikipedia: Mole (unit)"
     },
@@ -170,10 +170,10 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Periodic_table",
       "sourceLabel": "Wikipedia: Periodic table",
       "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Periodic_table_large.svg",
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Periodic%20table%20large.svg?width=900",
         "alt": "A periodic table of the elements",
         "credit": "Wikimedia Commons",
-        "creditUrl": "https://commons.wikimedia.org/wiki/File:Periodic_table_large.svg"
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Periodic%20table%20large.svg"
       }
     },
     {
@@ -287,6 +287,292 @@
       "explanation": "Lower pH corresponds to higher hydrogen ion activity (more acidic).",
       "sourceUrl": "https://en.wikipedia.org/wiki/PH",
       "sourceLabel": "Wikipedia: pH"
+    },
+    {
+      "id": "element-definition",
+      "prompt": "An element is a substance made of…",
+      "choices": [
+        "One kind of atom",
+        "Many kinds of atoms mixed",
+        "Only liquids",
+        "Only gases"
+      ],
+      "correctIndex": 0,
+      "explanation": "Elements are defined by their number of protons.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chemical_element",
+      "sourceLabel": "Wikipedia: Chemical element"
+    },
+    {
+      "id": "compound-definition",
+      "prompt": "A compound is…",
+      "choices": [
+        "Two or more elements chemically bonded",
+        "A single atom",
+        "A type of star",
+        "A kind of map"
+      ],
+      "correctIndex": 0,
+      "explanation": "Water is a compound made of hydrogen and oxygen.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chemical_compound",
+      "sourceLabel": "Wikipedia: Chemical compound"
+    },
+    {
+      "id": "mixture-definition",
+      "prompt": "A mixture is…",
+      "choices": [
+        "A physical combination of substances",
+        "A new element",
+        "Always a gas",
+        "Always a pure substance"
+      ],
+      "correctIndex": 0,
+      "explanation": "In mixtures, substances often can be separated without changing their chemistry.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mixture",
+      "sourceLabel": "Wikipedia: Mixture"
+    },
+    {
+      "id": "reactants-products",
+      "prompt": "In a chemical equation, the starting materials are the…",
+      "choices": [
+        "Reactants",
+        "Products",
+        "Catalysts",
+        "Isotopes"
+      ],
+      "correctIndex": 0,
+      "explanation": "Reactants turn into products during a reaction.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chemical_reaction",
+      "sourceLabel": "Wikipedia: Chemical reaction"
+    },
+    {
+      "id": "catalyst-definition",
+      "prompt": "A catalyst is something that…",
+      "choices": [
+        "Speeds up a reaction without being used up",
+        "Stops all reactions",
+        "Turns water into gold",
+        "Only exists in space"
+      ],
+      "correctIndex": 0,
+      "explanation": "Catalysts provide a different pathway with lower activation energy.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Catalysis",
+      "sourceLabel": "Wikipedia: Catalysis"
+    },
+    {
+      "id": "oxidation-loss-electrons",
+      "prompt": "In basic chemistry, oxidation is often described as…",
+      "choices": [
+        "Loss of electrons",
+        "Gain of electrons",
+        "Gain of neutrons",
+        "Loss of protons"
+      ],
+      "correctIndex": 0,
+      "explanation": "A common mnemonic is OIL RIG: Oxidation Is Loss, Reduction Is Gain (of electrons).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Redox",
+      "sourceLabel": "Wikipedia: Redox"
+    },
+    {
+      "id": "exothermic-reaction",
+      "prompt": "An exothermic reaction…",
+      "choices": [
+        "Releases heat",
+        "Absorbs heat",
+        "Has no energy change",
+        "Only happens in space"
+      ],
+      "correctIndex": 0,
+      "explanation": "Exothermic reactions give off energy to the surroundings.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Exothermic_process",
+      "sourceLabel": "Wikipedia: Exothermic process"
+    },
+    {
+      "id": "endothermic-reaction",
+      "prompt": "An endothermic reaction…",
+      "choices": [
+        "Absorbs heat",
+        "Releases heat",
+        "Has no energy change",
+        "Stops atoms moving"
+      ],
+      "correctIndex": 0,
+      "explanation": "Endothermic processes take in energy from their surroundings.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Endothermic_process",
+      "sourceLabel": "Wikipedia: Endothermic process"
+    },
+    {
+      "id": "boiling-definition",
+      "prompt": "Boiling is when a liquid…",
+      "choices": [
+        "Turns into a gas throughout the liquid",
+        "Freezes",
+        "Becomes a solid crystal",
+        "Stops moving"
+      ],
+      "correctIndex": 0,
+      "explanation": "Boiling happens when vapor bubbles form inside the liquid.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Boiling",
+      "sourceLabel": "Wikipedia: Boiling"
+    },
+    {
+      "id": "sublimation-definition",
+      "prompt": "Sublimation is when a substance goes from…",
+      "choices": [
+        "Solid directly to gas",
+        "Gas directly to solid",
+        "Liquid to solid",
+        "Liquid to plasma"
+      ],
+      "correctIndex": 0,
+      "explanation": "Dry ice (solid CO₂) sublimates at normal pressure.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sublimation_(phase_transition)",
+      "sourceLabel": "Wikipedia: Sublimation"
+    },
+    {
+      "id": "noble-gases-group",
+      "prompt": "Noble gases are found in which group of the periodic table?",
+      "choices": [
+        "Group 18",
+        "Group 1",
+        "Group 7",
+        "Group 12"
+      ],
+      "correctIndex": 0,
+      "explanation": "Helium, neon, and argon are noble gases in group 18.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Noble_gas",
+      "sourceLabel": "Wikipedia: Noble gas"
+    },
+    {
+      "id": "methane-image",
+      "prompt": "This ball and stick model shows which molecule?",
+      "choices": [
+        "Methane (CH₄)",
+        "Water (H₂O)",
+        "Carbon dioxide (CO₂)",
+        "Ammonia (NH₃)"
+      ],
+      "correctIndex": 0,
+      "explanation": "Methane is made of one carbon atom bonded to four hydrogen atoms.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Methane",
+      "sourceLabel": "Wikipedia: Methane",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Methane-3D-balls.png?width=900",
+        "alt": "Ball-and-stick model of methane",
+        "credit": "Wikimedia Commons contributors",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Methane-3D-balls.png"
+      }
+    },
+    {
+      "id": "carbon-dioxide-formula",
+      "prompt": "What is the chemical formula for carbon dioxide?",
+      "choices": [
+        "CO₂",
+        "H₂O",
+        "O₂",
+        "NaCl"
+      ],
+      "correctIndex": 0,
+      "explanation": "Carbon dioxide has one carbon atom and two oxygen atoms.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Carbon_dioxide",
+      "sourceLabel": "Wikipedia: Carbon dioxide"
+    },
+    {
+      "id": "salt-name",
+      "prompt": "Common table salt is…",
+      "choices": [
+        "Sodium chloride",
+        "Sodium carbonate",
+        "Calcium chloride",
+        "Potassium iodide"
+      ],
+      "correctIndex": 0,
+      "explanation": "Table salt is sodium chloride, NaCl.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sodium_chloride",
+      "sourceLabel": "Wikipedia: Sodium chloride"
+    },
+    {
+      "id": "acid-definition",
+      "prompt": "In simple terms, an acid is a substance that can…",
+      "choices": [
+        "Donate a proton (H⁺)",
+        "Donate an electron always",
+        "Turn into gold",
+        "Remove all atoms"
+      ],
+      "correctIndex": 0,
+      "explanation": "One common definition is the Brønsted–Lowry acid, which donates a proton.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Acid",
+      "sourceLabel": "Wikipedia: Acid"
+    },
+    {
+      "id": "base-definition",
+      "prompt": "In simple terms, a base is a substance that can…",
+      "choices": [
+        "Accept a proton (H⁺)",
+        "Accept neutrons",
+        "Remove light",
+        "Only exist as a gas"
+      ],
+      "correctIndex": 0,
+      "explanation": "One common definition is the Brønsted–Lowry base, which accepts a proton.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Base_(chemistry)",
+      "sourceLabel": "Wikipedia: Base (chemistry)"
+    },
+    {
+      "id": "solution-vs-suspension",
+      "prompt": "Salt water is an example of a…",
+      "choices": [
+        "Solution",
+        "Suspension",
+        "Pure element",
+        "Plasma"
+      ],
+      "correctIndex": 0,
+      "explanation": "In a solution, the solute is dissolved evenly at the particle level.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Solution",
+      "sourceLabel": "Wikipedia: Solution"
+    },
+    {
+      "id": "states-change-melting",
+      "prompt": "Melting is the change from…",
+      "choices": [
+        "Solid to liquid",
+        "Liquid to gas",
+        "Gas to liquid",
+        "Solid to gas"
+      ],
+      "correctIndex": 0,
+      "explanation": "Melting happens when a solid gains enough energy to become a liquid.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Melting",
+      "sourceLabel": "Wikipedia: Melting"
+    },
+    {
+      "id": "periodic-table-purpose",
+      "prompt": "The periodic table is useful because it groups elements with similar…",
+      "choices": [
+        "Chemical properties",
+        "Ages",
+        "Colors",
+        "Sizes only"
+      ],
+      "correctIndex": 0,
+      "explanation": "Elements in the same group often react in similar ways.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Periodic_table",
+      "sourceLabel": "Wikipedia: Periodic table"
+    },
+    {
+      "id": "activation-energy",
+      "prompt": "Activation energy is the energy needed to…",
+      "choices": [
+        "Start a chemical reaction",
+        "Stop electrons moving",
+        "Turn atoms into planets",
+        "Freeze light"
+      ],
+      "correctIndex": 0,
+      "explanation": "Reactions often need an initial energy input to begin.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Activation_energy",
+      "sourceLabel": "Wikipedia: Activation energy"
     }
   ]
 }

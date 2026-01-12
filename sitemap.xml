@@ -26,10 +26,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://marinsplaylab.org/stem-toolkits/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

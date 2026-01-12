@@ -1,6 +1,6 @@
 {
   "title": "Geography",
-  "description": "Maps, coordinates, continents, oceans, and countries.",
+  "description": "Maps, places, landforms, and how we describe Earth.",
   "questions": [
     {
       "id": "equator",
@@ -170,10 +170,10 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/World_map",
       "sourceLabel": "Wikipedia: World map",
       "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg",
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/World%20map%20-%20low%20resolution.svg?width=900",
         "alt": "A simplified outline world map",
         "credit": "Wikimedia Commons",
-        "creditUrl": "https://commons.wikimedia.org/wiki/File:World_map_-_low_resolution.svg"
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:World%20map%20-%20low%20resolution.svg"
       }
     },
     {
@@ -287,6 +287,292 @@
       "explanation": "Canberra is the capital city of Australia.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Canberra",
       "sourceLabel": "Wikipedia: Canberra"
+    },
+    {
+      "id": "largest-island",
+      "prompt": "What is the largest island in the world that is not a continent?",
+      "choices": [
+        "Greenland",
+        "Madagascar",
+        "Borneo",
+        "Iceland"
+      ],
+      "correctIndex": 0,
+      "explanation": "Greenland is the largest island by area.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Greenland",
+      "sourceLabel": "Wikipedia: Greenland"
+    },
+    {
+      "id": "peninsula-definition",
+      "prompt": "A peninsula is land that is…",
+      "choices": [
+        "Surrounded by water on three sides",
+        "Surrounded by water on all sides",
+        "Always covered in ice",
+        "Always flat"
+      ],
+      "correctIndex": 0,
+      "explanation": "A peninsula sticks out into water but is still connected to a larger landmass.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peninsula",
+      "sourceLabel": "Wikipedia: Peninsula"
+    },
+    {
+      "id": "isthmus-definition",
+      "prompt": "An isthmus is…",
+      "choices": [
+        "A narrow strip of land connecting two larger land areas",
+        "A narrow waterway between seas",
+        "A mountain pass",
+        "A type of desert"
+      ],
+      "correctIndex": 0,
+      "explanation": "An isthmus is land, a strait is water.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Isthmus",
+      "sourceLabel": "Wikipedia: Isthmus"
+    },
+    {
+      "id": "strait-definition",
+      "prompt": "A strait is…",
+      "choices": [
+        "A narrow water passage between two land areas",
+        "A line of mountains",
+        "A river delta",
+        "A type of forest"
+      ],
+      "correctIndex": 0,
+      "explanation": "Straits connect two larger bodies of water.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Strait",
+      "sourceLabel": "Wikipedia: Strait"
+    },
+    {
+      "id": "delta-definition",
+      "prompt": "A river delta forms where a river…",
+      "choices": [
+        "Slows down and drops sediment near its mouth",
+        "Starts in the mountains",
+        "Flows underground",
+        "Turns into ice"
+      ],
+      "correctIndex": 0,
+      "explanation": "Deltas build up when rivers deposit sediment into a lake or sea.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/River_delta",
+      "sourceLabel": "Wikipedia: River delta"
+    },
+    {
+      "id": "archipelago-definition",
+      "prompt": "An archipelago is…",
+      "choices": [
+        "A chain or group of islands",
+        "A type of desert",
+        "A mountain range",
+        "A city built on water"
+      ],
+      "correctIndex": 0,
+      "explanation": "Examples include Indonesia and the Philippines.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Archipelago",
+      "sourceLabel": "Wikipedia: Archipelago"
+    },
+    {
+      "id": "map-legend",
+      "prompt": "On a map, a legend helps you…",
+      "choices": [
+        "Understand symbols and colors",
+        "Change the weather",
+        "Measure time",
+        "Create earthquakes"
+      ],
+      "correctIndex": 0,
+      "explanation": "A legend explains what map symbols mean.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Map#Map_symbolization",
+      "sourceLabel": "Wikipedia: Map symbolization"
+    },
+    {
+      "id": "cardinal-directions",
+      "prompt": "What are the four main cardinal directions?",
+      "choices": [
+        "North, South, East, West",
+        "Up, Down, Left, Right",
+        "Hot, Cold, Wet, Dry",
+        "Land, Sea, Air, Space"
+      ],
+      "correctIndex": 0,
+      "explanation": "Cardinal directions are the basic compass directions.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cardinal_direction",
+      "sourceLabel": "Wikipedia: Cardinal direction"
+    },
+    {
+      "id": "equatorial-climate",
+      "prompt": "Regions near the Equator are usually…",
+      "choices": [
+        "Warm year round",
+        "Always freezing",
+        "Always dry",
+        "Always windy"
+      ],
+      "correctIndex": 0,
+      "explanation": "Sunlight is more direct near the Equator through the year.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tropics",
+      "sourceLabel": "Wikipedia: Tropics"
+    },
+    {
+      "id": "mountain-range",
+      "prompt": "A mountain range is…",
+      "choices": [
+        "A connected series of mountains",
+        "A single volcano",
+        "A type of river",
+        "A coral reef"
+      ],
+      "correctIndex": 0,
+      "explanation": "Mountain ranges form through tectonics and erosion over time.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mountain_range",
+      "sourceLabel": "Wikipedia: Mountain range"
+    },
+    {
+      "id": "bay-definition",
+      "prompt": "A bay is…",
+      "choices": [
+        "A body of water partly surrounded by land",
+        "A narrow land bridge",
+        "A deep canyon",
+        "A type of wind"
+      ],
+      "correctIndex": 0,
+      "explanation": "Bays are typically smaller than gulfs and are open to a larger body of water.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bay",
+      "sourceLabel": "Wikipedia: Bay"
+    },
+    {
+      "id": "gulf-definition",
+      "prompt": "A gulf is usually…",
+      "choices": [
+        "A large bay that is partly enclosed by land",
+        "A narrow river",
+        "A mountain pass",
+        "A desert valley"
+      ],
+      "correctIndex": 0,
+      "explanation": "Gulfs are large inlets connected to the ocean.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gulf",
+      "sourceLabel": "Wikipedia: Gulf"
+    },
+    {
+      "id": "plateau-definition",
+      "prompt": "A plateau is…",
+      "choices": [
+        "A high, flat area of land",
+        "A deep sea trench",
+        "A small island",
+        "A coral reef"
+      ],
+      "correctIndex": 0,
+      "explanation": "Plateaus can form from uplift or lava flows.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Plateau",
+      "sourceLabel": "Wikipedia: Plateau"
+    },
+    {
+      "id": "valley-definition",
+      "prompt": "A valley is…",
+      "choices": [
+        "Low land between hills or mountains",
+        "A type of ocean current",
+        "A region with no rivers",
+        "A high flat plain"
+      ],
+      "correctIndex": 0,
+      "explanation": "Valleys often form from river erosion or glaciers.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Valley",
+      "sourceLabel": "Wikipedia: Valley"
+    },
+    {
+      "id": "globe-definition",
+      "prompt": "A globe is…",
+      "choices": [
+        "A spherical model of Earth",
+        "A type of map projection",
+        "A mountain",
+        "A river"
+      ],
+      "correctIndex": 0,
+      "explanation": "Globes avoid many distortions that flat maps have.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Globe",
+      "sourceLabel": "Wikipedia: Globe"
+    },
+    {
+      "id": "topographic-map",
+      "prompt": "Topographic maps are useful because they show…",
+      "choices": [
+        "Elevation and land shape",
+        "Only city names",
+        "Only oceans",
+        "Only time zones"
+      ],
+      "correctIndex": 0,
+      "explanation": "Topographic maps often use contour lines to show terrain.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Topographic_map",
+      "sourceLabel": "Wikipedia: Topographic map"
+    },
+    {
+      "id": "continent-africa-image",
+      "prompt": "Which continent is highlighted in this image?",
+      "choices": [
+        "Africa",
+        "South America",
+        "Europe",
+        "Australia"
+      ],
+      "correctIndex": 0,
+      "explanation": "The highlighted landmass is Africa.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Africa",
+      "sourceLabel": "Wikipedia: Africa",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Africa%20%28orthographic%20projection%29.svg?width=900",
+        "alt": "Orthographic projection highlighting Africa",
+        "credit": "Wikimedia Commons contributors",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Africa%20%28orthographic%20projection%29.svg"
+      }
+    },
+    {
+      "id": "map-projection-mercator",
+      "prompt": "The Mercator projection is known for making areas near the poles look…",
+      "choices": [
+        "Bigger than they are",
+        "Smaller than they are",
+        "Perfectly accurate",
+        "Invisible"
+      ],
+      "correctIndex": 0,
+      "explanation": "Mercator keeps angles useful for navigation, but distorts area strongly toward the poles.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mercator_projection",
+      "sourceLabel": "Wikipedia: Mercator projection"
+    },
+    {
+      "id": "gps-satellites",
+      "prompt": "GPS works by using signals from…",
+      "choices": [
+        "Satellites",
+        "Undersea cables",
+        "Clouds",
+        "Volcanoes"
+      ],
+      "correctIndex": 0,
+      "explanation": "A receiver uses timing signals from multiple satellites to find its position.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Global_Positioning_System",
+      "sourceLabel": "Wikipedia: Global Positioning System"
+    },
+    {
+      "id": "capital-brazil",
+      "prompt": "What is the capital of Brazil?",
+      "choices": [
+        "Brasília",
+        "Rio de Janeiro",
+        "São Paulo",
+        "Salvador"
+      ],
+      "correctIndex": 0,
+      "explanation": "Brasília has been Brazil's capital since 1960.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bras%C3%ADlia",
+      "sourceLabel": "Wikipedia: Brasília"
     }
   ]
 }

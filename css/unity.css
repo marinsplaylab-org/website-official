@@ -134,6 +134,14 @@ body.unity-page #header:focus-within .site-navbar
   animation: site-spin 0.9s linear infinite;
 }
 
+@media (prefers-reduced-motion: reduce)
+{
+  .unity-loading-spinner
+  {
+    animation: none;
+  }
+}
+
 .unity-loading-text
 {
   font-size: 0.85rem;

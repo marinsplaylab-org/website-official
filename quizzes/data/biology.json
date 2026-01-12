@@ -1,6 +1,6 @@
 {
   "title": "Biology",
-  "description": "Cells, genetics, and basic life processes.",
+  "description": "Cells, ecosystems, evolution, and how living things work.",
   "questions": [
     {
       "id": "unit-of-life",
@@ -49,20 +49,14 @@
       "prompt": "DNA is shaped like a…",
       "choices": [
         "Double helix",
-        "Cube",
-        "Flat sheet",
-        "Perfect sphere"
+        "Perfect circle",
+        "Flat triangle",
+        "Straight line"
       ],
       "correctIndex": 0,
-      "explanation": "DNA is made of two strands that wind around each other like a twisted ladder (a double helix).",
+      "explanation": "DNA's overall shape is called a double helix.",
       "sourceUrl": "https://en.wikipedia.org/wiki/DNA",
-      "sourceLabel": "Wikipedia: DNA",
-      "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/DNA_chemical_structure.svg",
-        "alt": "Simplified diagram of DNA structure",
-        "credit": "Wikimedia Commons",
-        "creditUrl": "https://commons.wikimedia.org/wiki/File:DNA_chemical_structure.svg"
-      }
+      "sourceLabel": "Wikipedia: DNA"
     },
     {
       "id": "ribosomes-job",
@@ -287,6 +281,292 @@
       "explanation": "B cells can differentiate into plasma cells that secrete antibodies.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Antibody",
       "sourceLabel": "Wikipedia: Antibody"
+    },
+    {
+      "id": "nucleus-function",
+      "prompt": "In many cells, the nucleus mainly…",
+      "choices": [
+        "Holds DNA",
+        "Produces light",
+        "Pumps blood",
+        "Makes rocks"
+      ],
+      "correctIndex": 0,
+      "explanation": "The nucleus contains most of the cell's genetic material.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cell_nucleus",
+      "sourceLabel": "Wikipedia: Cell nucleus"
+    },
+    {
+      "id": "osmosis",
+      "prompt": "Osmosis is the movement of…",
+      "choices": [
+        "Water through a membrane",
+        "Only oxygen in air",
+        "Heat through metal",
+        "Sound through space"
+      ],
+      "correctIndex": 0,
+      "explanation": "Osmosis is water moving across a membrane toward higher solute concentration.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Osmosis",
+      "sourceLabel": "Wikipedia: Osmosis"
+    },
+    {
+      "id": "genes",
+      "prompt": "A gene is a stretch of DNA that…",
+      "choices": [
+        "Carries instructions used by cells",
+        "Is made of rocks",
+        "Only exists in space",
+        "Is always a virus"
+      ],
+      "correctIndex": 0,
+      "explanation": "Genes are parts of DNA that code for products like proteins.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gene",
+      "sourceLabel": "Wikipedia: Gene"
+    },
+    {
+      "id": "species-definition",
+      "prompt": "A species is often defined as a group of organisms that can…",
+      "choices": [
+        "Interbreed and produce fertile offspring",
+        "Live underwater only",
+        "Fly without wings",
+        "Never change"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is a common definition, though real cases can be complex.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Species",
+      "sourceLabel": "Wikipedia: Species"
+    },
+    {
+      "id": "food-chain",
+      "prompt": "In a simple food chain, energy usually flows from…",
+      "choices": [
+        "Producers to consumers",
+        "Consumers to the Sun",
+        "Rocks to plants",
+        "Water to stars"
+      ],
+      "correctIndex": 0,
+      "explanation": "Producers like plants capture energy, then consumers eat them.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Food_chain",
+      "sourceLabel": "Wikipedia: Food chain"
+    },
+    {
+      "id": "vertebrate-definition",
+      "prompt": "Vertebrates are animals that have a…",
+      "choices": [
+        "Backbone",
+        "Shell made of glass",
+        "Leaf",
+        "Magnetic field"
+      ],
+      "correctIndex": 0,
+      "explanation": "Fish, amphibians, reptiles, birds, and mammals are vertebrates.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vertebrate",
+      "sourceLabel": "Wikipedia: Vertebrate"
+    },
+    {
+      "id": "mammal-traits",
+      "prompt": "Mammals are known for having…",
+      "choices": [
+        "Hair and milk for their young",
+        "Gills and fins",
+        "Leaves and roots",
+        "No cells"
+      ],
+      "correctIndex": 0,
+      "explanation": "Most mammals have hair and females produce milk.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mammal",
+      "sourceLabel": "Wikipedia: Mammal"
+    },
+    {
+      "id": "red-blood-cells",
+      "prompt": "Red blood cells mainly carry…",
+      "choices": [
+        "Oxygen",
+        "DNA",
+        "Chlorophyll",
+        "Starch"
+      ],
+      "correctIndex": 0,
+      "explanation": "Hemoglobin in red blood cells binds oxygen.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Red_blood_cell",
+      "sourceLabel": "Wikipedia: Red blood cell"
+    },
+    {
+      "id": "heart-function",
+      "prompt": "Which organ pumps blood through the body?",
+      "choices": [
+        "Heart",
+        "Liver",
+        "Stomach",
+        "Lungs"
+      ],
+      "correctIndex": 0,
+      "explanation": "The heart pumps blood to deliver oxygen and nutrients.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Heart",
+      "sourceLabel": "Wikipedia: Heart"
+    },
+    {
+      "id": "largest-organ",
+      "prompt": "What is the largest organ in the human body?",
+      "choices": [
+        "Skin",
+        "Heart",
+        "Brain",
+        "Liver"
+      ],
+      "correctIndex": 0,
+      "explanation": "Skin is the body's largest organ by surface area.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Skin",
+      "sourceLabel": "Wikipedia: Skin"
+    },
+    {
+      "id": "cell-respiration",
+      "prompt": "Cellular respiration is the process cells use to…",
+      "choices": [
+        "Release energy from food",
+        "Make sunlight",
+        "Turn DNA into rocks",
+        "Stop chemical reactions"
+      ],
+      "correctIndex": 0,
+      "explanation": "Cells use respiration to produce ATP from nutrients.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cellular_respiration",
+      "sourceLabel": "Wikipedia: Cellular respiration"
+    },
+    {
+      "id": "photosynthesis-output",
+      "prompt": "Photosynthesis produces…",
+      "choices": [
+        "Sugar and oxygen",
+        "Protein and salt",
+        "Only water",
+        "Only carbon dioxide"
+      ],
+      "correctIndex": 0,
+      "explanation": "Plants use light to turn carbon dioxide and water into sugars, releasing oxygen.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Photosynthesis",
+      "sourceLabel": "Wikipedia: Photosynthesis"
+    },
+    {
+      "id": "chlorophyll-role",
+      "prompt": "Chlorophyll is important because it…",
+      "choices": [
+        "Absorbs light for photosynthesis",
+        "Carries oxygen in blood",
+        "Makes bones hard",
+        "Stops viruses"
+      ],
+      "correctIndex": 0,
+      "explanation": "Chlorophyll pigments capture light energy.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chlorophyll",
+      "sourceLabel": "Wikipedia: Chlorophyll"
+    },
+    {
+      "id": "neuron-definition",
+      "prompt": "A neuron is a type of cell that…",
+      "choices": [
+        "Sends electrical signals",
+        "Makes rocks",
+        "Produces lava",
+        "Creates planets"
+      ],
+      "correctIndex": 0,
+      "explanation": "Neurons transmit information in the nervous system.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Neuron",
+      "sourceLabel": "Wikipedia: Neuron"
+    },
+    {
+      "id": "immune-system-white-blood-cells",
+      "prompt": "White blood cells are part of the body's…",
+      "choices": [
+        "Immune system",
+        "Digestive system",
+        "Skeletal system",
+        "Respiratory system"
+      ],
+      "correctIndex": 0,
+      "explanation": "White blood cells help fight infections.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/White_blood_cell",
+      "sourceLabel": "Wikipedia: White blood cell"
+    },
+    {
+      "id": "bacteria-vs-eukaryotes",
+      "prompt": "Bacteria are different from animals and plants because bacteria usually…",
+      "choices": [
+        "Do not have a nucleus",
+        "Have more chromosomes",
+        "Are always larger",
+        "Have no DNA"
+      ],
+      "correctIndex": 0,
+      "explanation": "Bacteria are prokaryotes, so their DNA is not inside a nucleus.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bacteria",
+      "sourceLabel": "Wikipedia: Bacteria"
+    },
+    {
+      "id": "virus-not-cell",
+      "prompt": "Viruses are often described as not fully alive because they…",
+      "choices": [
+        "Need a host cell to reproduce",
+        "Have too much oxygen",
+        "Make their own food from rocks",
+        "Are made of metal"
+      ],
+      "correctIndex": 0,
+      "explanation": "Viruses depend on a host cell's machinery to replicate.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Virus",
+      "sourceLabel": "Wikipedia: Virus"
+    },
+    {
+      "id": "animal-cell-image",
+      "prompt": "This diagram shows a typical…",
+      "choices": [
+        "Animal cell",
+        "Volcano",
+        "Galaxy",
+        "Circuit"
+      ],
+      "correctIndex": 0,
+      "explanation": "The labeled structures are parts of a cell.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Animal_cell",
+      "sourceLabel": "Wikipedia: Animal cell",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Animal%20Cell.svg?width=900",
+        "alt": "Diagram of a typical animal cell with labeled organelles",
+        "credit": "Wikimedia Commons contributors",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Animal%20Cell.svg"
+      }
+    },
+    {
+      "id": "dna-base-pairs",
+      "prompt": "In DNA, adenine (A) pairs with…",
+      "choices": [
+        "Thymine (T)",
+        "Guanine (G)",
+        "Cytosine (C)",
+        "Uracil (U)"
+      ],
+      "correctIndex": 0,
+      "explanation": "In DNA, A pairs with T, and C pairs with G.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Base_pair",
+      "sourceLabel": "Wikipedia: Base pair"
+    },
+    {
+      "id": "plant-vs-animal-cell",
+      "prompt": "A key difference between plant and animal cells is that plant cells have…",
+      "choices": [
+        "Cell walls",
+        "No DNA",
+        "No membranes",
+        "No proteins"
+      ],
+      "correctIndex": 0,
+      "explanation": "Plant cells have a rigid cell wall outside the membrane.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cell_wall",
+      "sourceLabel": "Wikipedia: Cell wall"
     }
   ]
 }

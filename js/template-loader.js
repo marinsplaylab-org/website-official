@@ -29,6 +29,8 @@ async function loadHTML(elementId, templatePath)
 
 document.documentElement.classList.remove("no-js");
 
+let _layoutUpdatePending = false;
+
 function initPreloader()
 {
   // This preloader is skipped on Unity pages and shown once per session.
@@ -101,6 +103,31 @@ function updateLayoutVars()
   document.documentElement.style.setProperty("--site-footer-height", `${footerHeight}px`);
 }
 
+function scheduleLayoutUpdate()
+{
+  if (_layoutUpdatePending)
+  {
+    return;
+  }
+
+  _layoutUpdatePending = true;
+
+  const _runUpdate = () =>
+  {
+    _layoutUpdatePending = false;
+    updateLayoutVars();
+  };
+
+  if ("requestAnimationFrame" in window)
+  {
+    requestAnimationFrame(_runUpdate);
+  }
+  else
+  {
+    setTimeout(_runUpdate, 16);
+  }
+}
+
 // Load shared templates after the first paint so static content renders immediately.
 initPreloader();
 const loadTemplates = () =>
@@ -137,4 +164,4 @@ else
   scheduleTemplateLoad();
 }
 
-window.addEventListener("resize", updateLayoutVars);
+window.addEventListener("resize", scheduleLayoutUpdate);

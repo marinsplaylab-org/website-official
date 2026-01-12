@@ -1,6 +1,6 @@
 {
   "title": "Astronomy",
-  "description": "Planets, stars, galaxies, and basic space concepts.",
+  "description": "Planets, stars, galaxies, and how we explore space.",
   "questions": [
     {
       "id": "milky-way-name",
@@ -26,7 +26,7 @@
         "Betelgeuse"
       ],
       "correctIndex": 0,
-      "explanation": "The Sun is Earth's nearest star; Proxima Centauri is the nearest star beyond the Sun.",
+      "explanation": "The Sun is Earth's nearest star. Proxima Centauri is the nearest star beyond the Sun.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Sun",
       "sourceLabel": "Wikipedia: Sun"
     },
@@ -130,22 +130,22 @@
     },
     {
       "id": "saturn-rings",
-      "prompt": "Which planet is famous for its large, bright ring system?",
+      "prompt": "Which planet is shown in this image with a bright ring system?",
       "choices": [
         "Saturn",
-        "Mercury",
-        "Mars",
-        "Venus"
+        "Jupiter",
+        "Uranus",
+        "Neptune"
       ],
       "correctIndex": 0,
-      "explanation": "Saturn's rings are made mostly of ice particles and rocky debris.",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Rings_of_Saturn",
-      "sourceLabel": "Wikipedia: Rings of Saturn",
+      "explanation": "Saturn is famous for its large, bright rings made mostly of ice and rock.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Saturn",
+      "sourceLabel": "Wikipedia: Saturn",
       "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg",
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saturn%20during%20Equinox.jpg?width=900",
         "alt": "Saturn with its rings, photographed during equinox",
         "credit": "NASA/JPL/Space Science Institute",
-        "creditUrl": "https://commons.wikimedia.org/wiki/File:Saturn_during_Equinox.jpg"
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Saturn%20during%20Equinox.jpg"
       }
     },
     {
@@ -172,7 +172,7 @@
         "Near vacuum"
       ],
       "correctIndex": 0,
-      "explanation": "Venus has a very dense CO₂ atmosphere; surface pressure is about 92 times Earth's.",
+      "explanation": "Venus has a very dense CO₂ atmosphere. surface pressure is about 92 times Earth's.",
       "sourceUrl": "https://astrobiology.nasa.gov/nai/media/medialibrary/2016/01/Astrobiology-Habitability-Cards.pdf",
       "sourceLabel": "NASA Astrobiology: Habitability Cards (Venus)"
     },
@@ -270,7 +270,7 @@
         "A planet’s ring system"
       ],
       "correctIndex": 0,
-      "explanation": "Constellations are sky patterns/regions; the stars are not usually near each other in space.",
+      "explanation": "Constellations are sky patterns/regions. the stars are not usually near each other in space.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Constellation",
       "sourceLabel": "Wikipedia: Constellation"
     },
@@ -284,9 +284,295 @@
         "Io"
       ],
       "correctIndex": 0,
-      "explanation": "Pluto is classified as a dwarf planet; the others are moons.",
+      "explanation": "Pluto is classified as a dwarf planet. the others are moons.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Dwarf_planet",
       "sourceLabel": "Wikipedia: Dwarf planet"
+    },
+    {
+      "id": "jupiter-great-red-spot",
+      "prompt": "The Great Red Spot is a giant storm on which planet?",
+      "choices": [
+        "Jupiter",
+        "Saturn",
+        "Mars",
+        "Neptune"
+      ],
+      "correctIndex": 0,
+      "explanation": "The Great Red Spot is a long lasting storm in Jupiter's atmosphere.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Great_Red_Spot",
+      "sourceLabel": "Wikipedia: Great Red Spot"
+    },
+    {
+      "id": "sun-mostly-hydrogen",
+      "prompt": "The Sun is made mostly of which element?",
+      "choices": [
+        "Hydrogen",
+        "Oxygen",
+        "Iron",
+        "Carbon dioxide"
+      ],
+      "correctIndex": 0,
+      "explanation": "Hydrogen is the main ingredient in the Sun.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sun",
+      "sourceLabel": "Wikipedia: Sun"
+    },
+    {
+      "id": "andromeda-nearest-major-galaxy",
+      "prompt": "What is the nearest major galaxy to the Milky Way?",
+      "choices": [
+        "Andromeda Galaxy",
+        "Triangulum Galaxy",
+        "Sombrero Galaxy",
+        "Whirlpool Galaxy"
+      ],
+      "correctIndex": 0,
+      "explanation": "Andromeda is the closest large spiral galaxy to the Milky Way.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Andromeda_Galaxy",
+      "sourceLabel": "Wikipedia: Andromeda Galaxy"
+    },
+    {
+      "id": "au-meaning",
+      "prompt": "AU stands for…",
+      "choices": [
+        "Astronomical unit",
+        "Asteroid unit",
+        "Atmospheric unit",
+        "Angular unit"
+      ],
+      "correctIndex": 0,
+      "explanation": "An astronomical unit is a standard distance based on the average Earth to Sun distance.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Astronomical_unit",
+      "sourceLabel": "Wikipedia: Astronomical unit"
+    },
+    {
+      "id": "comet-made-of",
+      "prompt": "Comets are mostly made of…",
+      "choices": [
+        "Ice and dust",
+        "Molten rock",
+        "Liquid water",
+        "Solid iron"
+      ],
+      "correctIndex": 0,
+      "explanation": "Comets are icy bodies that release gas and dust when warmed by the Sun.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Comet",
+      "sourceLabel": "Wikipedia: Comet"
+    },
+    {
+      "id": "meteorite-definition",
+      "prompt": "What do we call a space rock that survives the atmosphere and reaches the ground?",
+      "choices": [
+        "Meteorite",
+        "Meteor",
+        "Comet",
+        "Nebula"
+      ],
+      "correctIndex": 0,
+      "explanation": "A meteor is the streak of light. A meteorite is what reaches the ground.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Meteorite",
+      "sourceLabel": "Wikipedia: Meteorite"
+    },
+    {
+      "id": "supernova-meaning",
+      "prompt": "A supernova is…",
+      "choices": [
+        "A powerful explosion of a star",
+        "A small rocky planet",
+        "A type of moon",
+        "A comet tail"
+      ],
+      "correctIndex": 0,
+      "explanation": "A supernova is a dramatic, very bright stellar explosion.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Supernova",
+      "sourceLabel": "Wikipedia: Supernova"
+    },
+    {
+      "id": "nebula-meaning",
+      "prompt": "A nebula is best described as…",
+      "choices": [
+        "A cloud of gas and dust in space",
+        "A single planet",
+        "A type of telescope",
+        "A black hole boundary"
+      ],
+      "correctIndex": 0,
+      "explanation": "Nebulae are clouds where stars can form and where stellar material can spread out.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nebula",
+      "sourceLabel": "Wikipedia: Nebula"
+    },
+    {
+      "id": "pulsar-meaning",
+      "prompt": "A pulsar is…",
+      "choices": [
+        "A rapidly spinning neutron star",
+        "A young planet",
+        "A comet",
+        "A type of galaxy"
+      ],
+      "correctIndex": 0,
+      "explanation": "Pulsars are neutron stars that beam radiation as they rotate.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pulsar",
+      "sourceLabel": "Wikipedia: Pulsar"
+    },
+    {
+      "id": "uranus-tilt",
+      "prompt": "Which planet rotates with an extreme tilt, like it is on its side?",
+      "choices": [
+        "Uranus",
+        "Mars",
+        "Mercury",
+        "Jupiter"
+      ],
+      "correctIndex": 0,
+      "explanation": "Uranus has an axial tilt of about 98 degrees.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Uranus",
+      "sourceLabel": "Wikipedia: Uranus"
+    },
+    {
+      "id": "venus-day-longer-than-year",
+      "prompt": "On which planet is a day longer than its year?",
+      "choices": [
+        "Venus",
+        "Earth",
+        "Mars",
+        "Jupiter"
+      ],
+      "correctIndex": 0,
+      "explanation": "Venus rotates very slowly, so one rotation takes longer than one orbit around the Sun.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Venus",
+      "sourceLabel": "Wikipedia: Venus"
+    },
+    {
+      "id": "telescope-purpose",
+      "prompt": "A telescope is mainly used to…",
+      "choices": [
+        "Collect and focus light from distant objects",
+        "Measure earthquakes",
+        "Detect sound in space",
+        "Generate gravity"
+      ],
+      "correctIndex": 0,
+      "explanation": "Telescopes help us see faint and far away objects by gathering more light than our eyes can.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Telescope",
+      "sourceLabel": "Wikipedia: Telescope"
+    },
+    {
+      "id": "main-sequence",
+      "prompt": "Most stars, including the Sun, spend most of their lives in which stage?",
+      "choices": [
+        "Main sequence",
+        "Supernova",
+        "White dwarf",
+        "Black hole"
+      ],
+      "correctIndex": 0,
+      "explanation": "In the main sequence stage, a star fuses hydrogen into helium in its core.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Main_sequence",
+      "sourceLabel": "Wikipedia: Main sequence"
+    },
+    {
+      "id": "lunar-eclipse",
+      "prompt": "A lunar eclipse happens when…",
+      "choices": [
+        "Earth blocks sunlight from reaching the Moon",
+        "The Moon blocks sunlight from reaching Earth",
+        "Mars passes in front of the Sun",
+        "The Sun turns off"
+      ],
+      "correctIndex": 0,
+      "explanation": "During a lunar eclipse, Earth is between the Sun and the Moon.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lunar_eclipse",
+      "sourceLabel": "Wikipedia: Lunar eclipse"
+    },
+    {
+      "id": "solar-eclipse",
+      "prompt": "A solar eclipse happens when…",
+      "choices": [
+        "The Moon blocks sunlight from reaching Earth",
+        "Earth blocks sunlight from reaching the Moon",
+        "Jupiter blocks sunlight from reaching Earth",
+        "A star explodes"
+      ],
+      "correctIndex": 0,
+      "explanation": "During a solar eclipse, the Moon moves between Earth and the Sun.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Solar_eclipse",
+      "sourceLabel": "Wikipedia: Solar eclipse"
+    },
+    {
+      "id": "cmb-meaning",
+      "prompt": "The cosmic microwave background is…",
+      "choices": [
+        "Faint leftover radiation from the early universe",
+        "A bright star cluster",
+        "A type of telescope",
+        "A comet trail"
+      ],
+      "correctIndex": 0,
+      "explanation": "The CMB is a weak glow seen in microwaves coming from all directions.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cosmic_microwave_background",
+      "sourceLabel": "Wikipedia: Cosmic microwave background"
+    },
+    {
+      "id": "transit-method",
+      "prompt": "One common way to find exoplanets is to watch for…",
+      "choices": [
+        "A small dip in a star's brightness",
+        "A star changing color every hour",
+        "A planet making sound waves",
+        "A comet hitting a planet"
+      ],
+      "correctIndex": 0,
+      "explanation": "In the transit method, a planet passes in front of its star and slightly dims the starlight.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Transit_method",
+      "sourceLabel": "Wikipedia: Transit method"
+    },
+    {
+      "id": "accretion-disk",
+      "prompt": "An accretion disk is…",
+      "choices": [
+        "A disk of gas and dust spiraling into an object",
+        "A planet's ring made only of ice",
+        "A galaxy's outer edge",
+        "A type of rocket engine"
+      ],
+      "correctIndex": 0,
+      "explanation": "Accretion disks form when material falls toward something like a star or black hole.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Accretion_disk",
+      "sourceLabel": "Wikipedia: Accretion disk"
+    },
+    {
+      "id": "aphelion-meaning",
+      "prompt": "Aphelion is the point in an orbit where an object is…",
+      "choices": [
+        "Farthest from the Sun",
+        "Closest to the Sun",
+        "Moving the fastest",
+        "Not moving at all"
+      ],
+      "correctIndex": 0,
+      "explanation": "For objects orbiting the Sun, aphelion is the farthest point.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aphelion",
+      "sourceLabel": "Wikipedia: Aphelion"
+    },
+    {
+      "id": "moon-image",
+      "prompt": "What object is shown in this image?",
+      "choices": [
+        "The Moon",
+        "Mars",
+        "Venus",
+        "Europa"
+      ],
+      "correctIndex": 0,
+      "explanation": "It is Earth's Moon, a rocky natural satellite.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Moon",
+      "sourceLabel": "Wikipedia: Moon",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/FullMoon2010%20%28cropped%29.jpg?width=900",
+        "alt": "A full Moon against a dark sky",
+        "credit": "Gregory H. Revera (via Wikimedia Commons)",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:FullMoon2010%20%28cropped%29.jpg"
+      }
     }
   ]
 }

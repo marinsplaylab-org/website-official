@@ -3,7 +3,7 @@
     {
       "id": "astronomy",
       "title": "Astronomy",
-      "description": "Solar system, stars, galaxies, and space basics.",
+      "description": "Planets, stars, galaxies, and the big stuff in space.",
       "questionCount": 10,
       "icon": "/quizzes/media/icon-astronomy.svg",
       "dataUrl": "/quizzes/data/astronomy.json"
@@ -28,7 +28,7 @@
     {
       "id": "earth-sciences",
       "title": "Earth Sciences",
-      "description": "Weather, oceans, climate, geology, and natural hazards.",
+      "description": "Weather, geology, oceans, and Earth's systems.",
       "questionCount": 10,
       "icon": "/quizzes/media/icon-earth.svg",
       "dataUrl": "/quizzes/data/earth-sciences.json"
@@ -36,7 +36,7 @@
     {
       "id": "geography",
       "title": "Geography",
-      "description": "Maps, coordinates, places, and Earth regions.",
+      "description": "Maps, places, landforms, and how Earth is organized.",
       "questionCount": 10,
       "icon": "/quizzes/media/icon-geography.svg",
       "dataUrl": "/quizzes/data/geography.json"
@@ -44,7 +44,7 @@
     {
       "id": "biology",
       "title": "Biology",
-      "description": "Cells, genetics, evolution, and life processes.",
+      "description": "Living things, cells, ecosystems, and evolution.",
       "questionCount": 10,
       "colors": {
         "base": "rgba(34, 197, 94, 0.44)",
@@ -61,7 +61,7 @@
     {
       "id": "chemistry",
       "title": "Chemistry",
-      "description": "Atoms, bonding, reactions, and chemical basics.",
+      "description": "Atoms, bonding, reactions, and materials.",
       "questionCount": 10,
       "colors": {
         "base": "rgba(99, 102, 241, 0.46)",

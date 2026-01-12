@@ -1,6 +1,6 @@
 {
   "title": "Physics",
-  "description": "Motion, forces, energy, and basic physical laws.",
+  "description": "Forces, motion, energy, waves, and electricity.",
   "questions": [
     {
       "id": "inertia-definition",
@@ -98,13 +98,7 @@
       "correctIndex": 0,
       "explanation": "For small angles, T ≈ 2π√(L/g). Mass does not appear in the ideal formula.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Pendulum#Period_of_oscillation",
-      "sourceLabel": "Wikipedia: Pendulum (period)",
-      "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Simple_gravity_pendulum.svg",
-        "alt": "Diagram of a simple pendulum",
-        "credit": "Wikimedia Commons",
-        "creditUrl": "https://commons.wikimedia.org/wiki/File:Simple_gravity_pendulum.svg"
-      }
+      "sourceLabel": "Wikipedia: Pendulum (period)"
     },
     {
       "id": "speed-vs-velocity",
@@ -146,13 +140,7 @@
       "correctIndex": 0,
       "explanation": "A Möbius strip is a non‑orientable surface: it has only one side and one boundary curve.",
       "sourceUrl": "https://en.wikipedia.org/wiki/M%C3%B6bius_strip",
-      "sourceLabel": "Wikipedia: Möbius strip",
-      "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mobius_strip.jpg/640px-Mobius_strip.jpg",
-        "alt": "A paper Möbius strip",
-        "credit": "Wikimedia Commons",
-        "creditUrl": "https://commons.wikimedia.org/wiki/File:Mobius_strip.jpg"
-      }
+      "sourceLabel": "Wikipedia: Möbius strip"
     },
     {
       "id": "speed-of-light",
@@ -220,7 +208,7 @@
         "Volt (V)"
       ],
       "correctIndex": 0,
-      "explanation": "Power is energy per unit time; 1 watt = 1 joule/second.",
+      "explanation": "Power is energy per unit time. 1 watt = 1 joule/second.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Watt",
       "sourceLabel": "Wikipedia: Watt"
     },
@@ -290,9 +278,295 @@
         "Only present in the battery"
       ],
       "correctIndex": 0,
-      "explanation": "Series components share the same current; voltage divides across them.",
+      "explanation": "Series components share the same current. voltage divides across them.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Series_and_parallel_circuits",
       "sourceLabel": "Wikipedia: Series and parallel circuits"
+    },
+    {
+      "id": "mass-vs-weight",
+      "prompt": "Mass and weight are different because weight depends on…",
+      "choices": [
+        "Gravity",
+        "Color",
+        "Time zones",
+        "Sound"
+      ],
+      "correctIndex": 0,
+      "explanation": "Mass is how much matter you have. Weight is the force of gravity on that mass.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Weight",
+      "sourceLabel": "Wikipedia: Weight"
+    },
+    {
+      "id": "work-definition",
+      "prompt": "In physics, work is done when a force…",
+      "choices": [
+        "Moves an object through a distance",
+        "Only exists in a vacuum",
+        "Changes an object's color",
+        "Stops time"
+      ],
+      "correctIndex": 0,
+      "explanation": "Work depends on force and how far the object moves in the direction of the force.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Work_(physics)",
+      "sourceLabel": "Wikipedia: Work (physics)"
+    },
+    {
+      "id": "power-definition",
+      "prompt": "Power is the rate of doing…",
+      "choices": [
+        "Work",
+        "Mass",
+        "Length",
+        "Charge"
+      ],
+      "correctIndex": 0,
+      "explanation": "Power tells how fast energy is transferred or work is done.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Power_(physics)",
+      "sourceLabel": "Wikipedia: Power (physics)"
+    },
+    {
+      "id": "friction-effect",
+      "prompt": "Friction usually acts…",
+      "choices": [
+        "Opposite the direction of motion",
+        "In the same direction as motion",
+        "Only upward",
+        "Only in space"
+      ],
+      "correctIndex": 0,
+      "explanation": "Friction resists sliding between surfaces.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friction",
+      "sourceLabel": "Wikipedia: Friction"
+    },
+    {
+      "id": "density-definition",
+      "prompt": "Density is mass divided by…",
+      "choices": [
+        "Volume",
+        "Time",
+        "Speed",
+        "Force"
+      ],
+      "correctIndex": 0,
+      "explanation": "Dense materials pack more mass into the same volume.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Density",
+      "sourceLabel": "Wikipedia: Density"
+    },
+    {
+      "id": "pressure-unit",
+      "prompt": "What is the SI unit of pressure?",
+      "choices": [
+        "Pascal",
+        "Newton",
+        "Joule",
+        "Ohm"
+      ],
+      "correctIndex": 0,
+      "explanation": "Pressure is measured in pascals (Pa).",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pascal_(unit)",
+      "sourceLabel": "Wikipedia: Pascal (unit)"
+    },
+    {
+      "id": "sound-needs-medium",
+      "prompt": "Sound cannot travel through empty space because it needs…",
+      "choices": [
+        "A material medium",
+        "Light",
+        "Gravity",
+        "Electric charge"
+      ],
+      "correctIndex": 0,
+      "explanation": "Sound is a mechanical wave that needs particles to vibrate.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sound",
+      "sourceLabel": "Wikipedia: Sound"
+    },
+    {
+      "id": "reflection-law",
+      "prompt": "For a mirror, the angle of reflection is…",
+      "choices": [
+        "Equal to the angle of incidence",
+        "Always 90 degrees",
+        "Always zero",
+        "Random"
+      ],
+      "correctIndex": 0,
+      "explanation": "Reflection follows a simple geometric rule for smooth surfaces.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Law_of_reflection",
+      "sourceLabel": "Wikipedia: Law of reflection"
+    },
+    {
+      "id": "refraction-in-water",
+      "prompt": "A straw looks bent in a glass of water mainly because of…",
+      "choices": [
+        "Refraction",
+        "Gravity",
+        "Magnetism",
+        "Friction"
+      ],
+      "correctIndex": 0,
+      "explanation": "Light bends when it changes speed entering a new material.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Refraction",
+      "sourceLabel": "Wikipedia: Refraction"
+    },
+    {
+      "id": "temperature-vs-heat",
+      "prompt": "Temperature is most closely related to the average…",
+      "choices": [
+        "Kinetic energy of particles",
+        "Mass of an object",
+        "Electrical charge",
+        "Volume of a gas"
+      ],
+      "correctIndex": 0,
+      "explanation": "Temperature reflects how fast particles are moving on average.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Temperature",
+      "sourceLabel": "Wikipedia: Temperature"
+    },
+    {
+      "id": "heat-transfer-conduction",
+      "prompt": "Heat transfer through direct contact is called…",
+      "choices": [
+        "Conduction",
+        "Convection",
+        "Radiation",
+        "Reflection"
+      ],
+      "correctIndex": 0,
+      "explanation": "Conduction moves thermal energy through collisions between particles.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Thermal_conduction",
+      "sourceLabel": "Wikipedia: Thermal conduction"
+    },
+    {
+      "id": "heat-transfer-convection",
+      "prompt": "Heat transfer by moving fluids (air or water) is called…",
+      "choices": [
+        "Convection",
+        "Conduction",
+        "Radiation",
+        "Diffraction"
+      ],
+      "correctIndex": 0,
+      "explanation": "Warm fluid rises and cool fluid sinks, making convection currents.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Convection",
+      "sourceLabel": "Wikipedia: Convection"
+    },
+    {
+      "id": "heat-transfer-radiation",
+      "prompt": "Heat transfer by electromagnetic waves is called…",
+      "choices": [
+        "Radiation",
+        "Conduction",
+        "Convection",
+        "Evaporation"
+      ],
+      "correctIndex": 0,
+      "explanation": "Radiation can travel through vacuum, like sunlight warming Earth.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Thermal_radiation",
+      "sourceLabel": "Wikipedia: Thermal radiation"
+    },
+    {
+      "id": "magnetic-field",
+      "prompt": "A magnetic field is produced by…",
+      "choices": [
+        "Moving electric charges",
+        "Static water",
+        "Rocks only",
+        "Sound waves"
+      ],
+      "correctIndex": 0,
+      "explanation": "Electric currents and changing electric fields create magnetic fields.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Magnetic_field",
+      "sourceLabel": "Wikipedia: Magnetic field"
+    },
+    {
+      "id": "induction",
+      "prompt": "Electromagnetic induction happens when a changing magnetic field…",
+      "choices": [
+        "Creates an electric current",
+        "Stops all motion",
+        "Turns matter into light",
+        "Removes gravity"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is how generators and transformers work.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Electromagnetic_induction",
+      "sourceLabel": "Wikipedia: Electromagnetic induction"
+    },
+    {
+      "id": "simple-machine-lever",
+      "prompt": "A lever helps you by…",
+      "choices": [
+        "Changing the size of the force needed",
+        "Removing friction completely",
+        "Creating energy from nothing",
+        "Stopping gravity"
+      ],
+      "correctIndex": 0,
+      "explanation": "Levers trade force for distance.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lever",
+      "sourceLabel": "Wikipedia: Lever"
+    },
+    {
+      "id": "torque-definition",
+      "prompt": "Torque is a measure of how strongly a force tends to…",
+      "choices": [
+        "Rotate an object",
+        "Cool an object",
+        "Shrink an object",
+        "Turn light into sound"
+      ],
+      "correctIndex": 0,
+      "explanation": "Torque depends on force and the distance from the rotation point.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Torque",
+      "sourceLabel": "Wikipedia: Torque"
+    },
+    {
+      "id": "center-of-mass",
+      "prompt": "The center of mass is the point where an object's mass is…",
+      "choices": [
+        "Balanced on average",
+        "Always at the top",
+        "Always at the bottom",
+        "Outside the object"
+      ],
+      "correctIndex": 0,
+      "explanation": "It is the average position of mass distribution.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Center_of_mass",
+      "sourceLabel": "Wikipedia: Center of mass"
+    },
+    {
+      "id": "phase-change-latent-heat",
+      "prompt": "When ice melts, it absorbs energy mainly as…",
+      "choices": [
+        "Latent heat",
+        "Electric charge",
+        "Magnetic force",
+        "Light pressure"
+      ],
+      "correctIndex": 0,
+      "explanation": "Energy goes into changing the phase, not raising temperature during melting.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Latent_heat",
+      "sourceLabel": "Wikipedia: Latent heat"
+    },
+    {
+      "id": "dispersion-prism-image",
+      "prompt": "What is happening in this image when white light passes through a prism?",
+      "choices": [
+        "It is being split into different colors",
+        "It is turning into sound",
+        "It is speeding up in air",
+        "It is becoming invisible"
+      ],
+      "correctIndex": 0,
+      "explanation": "A prism can disperse white light into a spectrum because different wavelengths bend by different amounts.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dispersion_(optics)",
+      "sourceLabel": "Wikipedia: Dispersion (optics)",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dispersion%20of%20White%20Light%20Through%20a%20Prism.jpg?width=900",
+        "alt": "White light passing through a prism and separating into colors",
+        "credit": "Wikimedia Commons contributors",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Dispersion%20of%20White%20Light%20Through%20a%20Prism.jpg"
+      }
     }
   ]
 }

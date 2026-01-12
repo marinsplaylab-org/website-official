@@ -176,6 +176,11 @@
     }));
 
     const _shuffled = shuffleArray(_choices);
+    const _sameOrder = _shuffled.every((_item, _index) => _item.index === _choices[_index].index);
+    if (_sameOrder && _shuffled.length > 1)
+    {
+      _shuffled.push(_shuffled.shift());
+    }
     const _newCorrectIndex = _shuffled.findIndex((_item) => _item.index === _correctIndex);
 
     return {
@@ -622,7 +627,6 @@
       _icon.setAttribute("width", _iconSize.toFixed(2));
       _icon.setAttribute("height", _iconSize.toFixed(2));
       _icon.setAttribute("href", _iconUrl);
-      _icon.setAttributeNS("http://www.w3.org/1999/xlink", "href", _iconUrl);
       _icon.setAttribute("preserveAspectRatio", "xMidYMid meet");
       _icon.setAttribute("aria-hidden", "true");
       _icon.setAttribute("focusable", "false");
@@ -851,6 +855,11 @@
 
   function createQuestionImage(_imageData)
   {
+    if (!_imageData || !_imageData.url)
+    {
+      return null;
+    }
+
     const _figure = document.createElement("figure");
     _figure.className = "quiz-question-image";
 
@@ -858,33 +867,37 @@
     _frame.className = "quiz-question-image-frame";
     _figure.appendChild(_frame);
 
-    if (!_imageData || !_imageData.url)
-    {
-      _figure.dataset.hasImage = "false";
-      _figure.setAttribute("aria-hidden", "true");
-      return _figure;
-    }
-
-    _figure.dataset.hasImage = "true";
-
     const _image = document.createElement("img");
     _image.src = _imageData.url;
     _image.alt = _imageData.alt || "";
     _image.loading = "lazy";
     _image.decoding = "async";
     let _caption = null;
+    const _setLoadedState = () =>
+    {
+      _figure.classList.add("is-loaded");
+    };
+    _image.addEventListener("load", () =>
+    {
+      _setLoadedState();
+    }, { once: true });
     _image.addEventListener("error", () =>
     {
-      _figure.dataset.hasImage = "false";
-      _figure.setAttribute("aria-hidden", "true");
-      _image.remove();
-      if (_caption)
-      {
-        _caption.remove();
-      }
+      _figure.remove();
     }, { once: true });
 
     _frame.appendChild(_image);
+    if (_image.complete && _image.naturalWidth > 0)
+    {
+      if ("requestAnimationFrame" in window)
+      {
+        requestAnimationFrame(_setLoadedState);
+      }
+      else
+      {
+        setTimeout(_setLoadedState, 0);
+      }
+    }
 
     if (_imageData.credit)
     {
@@ -1269,7 +1282,7 @@
 
     const _retryButton = document.createElement("button");
     _retryButton.type = "button";
-    _retryButton.className = "btn btn-outline-light";
+    _retryButton.className = "quiz-action-button quiz-pill";
     _retryButton.textContent = "Retry category";
     _retryButton.addEventListener("click", (_event) =>
     {
@@ -1282,7 +1295,7 @@
 
     const _chooseButton = document.createElement("button");
     _chooseButton.type = "button";
-    _chooseButton.className = "btn btn-outline-light";
+    _chooseButton.className = "quiz-action-button quiz-pill";
     _chooseButton.textContent = "Choose another category";
     _chooseButton.addEventListener("click", (_event) =>
     {
@@ -1292,7 +1305,7 @@
 
     const _menuButton = document.createElement("button");
     _menuButton.type = "button";
-    _menuButton.className = "btn btn-outline-light";
+    _menuButton.className = "quiz-action-button quiz-pill";
     _menuButton.textContent = "Back to home";
     _menuButton.addEventListener("click", (_event) =>
     {

@@ -1,6 +1,6 @@
 {
   "title": "Earth Sciences",
-  "description": "Atmosphere, oceans, weather, climate, and geology.",
+  "description": "Earth's systems, weather, geology, and natural hazards.",
   "questions": [
     {
       "id": "atmosphere-main-gas",
@@ -152,7 +152,7 @@
         "Oceans"
       ],
       "correctIndex": 0,
-      "explanation": "Most freshwater is locked up in ice and glaciers; a large fraction is also stored underground.",
+      "explanation": "Most freshwater is locked up in ice and glaciers. a large fraction is also stored underground.",
       "sourceUrl": "https://www.usgs.gov/water-science-school/science/how-much-water-there-earth",
       "sourceLabel": "USGS: How much water is there on Earth?"
     },
@@ -170,10 +170,10 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Hurricane_Isabel",
       "sourceLabel": "Wikipedia: Hurricane Isabel",
       "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Hurricane_Isabel_from_ISS.jpg",
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hurricane%20Isabel%20from%20ISS.jpg?width=900",
         "alt": "Hurricane Isabel photographed from the International Space Station",
         "credit": "NASA / Wikimedia Commons",
-        "creditUrl": "https://commons.wikimedia.org/wiki/File:Hurricane_Isabel_from_ISS.jpg"
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Hurricane%20Isabel%20from%20ISS.jpg"
       }
     },
     {
@@ -287,6 +287,298 @@
       "explanation": "Minerals have specific compositions and ordered crystal structures.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Mineral",
       "sourceLabel": "Wikipedia: Mineral"
+    },
+    {
+      "id": "divergent-boundary",
+      "prompt": "A plate boundary where plates move apart is called…",
+      "choices": [
+        "Divergent",
+        "Convergent",
+        "Transform",
+        "Static"
+      ],
+      "correctIndex": 0,
+      "explanation": "Divergent boundaries create new crust, like at mid ocean ridges.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Divergent_boundary",
+      "sourceLabel": "Wikipedia: Divergent boundary"
+    },
+    {
+      "id": "convergent-boundary",
+      "prompt": "A plate boundary where plates move toward each other is called…",
+      "choices": [
+        "Convergent",
+        "Divergent",
+        "Transform",
+        "Floating"
+      ],
+      "correctIndex": 0,
+      "explanation": "Convergent boundaries can form mountain ranges and subduction zones.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Convergent_boundary",
+      "sourceLabel": "Wikipedia: Convergent boundary"
+    },
+    {
+      "id": "transform-boundary",
+      "prompt": "A plate boundary where plates slide past each other is called…",
+      "choices": [
+        "Transform",
+        "Divergent",
+        "Convergent",
+        "Polar"
+      ],
+      "correctIndex": 0,
+      "explanation": "Transform boundaries often produce earthquakes.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Transform_fault",
+      "sourceLabel": "Wikipedia: Transform fault"
+    },
+    {
+      "id": "seismometer-use",
+      "prompt": "A seismometer is used to…",
+      "choices": [
+        "Measure ground shaking",
+        "Measure wind speed",
+        "Measure ocean salinity",
+        "Measure sunlight brightness"
+      ],
+      "correctIndex": 0,
+      "explanation": "Seismometers record vibrations from earthquakes and other sources.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Seismometer",
+      "sourceLabel": "Wikipedia: Seismometer"
+    },
+    {
+      "id": "barometer-use",
+      "prompt": "A barometer measures…",
+      "choices": [
+        "Air pressure",
+        "Temperature",
+        "Humidity",
+        "Wind direction"
+      ],
+      "correctIndex": 0,
+      "explanation": "Barometers are used in weather forecasting.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Barometer",
+      "sourceLabel": "Wikipedia: Barometer"
+    },
+    {
+      "id": "weather-vs-climate",
+      "prompt": "Weather is to climate as…",
+      "choices": [
+        "Days are to decades",
+        "Oceans are to rivers",
+        "Mountains are to clouds",
+        "Rocks are to minerals"
+      ],
+      "correctIndex": 0,
+      "explanation": "Weather is short term. Climate is the long term pattern.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Climate",
+      "sourceLabel": "Wikipedia: Climate"
+    },
+    {
+      "id": "magma-vs-lava",
+      "prompt": "Magma becomes lava when it…",
+      "choices": [
+        "Reaches Earth's surface",
+        "Turns into ice",
+        "Moves into the outer core",
+        "Stops moving"
+      ],
+      "correctIndex": 0,
+      "explanation": "Magma is molten rock underground. Lava is molten rock on the surface.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Magma",
+      "sourceLabel": "Wikipedia: Magma"
+    },
+    {
+      "id": "mantle-definition",
+      "prompt": "The mantle is the layer of Earth that lies between the…",
+      "choices": [
+        "Crust and core",
+        "Atmosphere and oceans",
+        "Oceans and crust",
+        "Inner core and outer core"
+      ],
+      "correctIndex": 0,
+      "explanation": "The mantle is a thick layer of hot rock beneath Earth's crust.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Earth%27s_mantle",
+      "sourceLabel": "Wikipedia: Earth's mantle"
+    },
+    {
+      "id": "inner-core-state",
+      "prompt": "Earth's inner core is mostly…",
+      "choices": [
+        "Solid",
+        "Liquid",
+        "Gas",
+        "Plasma"
+      ],
+      "correctIndex": 0,
+      "explanation": "The inner core is solid due to very high pressure.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+      "sourceLabel": "Wikipedia: Earth's inner core"
+    },
+    {
+      "id": "stratosphere-layer",
+      "prompt": "The ozone layer is mainly in the…",
+      "choices": [
+        "Stratosphere",
+        "Troposphere",
+        "Mesosphere",
+        "Thermosphere"
+      ],
+      "correctIndex": 0,
+      "explanation": "Most ozone that absorbs UV is in the stratosphere.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ozone_layer",
+      "sourceLabel": "Wikipedia: Ozone layer"
+    },
+    {
+      "id": "nitrogen-cycle",
+      "prompt": "The nitrogen cycle describes how nitrogen moves through…",
+      "choices": [
+        "Air, land, and water",
+        "Only oceans",
+        "Only volcanoes",
+        "Only space"
+      ],
+      "correctIndex": 0,
+      "explanation": "Nitrogen is essential for life and cycles through ecosystems.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nitrogen_cycle",
+      "sourceLabel": "Wikipedia: Nitrogen cycle"
+    },
+    {
+      "id": "erosion-definition",
+      "prompt": "Erosion is the process where rock and soil are…",
+      "choices": [
+        "Worn away and moved",
+        "Turned into magma instantly",
+        "Created from nothing",
+        "Frozen forever"
+      ],
+      "correctIndex": 0,
+      "explanation": "Water, wind, and ice can erode and transport material.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Erosion",
+      "sourceLabel": "Wikipedia: Erosion"
+    },
+    {
+      "id": "weathering-definition",
+      "prompt": "Weathering is the breakdown of rocks by…",
+      "choices": [
+        "Physical and chemical processes",
+        "Earth's magnetic field",
+        "Moon phases",
+        "Solar eclipses"
+      ],
+      "correctIndex": 0,
+      "explanation": "Weathering breaks material down. Erosion moves it.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Weathering",
+      "sourceLabel": "Wikipedia: Weathering"
+    },
+    {
+      "id": "ocean-currents-driver",
+      "prompt": "Surface ocean currents are driven mostly by…",
+      "choices": [
+        "Winds",
+        "Earthquakes",
+        "Volcanoes",
+        "Moonlight"
+      ],
+      "correctIndex": 0,
+      "explanation": "Winds push surface water and Earth's rotation affects the flow.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ocean_current",
+      "sourceLabel": "Wikipedia: Ocean current"
+    },
+    {
+      "id": "salinity-definition",
+      "prompt": "Salinity is a measure of how much…",
+      "choices": [
+        "Salt is dissolved in water",
+        "Oxygen is in the air",
+        "Sand is in soil",
+        "Heat is in rock"
+      ],
+      "correctIndex": 0,
+      "explanation": "Seawater salinity affects density and circulation.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Salinity",
+      "sourceLabel": "Wikipedia: Salinity"
+    },
+    {
+      "id": "volcano-image",
+      "prompt": "What natural event is shown in this image?",
+      "choices": [
+        "A volcanic ash plume",
+        "A tornado",
+        "A coral reef",
+        "A glacier"
+      ],
+      "correctIndex": 0,
+      "explanation": "The image shows an ash plume from a volcanic eruption.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Volcanic_ash",
+      "sourceLabel": "Wikipedia: Volcanic ash",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Detailed%20View%20of%20Ash%20Plume%20at%20Eyjafjallaj%C3%B6kull%20Volcano.jpg?width=900",
+        "alt": "A volcano ash plume rising into the atmosphere",
+        "credit": "NASA Earth Observatory (via Wikimedia Commons)",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Detailed%20View%20of%20Ash%20Plume%20at%20Eyjafjallaj%C3%B6kull%20Volcano.jpg"
+      }
+    },
+    {
+      "id": "tectonic-plates-image",
+      "prompt": "This map shows Earth's major…",
+      "choices": [
+        "Tectonic plates",
+        "Time zones",
+        "Biomes",
+        "Ocean currents"
+      ],
+      "correctIndex": 0,
+      "explanation": "Tectonic plates are large pieces of Earth's lithosphere that move over time.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tectonic_plate",
+      "sourceLabel": "Wikipedia: Tectonic plate",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tectonic%20plates%20boundaries%20detailed-en.svg?width=900",
+        "alt": "World map showing tectonic plates and their boundaries",
+        "credit": "Wikimedia Commons contributors",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Tectonic%20plates%20boundaries%20detailed-en.svg"
+      }
+    },
+    {
+      "id": "glacier-definition",
+      "prompt": "A glacier is…",
+      "choices": [
+        "A slow moving mass of ice on land",
+        "A type of cloud",
+        "A deep sea trench",
+        "A volcano vent"
+      ],
+      "correctIndex": 0,
+      "explanation": "Glaciers form when snow builds up and compacts into ice over many years.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Glacier",
+      "sourceLabel": "Wikipedia: Glacier"
+    },
+    {
+      "id": "aquifer-definition",
+      "prompt": "An aquifer is…",
+      "choices": [
+        "An underground layer that holds water",
+        "A type of hurricane",
+        "A mountain range",
+        "A space telescope"
+      ],
+      "correctIndex": 0,
+      "explanation": "Aquifers store groundwater that can feed wells and springs.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aquifer",
+      "sourceLabel": "Wikipedia: Aquifer"
+    },
+    {
+      "id": "volcano-forms",
+      "prompt": "Most volcanoes form near…",
+      "choices": [
+        "Plate boundaries or hotspots",
+        "The Equator only",
+        "River deltas only",
+        "Deserts only"
+      ],
+      "correctIndex": 0,
+      "explanation": "Magma reaches the surface more easily at certain tectonic settings.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Volcano",
+      "sourceLabel": "Wikipedia: Volcano"
     }
   ]
 }

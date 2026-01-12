@@ -276,6 +276,14 @@ samp
   animation: site-spin 0.9s linear infinite;
 }
 
+@media (prefers-reduced-motion: reduce)
+{
+  .site-preloader-spinner
+  {
+    animation: none;
+  }
+}
+
 /* === JavaScript required banner === */
 .no-js-warning
 {
